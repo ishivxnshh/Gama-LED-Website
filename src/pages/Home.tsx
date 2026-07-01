@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import HeroExpandable from "../components/HeroExpandable";
 import ProductCard from "../components/ProductCard";
+import FAQ from "../components/FAQ";
 import { productCategories } from "../data/products";
 
 export default function Home() {
@@ -234,6 +235,8 @@ export default function Home() {
         </div>
       </section>
 
+      <FAQ />
+
       {/* Contact CTA */}
       <section style={{ padding: "128px 0", background: "linear-gradient(135deg, var(--bg-primary), var(--bg-secondary))", borderTop: "1px solid var(--border-color)", textAlign: "center", color: "var(--text-primary)" }}>
         <div style={{ maxWidth: 800, margin: "0 auto", padding: "0 24px" }}>
@@ -241,10 +244,10 @@ export default function Home() {
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 800, letterSpacing: "-0.025em", lineHeight: 1.1 }}>Need the Right LED Display Solution?</h2>
             <p style={{ marginTop: 24, color: "var(--text-secondary)", fontSize: 18, lineHeight: 1.6 }}>Our experts will help you choose the perfect LED display for your project. Contact us today for a free consultation and customized quote.</p>
             <div style={{ marginTop: 40, display: "flex", alignItems: "center", justifyContent: "center", gap: 16, flexWrap: "wrap" }}>
-              <Link to="/contact" style={{ padding: "16px 40px", background: "var(--brand)", color: "#fff", fontSize: 14, fontWeight: 800, borderRadius: 999, textDecoration: "none", textTransform: "uppercase", letterSpacing: "0.05em", boxShadow: "0 4px 15px rgba(225, 29, 72, 0.4)" }} className="hover:bg-brand-dark transition-colors">
+              <Link to="/contact" style={{ padding: "16px 40px", background: "var(--brand)", color: "#fff", fontSize: 14, fontWeight: 800, borderRadius: 999, textDecoration: "none", textTransform: "uppercase", letterSpacing: "0.05em", boxShadow: "0 4px 15px rgba(225, 29, 72, 0.4)" }}>
                 Get Quote
               </Link>
-              <Link to="/contact" style={{ padding: "16px 40px", background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff", fontSize: 14, fontWeight: 800, borderRadius: 999, textDecoration: "none", textTransform: "uppercase", letterSpacing: "0.05em" }} className="hover:bg-white/10 transition-colors">
+              <Link to="/contact" style={{ padding: "16px 40px", background: "transparent", border: "1px solid var(--border-color)", color: "var(--text-primary)", fontSize: 14, fontWeight: 800, borderRadius: 999, textDecoration: "none", textTransform: "uppercase", letterSpacing: "0.05em" }}>
                 Contact Sales
               </Link>
             </div>

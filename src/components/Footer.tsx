@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logoUrl from "../assets/LOGO.jpeg";
 
 export default function Footer() {
   return (
@@ -8,7 +9,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link to="/" style={{ textDecoration: "none", display: "inline-block", marginBottom: 24 }}>
-              <img src="/src/assets/LOGO.jpeg" alt="Gama LED Logo" style={{ height: 48, objectFit: "contain", background: "white", padding: 4, borderRadius: 4 }} />
+              <img src={logoUrl} alt="Gama LED Logo" style={{ height: 48, objectFit: "contain", background: "white", padding: 4, borderRadius: 4 }} />
             </Link>
             <p style={{ fontSize: 14, lineHeight: 1.6, maxWidth: 320 }}>Professional LED Display Manufacturer providing high-quality indoor, outdoor, and rental LED screens for global clients. Innovation, reliability, and true colors.</p>
           </div>
