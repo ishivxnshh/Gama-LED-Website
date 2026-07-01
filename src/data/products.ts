@@ -71,6 +71,47 @@ export const productCategories: LEDProductType[] = [
             features: ["Easy Installation", "High Stability", "True Color Reproduction"]
           }
         ]
+      },
+      {
+        id: "cob-series",
+        name: "COB Series",
+        description: "Next-generation Chip-on-Board technology for extreme durability and contrast.",
+        image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800",
+        products: [
+          {
+            id: "cob-p0-9",
+            name: "COB P0.9",
+            description: "Ultra-fine pitch COB display for the most demanding visual environments.",
+            image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800",
+            pixelPitch: "0.93mm",
+            brightness: "1000 nits",
+            refreshRate: "3840Hz",
+            applications: ["Command Centers", "High-end Boardrooms"],
+            features: ["Waterproof Surface", "Anti-collision", "Deep Black"]
+          },
+          {
+            id: "cob-p1-25",
+            name: "COB P1.25",
+            description: "High-contrast COB display perfect for broadcast and corporate applications.",
+            image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800",
+            pixelPitch: "1.25mm",
+            brightness: "1000 nits",
+            refreshRate: "3840Hz",
+            applications: ["Broadcast Studios", "Corporate Environments"],
+            features: ["Dustproof", "High Contrast", "Impact Resistant"]
+          },
+          {
+            id: "cob-p1-5",
+            name: "COB P1.56",
+            description: "Reliable and durable COB display for public spaces and premium retail.",
+            image: "https://images.unsplash.com/photo-1517502884422-41eaead166d4?w=800",
+            pixelPitch: "1.56mm",
+            brightness: "1000 nits",
+            refreshRate: "3840Hz",
+            applications: ["Premium Retail", "Public Spaces", "Museums"],
+            features: ["Easy to Clean", "Wide Viewing Angle", "Energy Efficient"]
+          }
+        ]
       }
     ]
   },
@@ -106,6 +147,58 @@ export const productCategories: LEDProductType[] = [
             refreshRate: "3840Hz",
             applications: ["Digital Billboards", "Stadiums", "Building Facades"],
             features: ["Excellent Heat Dissipation", "Energy Saving", "High Contrast"]
+          },
+          {
+            id: "ma-p6-67",
+            name: "MA Series P6.67",
+            description: "High-brightness outdoor display perfect for long viewing distances.",
+            image: "https://images.unsplash.com/photo-1460500063983-994d4c27756c?w=800",
+            pixelPitch: "6.67mm",
+            brightness: "6500 nits",
+            refreshRate: "3840Hz",
+            applications: ["Highway Billboards", "Building Facades", "Stadiums"],
+            features: ["IP65 Waterproof", "High Stability", "Cost Effective"]
+          }
+        ]
+      },
+      {
+        id: "eco-series",
+        name: "ECO Series",
+        description: "Energy-efficient outdoor displays designed to reduce running costs.",
+        image: "https://images.unsplash.com/photo-1460500063983-994d4c27756c?w=800",
+        products: [
+          {
+            id: "eco-p6-67",
+            name: "ECO Series P6.67",
+            description: "Cost-effective and energy-saving outdoor display for large billboards.",
+            image: "https://images.unsplash.com/photo-1460500063983-994d4c27756c?w=800",
+            pixelPitch: "6.67mm",
+            brightness: "6500 nits",
+            refreshRate: "3840Hz",
+            applications: ["Highway Billboards", "Building Facades"],
+            features: ["Ultra Low Power", "Fanless Design", "High Brightness"]
+          },
+          {
+            id: "eco-p8",
+            name: "ECO Series P8",
+            description: "Durable and ultra-efficient P8 outdoor display for commercial zones.",
+            image: "https://images.unsplash.com/photo-1555626906-fcf10d6851b4?w=800",
+            pixelPitch: "8mm",
+            brightness: "6500 nits",
+            refreshRate: "3840Hz",
+            applications: ["Commercial Plazas", "Sports Venues"],
+            features: ["Low Heat Generation", "Wide Color Gamut", "High Contrast"]
+          },
+          {
+            id: "eco-p10",
+            name: "ECO Series P10",
+            description: "The most economical choice for massive outdoor LED installations.",
+            image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800",
+            pixelPitch: "10mm",
+            brightness: "7000 nits",
+            refreshRate: "3840Hz",
+            applications: ["DOOH Advertising", "Rooftop Billboards"],
+            features: ["Maximum Energy Savings", "All-Weather Reliability", "Easy Maintenance"]
           }
         ]
       }
@@ -132,6 +225,28 @@ export const productCategories: LEDProductType[] = [
             refreshRate: "3840Hz",
             applications: ["Concerts", "Corporate Events", "Exhibitions"],
             features: ["Fast Lock System", "Lightweight Cabinet", "High Refresh Rate"]
+          },
+          {
+            id: "mys500-p2-9",
+            name: "MYS500 P2.97",
+            description: "Versatile indoor rental display with extreme stability.",
+            image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800",
+            pixelPitch: "2.97mm",
+            brightness: "1000 nits",
+            refreshRate: "3840Hz",
+            applications: ["Live Events", "Conferences", "Trade Shows"],
+            features: ["Curve Assembly", "Corner Protection", "Dual Backup"]
+          },
+          {
+            id: "mys500-p3-91",
+            name: "MYS500 P3.91",
+            description: "Standard indoor/outdoor rental display for diverse staging needs.",
+            image: "https://images.unsplash.com/photo-1470229722913-7c092fb27318?w=800",
+            pixelPitch: "3.91mm",
+            brightness: "4500 nits",
+            refreshRate: "3840Hz",
+            applications: ["Music Festivals", "Touring", "Outdoor Events"],
+            features: ["IP65 Waterproof", "High Brightness", "Quick Maintenance"]
           }
         ]
       },
@@ -151,6 +266,17 @@ export const productCategories: LEDProductType[] = [
             refreshRate: "7680Hz",
             applications: ["Virtual Production", "Broadcast Studios", "Film Sets"],
             features: ["HDR Support", "Low Latency", "Wide Color Gamut"]
+          },
+          {
+            id: "xr-p2-6",
+            name: "XR Stage P2.6",
+            description: "Premium virtual production background display with zero scan lines.",
+            image: "https://images.unsplash.com/photo-1616469829581-73993eb86b02?w=800",
+            pixelPitch: "2.6mm",
+            brightness: "1500 nits",
+            refreshRate: "7680Hz",
+            applications: ["XR Studios", "Film Production", "Live Broadcast"],
+            features: ["High Frame Rate", "Anti-reflection", "Deep Black"]
           }
         ]
       }
@@ -177,6 +303,17 @@ export const productCategories: LEDProductType[] = [
             refreshRate: "3840Hz",
             applications: ["Football Stadiums", "Basketball Arenas", "Race Tracks"],
             features: ["Soft Top Cover", "High Impact Resistance", "Wide Viewing Angle"]
+          },
+          {
+            id: "ev960-s-p8",
+            name: "EV960-S P8",
+            description: "High-definition perimeter display for close viewing distances.",
+            image: "https://images.unsplash.com/photo-1518605368461-1ea4a4d65609?w=800",
+            pixelPitch: "8mm",
+            brightness: "6500 nits",
+            refreshRate: "3840Hz",
+            applications: ["Indoor Arenas", "Hockey Rinks", "Tennis Courts"],
+            features: ["Soft Rubber Mask", "High Refresh Rate", "Adjustable Bracket"]
           }
         ]
       }
@@ -203,6 +340,17 @@ export const productCategories: LEDProductType[] = [
             refreshRate: "3840Hz",
             applications: ["Retail Stores", "Hotels", "Exhibitions"],
             features: ["Plug & Play", "Ultra Slim", "Multiple Splicing Options"]
+          },
+          {
+            id: "poster-p1-8",
+            name: "iPoster P1.8",
+            description: "High-resolution digital poster for luxury retail environments.",
+            image: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=800",
+            pixelPitch: "1.86mm",
+            brightness: "1000 nits",
+            refreshRate: "3840Hz",
+            applications: ["Luxury Retail", "Car Showrooms", "Corporate Lobbies"],
+            features: ["Cloud Management", "Wheeled Base", "Seamless Connection"]
           }
         ]
       }
@@ -229,6 +377,17 @@ export const productCategories: LEDProductType[] = [
             refreshRate: "3840Hz",
             applications: ["Retail Windows", "Glass Facades", "Shopping Malls"],
             features: ["70% Transparency", "Lightweight", "Customizable Sizes"]
+          },
+          {
+            id: "if-p7-81",
+            name: "IF Series P7.81",
+            description: "High-transparency display for massive glass architecture installations.",
+            image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800",
+            pixelPitch: "7.81x7.81mm",
+            brightness: "5500 nits",
+            refreshRate: "3840Hz",
+            applications: ["Building Facades", "Airports", "Auto Showrooms"],
+            features: ["80% Transparency", "High Brightness", "Easy Maintenance"]
           }
         ]
       }
@@ -255,6 +414,47 @@ export const productCategories: LEDProductType[] = [
             refreshRate: "3840Hz",
             applications: ["Custom Displays", "OEM Assembly", "Repairs"],
             features: ["Standard 320x160mm Size", "Magnetic Front Service", "High Contrast"]
+          },
+          {
+            id: "indoor-p2-5-module",
+            name: "Indoor P2.5 Module",
+            description: "Cost-effective 320x160mm indoor LED module.",
+            image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800",
+            pixelPitch: "2.5mm",
+            brightness: "800 nits",
+            refreshRate: "1920Hz",
+            applications: ["Commercial Displays", "Information Boards"],
+            features: ["Reliable Performance", "Easy Installation", "Standard Dimensions"]
+          }
+        ]
+      },
+      {
+        id: "outdoor-modules",
+        name: "Outdoor Modules",
+        description: "Weatherproof outdoor LED modules for custom billboard construction.",
+        image: "https://images.unsplash.com/photo-1555626906-fcf10d6851b4?w=800",
+        products: [
+          {
+            id: "outdoor-p4-module",
+            name: "Outdoor P4 Module",
+            description: "High-definition 320x160mm waterproof outdoor LED module.",
+            image: "https://images.unsplash.com/photo-1555626906-fcf10d6851b4?w=800",
+            pixelPitch: "4mm",
+            brightness: "6000 nits",
+            refreshRate: "3840Hz",
+            applications: ["Outdoor Advertising", "Custom Billboards", "Fascia Signs"],
+            features: ["IP65 Waterproof", "High Brightness", "UV Resistant"]
+          },
+          {
+            id: "outdoor-p5-module",
+            name: "Outdoor P5 Module",
+            description: "Standard 320x160mm waterproof outdoor LED module.",
+            image: "https://images.unsplash.com/photo-1555626906-fcf10d6851b4?w=800",
+            pixelPitch: "5mm",
+            brightness: "6500 nits",
+            refreshRate: "3840Hz",
+            applications: ["DOOH Billboards", "Storefront Displays"],
+            features: ["Durable Mask", "High Reliability", "Cost-effective"]
           }
         ]
       }

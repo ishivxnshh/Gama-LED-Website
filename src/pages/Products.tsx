@@ -108,7 +108,7 @@ export default function Products() {
                     <h2 style={{ fontSize: 28, fontWeight: 800, color: "var(--ink)" }}>{cat.name}</h2>
                     <Link to={`/products/${cat.id}`} style={{ fontSize: 14, fontWeight: 700, color: "var(--brand)", textDecoration: "none" }} className="hover:underline">View All &rarr;</Link>
                   </div>
-                  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 24 }}>
+                  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 32 }}>
                     {cat.series.slice(0, 3).map((s, i) => (
                       <ProductCard key={s.id} name={s.name} description={s.description} image={s.image} tags={[]} link={`/products/${cat.id}/${s.id}`} index={i} />
                     ))}
@@ -120,7 +120,7 @@ export default function Products() {
 
           {/* Level 2: Specific Category (Has productType, No series) */}
           {productType && !series && breadcrumbType && (
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 24 }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 32 }}>
               {breadcrumbType.series.map((s, i) => (
                 <ProductCard key={s.id} name={s.name} description={s.description} image={s.image} tags={[]} link={`/products/${breadcrumbType.id}/${s.id}`} index={i} />
               ))}
@@ -129,7 +129,7 @@ export default function Products() {
 
           {/* Level 3: Specific Series (Has productType and series) */}
           {productType && series && breadcrumbSeries && (
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 24 }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 32 }}>
               {breadcrumbSeries.products.map((p, i) => (
                 <ProductCard key={p.id} name={p.name} description={p.description} image={p.image} tags={[p.pixelPitch, p.brightness]} link={`/products/${productType}/${series}/${p.id}`} index={i} />
               ))}

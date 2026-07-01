@@ -38,8 +38,7 @@ export default function Navbar() {
             <AnimatePresence>
               {shopMenuOpen && (
                 <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }} transition={{ duration: 0.2 }}
-                  style={{ position: "absolute", top: "100%", left: "50%", transform: "translateX(-50%)", width: 850, background: "#fff", border: "1px solid #e2e8f0", borderRadius: 16, boxShadow: "0 10px 40px rgba(0,0,0,0.1)", padding: 32, display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24, marginTop: 24, cursor: "default" }}>
-                  <div style={{ position: "absolute", top: -8, left: "50%", marginLeft: -8, width: 16, height: 16, background: "#fff", borderLeft: "1px solid #e2e8f0", borderTop: "1px solid #e2e8f0", transform: "rotate(45deg)" }} />
+                  style={{ position: "fixed", top: 80, left: "50%", transform: "translateX(-50%)", width: "100%", maxWidth: 900, background: "#fff", border: "1px solid #e2e8f0", borderRadius: 16, boxShadow: "0 10px 40px rgba(0,0,0,0.1)", padding: 32, display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24, cursor: "default", zIndex: 100 }}>
                   
                   {productCategories.map((category) => (
                     <div key={category.id}>
