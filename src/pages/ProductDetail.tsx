@@ -72,7 +72,7 @@ export default function ProductDetail() {
 
             <div style={{ background: "var(--bg-secondary)", borderRadius: 16, border: "1px solid var(--border-color)", padding: 24, marginBottom: 40 }}>
               <h3 style={{ fontSize: 14, fontWeight: 800, color: "var(--text-primary)", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 16 }}>Key Specifications</h3>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 16 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 16 }}>
                 <div>
                   <p style={{ fontSize: 12, color: "var(--text-secondary)", textTransform: "uppercase", fontWeight: 600 }}>Pixel Pitch</p>
                   <p style={{ fontSize: 16, color: "var(--text-primary)", fontWeight: 700 }}>{prod.pixelPitch}</p>

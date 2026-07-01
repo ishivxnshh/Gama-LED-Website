@@ -109,7 +109,7 @@ export default function About() {
               From iconic sports stadiums in Europe to bustling commercial centers in Asia, Gama LED displays captivate audiences worldwide.
             </p>
             
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24, borderTop: "1px solid var(--border-color)", borderBottom: "1px solid var(--border-color)", padding: "48px 0" }} className="md-grid-4">
+            <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: 24, borderTop: "1px solid var(--border-color)", borderBottom: "1px solid var(--border-color)", padding: "48px 0" }} className="md-grid-4">
               <div>
                 <div style={{ fontSize: "clamp(2rem, 3vw, 2.5rem)", fontWeight: 800, color: "var(--brand)" }}>100+</div>
                 <div style={{ fontSize: 14, fontWeight: 600, color: "var(--text-secondary)", textTransform: "uppercase", letterSpacing: "0.05em", marginTop: 8 }}>Countries</div>

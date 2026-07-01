@@ -331,7 +331,7 @@ export default function HeroExpandable() {
                             />
                           </div>
 
-                          <div style={{ display: "flex", gap: 16 }}>
+                          <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
                             <div style={{ flex: 1 }}>
                               <label style={{ display: "block", fontSize: 12, fontWeight: 500, color: "rgba(255,255,255,0.8)", marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.05em" }}>
                                 Company

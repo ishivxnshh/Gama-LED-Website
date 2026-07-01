@@ -55,7 +55,7 @@ export default function FAQ() {
           
           {/* Left: SVG Illustration */}
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} style={{ display: "flex", justifyContent: "center" }}>
-            <svg viewBox="0 0 500 500" style={{ width: "100%", maxWidth: 600, filter: "drop-shadow(0 20px 40px rgba(225,29,72,0.15))", transform: "scale(1.1)" }}>
+            <svg viewBox="0 0 500 500" style={{ width: "100%", maxWidth: 600, filter: "drop-shadow(0 20px 40px rgba(225,29,72,0.15))" }}>
               <defs>
                 <linearGradient id="faqGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stopColor="var(--brand)" />

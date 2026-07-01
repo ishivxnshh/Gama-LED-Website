@@ -50,7 +50,7 @@ export default function Home() {
             </Link>
           </motion.div>
  
-          <div className="md-grid-4" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 24 }}>
+          <div className="md-grid-4" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 24 }}>
             {featuredSeries.map((series, i) => (
               <ProductCard key={series.id} name={series.name} description={series.description} image={series.image} tags={series.products[0]?.applications || []} link={`/products/${series.categoryId}/${series.id}`} index={i} />
             ))}
@@ -65,7 +65,7 @@ export default function Home() {
             <span style={{ color: "var(--brand)", fontSize: 12, fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase" }}>Versatile Deployments</span>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.5rem)", fontWeight: 800, marginTop: 8, color: "var(--text-primary)", letterSpacing: "-0.025em" }}>LED Applications</h2>
           </motion.div>
-          <div className="md-grid-4" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24 }}>
+          <div className="md-grid-4" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 24 }}>
             {applications.map((app, i) => (
               <motion.div key={app.name} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}
                 style={{ background: "var(--bg-secondary)", padding: "32px 16px", borderRadius: 16, textAlign: "center", border: "1px solid var(--border-color)" }} className="hover:shadow-md transition-all group hover:border-gray-900">
@@ -188,7 +188,7 @@ export default function Home() {
             <span style={{ color: "var(--brand)", fontSize: 12, fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase" }}>Case Studies</span>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.5rem)", fontWeight: 800, marginTop: 8, color: "var(--text-primary)", letterSpacing: "-0.025em" }}>Global LED Installations</h2>
           </motion.div>
-          <div className="md-grid-4" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 24 }}>
+          <div className="md-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 24 }}>
             {projects.map((proj, i) => (
               <motion.div key={proj.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                 style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }} className="group">
@@ -214,7 +214,7 @@ export default function Home() {
             <p style={{ marginTop: 16, fontSize: 16, color: "var(--text-secondary)", lineHeight: 1.6 }}>
               We offer comprehensive OEM / ODM services, backed by our team of professional engineers and a robust quality control system.
             </p>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 24, marginTop: 32 }}>
+            <div className="md-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 24, marginTop: 32 }}>
               <div>
                 <h4 style={{ fontSize: 24, fontWeight: 800, color: "var(--brand)" }}>100+</h4>
                 <p style={{ fontSize: 14, color: "var(--text-secondary)", fontWeight: 600 }}>Countries Served</p>
