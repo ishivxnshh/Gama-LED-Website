@@ -39,9 +39,9 @@ export default function Contact() {
         <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 24px", textAlign: "center" }}>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <span style={{ color: "var(--brand)", fontSize: 12, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase" }}>Connect</span>
-            <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 5vw, 4rem)", fontWeight: 800, marginTop: 8, color: "var(--ink)", letterSpacing: "-0.025em" }}>Contact LUMEN</h1>
+            <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 5vw, 4rem)", fontWeight: 800, marginTop: 8, color: "var(--ink)", letterSpacing: "-0.025em" }}>Contact Gama LED</h1>
             <p style={{ marginTop: 12, color: "#64748b", maxWidth: 600, margin: "12px auto 0", fontSize: 16, lineHeight: 1.6 }}>
-              Have questions about our Smart TVs, Air Conditioners, or other consumer electronics? Get in touch with our support and sales team today.
+              Have questions about our professional LED display solutions? Get in touch with our technical sales and engineering team today.
             </p>
           </motion.div>
         </div>
@@ -65,7 +65,7 @@ export default function Contact() {
                   <div>
                     <h4 style={{ fontSize: 14, fontWeight: 700, color: "var(--ink)" }}>Address</h4>
                     <p style={{ fontSize: 14, color: "#64748b", marginTop: 4, lineHeight: 1.5 }}>
-                      LUMEN Electronics India<br />
+                      Gama LED Electronics India<br />
                       404 Tech Park, Phase 2, Bandra West<br />
                       Mumbai, MH — 400050
                     </p>
@@ -89,8 +89,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 style={{ fontSize: 14, fontWeight: 700, color: "var(--ink)" }}>Email Support</h4>
-                    <p style={{ fontSize: 14, color: "#64748b", marginTop: 4 }}>sales@LUMEN.in</p>
-                    <p style={{ fontSize: 14, color: "#64748b", marginTop: 2 }}>support@LUMEN.in</p>
+                    <p style={{ fontSize: 14, color: "#64748b", marginTop: 4 }}>sales@gamaled.in</p>
+                    <p style={{ fontSize: 14, color: "#64748b", marginTop: 2 }}>support@gamaled.in</p>
                   </div>
                 </div>
               </div>
@@ -122,7 +122,7 @@ export default function Contact() {
 
                     <div>
                       <label style={labelStyle}>Subject</label>
-                      <input value={form.subject} onChange={update("subject")} placeholder="Smart TV Installation Request" style={inputStyle} />
+                      <input value={form.subject} onChange={update("subject")} placeholder="Project Consultation or Quotation" style={inputStyle} />
                     </div>
 
                     <div>
@@ -149,7 +149,7 @@ export default function Contact() {
                     </div>
                     <h3 style={{ fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 700, color: "var(--ink)", marginBottom: 12 }}>Message Sent!</h3>
                     <p style={{ fontSize: 14, color: "#64748b", lineHeight: 1.6, maxWidth: 300, marginBottom: 24 }}>
-                      Thank you for contacting LUMEN. Our technical sales team will review your inquiry and get back to you within 24 business hours.
+                      Thank you for contacting Gama LED. Our technical sales team will review your inquiry and get back to you within 24 business hours.
                     </p>
                     <button onClick={() => setSuccess(false)}
                       style={{

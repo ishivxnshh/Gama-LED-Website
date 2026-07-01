@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import Shop from "./pages/Shop";
+import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import Contact from "./pages/Contact";
 
@@ -12,8 +12,10 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/shop/:id" element={<ProductDetail />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/products/:productType" element={<Products />} />
+        <Route path="/products/:productType/:series" element={<Products />} />
+        <Route path="/products/:productType/:series/:product" element={<ProductDetail />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />

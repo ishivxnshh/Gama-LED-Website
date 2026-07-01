@@ -1,7 +1,7 @@
 :root {
-  --brand: #e60012; /* LUMEN Red */
-  --brand-pink: #ff3344;
-  --brand-dark: #b3000e;
+  --brand: #06133C; /* Gama Navy Blue */
+  --brand-pink: #1a3673; /* A lighter blue */
+  --brand-dark: #03081e; /* Darker navy */
   --ink: #171717; /* Base Text */
   --soft: #f8fafc;
   --mist: #e2e8f0;

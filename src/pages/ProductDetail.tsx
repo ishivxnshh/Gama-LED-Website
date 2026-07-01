@@ -1,107 +1,165 @@
-import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { getProduct } from "../data/api";
+import { getProductBySlug, getProductTypeBySlug, getSeriesBySlug, type LEDProduct } from "../data/products";
+import ProductCard from "../components/ProductCard";
 
 export default function ProductDetail() {
-  const { id } = useParams();
-  const [product, setProduct] = useState<any>(null);
-  const [activeImage, setActiveImage] = useState(0);
-  const [selectedSize, setSelectedSize] = useState("");
-  const [selectedColor, setSelectedColor] = useState("");
+  const { productType, series, product } = useParams();
+  const navigate = useNavigate();
+  
+  const [activeTab, setActiveTab] = useState("overview");
 
-  useEffect(() => {
-    getProduct(id).then((p) => { setProduct(p); setSelectedSize(p.sizes[0]); setSelectedColor(p.colors[0]); }).catch(() => {});
-  }, [id]);
-
-  if (!product) {
-    return <main style={{ paddingTop: 80, minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
-      <div style={{ width: 32, height: 32, border: "2px solid var(--ink)", borderTopColor: "transparent", borderRadius: "50%", animation: "spin 0.6s linear infinite" }} />
-    </main>;
+  if (!productType || !series || !product) {
+    return <div style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>Invalid URL parameters</div>;
   }
 
+  const prod = getProductBySlug(productType, series, product);
+  const typeObj = getProductTypeBySlug(productType);
+  const seriesObj = getSeriesBySlug(productType, series);
 
+  if (!prod || !typeObj || !seriesObj) {
+    return (
+      <div style={{ height: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 16 }}>
+        <h2>Product not found</h2>
+        <button onClick={() => navigate("/products")} style={{ padding: "10px 20px", cursor: "pointer" }}>Back to Products</button>
+      </div>
+    );
+  }
+
+  // Find some related products (same series or just random)
+  const relatedProducts = seriesObj.products.filter(x => x.id !== prod.id).slice(0, 4);
 
   return (
-    <main style={{ paddingTop: 80, minHeight: "100vh" }}>
-      <div style={{ maxWidth: 1280, margin: "0 auto", padding: "40px 24px" }}>
-        <Link to="/shop" style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 14, color: "#64748b", textDecoration: "none", marginBottom: 32 }}>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-          Back to Shop
-        </Link>
- 
-        <div className="md-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 48, alignItems: "start" }}>
-          {/* Left Column */}
-          <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }}>
-            <div style={{ aspectRatio: "1/1", background: "#f8fafc", borderRadius: 16, overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <img src={product.images[activeImage]} alt={product.name} style={{ width: "100%", height: "100%", objectFit: "contain", mixBlendMode: "multiply" }} />
-            </div>
-            {/* Thumbnails */}
-            <div style={{ display: "flex", gap: 12, marginTop: 16 }}>
-              {product.images.map((img: string, idx: number) => (
-                <div key={idx} onClick={() => setActiveImage(idx)} style={{ width: 80, height: 80, border: idx === activeImage ? "2px solid var(--brand)" : "1px solid #e2e8f0", borderRadius: 8, overflow: "hidden", cursor: "pointer", background: "#f8fafc", padding: 4, transition: "all 0.2s" }}>
-                  <img src={img} style={{ width: "100%", height: "100%", objectFit: "contain", mixBlendMode: "multiply" }} />
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Right Column */}
-          <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }}>
-            <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem, 2.5vw, 2rem)", fontWeight: 700, color: "var(--ink)", lineHeight: 1.3 }}>{product.name}</h1>
- 
-            {product.originalPrice > product.price && (
-              <div style={{ display: "inline-block", padding: "6px 12px", background: "#4ade80", color: "#fff", fontSize: 11, fontWeight: 700, borderRadius: 4, marginTop: 16 }}>
-                Save {Math.round((1 - product.price / product.originalPrice) * 100)}% (Price Updated with New GST Benefits)
-              </div>
-            )}
-
-            <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginTop: 16 }}>
-              <span style={{ fontSize: 18, fontWeight: 700, color: "#4ade80" }}>Rs. {product.price.toLocaleString()}.00</span>
-              {product.originalPrice > product.price && <span style={{ fontSize: 13, color: "#94a3b8", textDecoration: "line-through" }}>Rs. {product.originalPrice.toLocaleString()}.00</span>}
-            </div>
-  
-            {/* Product Highlights */}
-            <div style={{ marginTop: 32 }}>
-              <h4 style={{ fontSize: 13, fontWeight: 700, color: "var(--ink)", marginBottom: 16 }}>Product Highlights</h4>
-              <ul style={{ paddingLeft: 20, display: "flex", flexDirection: "column", gap: 12, color: "#475569", fontSize: 12, lineHeight: 1.5 }}>
-                {Object.entries(product.specs || {}).map(([key, val]: any, idx) => (
-                  <li key={idx}><strong>{key}:</strong> {val}</li>
-                ))}
-                {product.features?.map((feat: string, idx: number) => (
-                  <li key={`feat-${idx}`}>{feat}</li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Share */}
-            <div style={{ display: "flex", alignItems: "center", gap: 16, marginTop: 32, paddingBottom: 24, borderBottom: "1px solid #e2e8f0" }}>
-              <span style={{ fontSize: 12, color: "#475569" }}>Share:</span>
-              <div style={{ display: "flex", gap: 16, color: "var(--ink)" }}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" cursor="pointer"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" cursor="pointer"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" cursor="pointer"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-              </div>
-              <div style={{ display: "flex", alignItems: "center", gap: 6, marginLeft: "auto", cursor: "pointer" }}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                <span style={{ fontSize: 12, color: "var(--ink)", textDecoration: "underline" }}>FAQs</span>
-              </div>
-            </div>
-
-            {/* Find Nearby Stores */}
-            <div style={{ marginTop: 24, padding: 20, background: "#f8fafc", borderRadius: 8, border: "1px solid #e2e8f0" }}>
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 8 }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                  <span style={{ fontSize: 13, fontWeight: 700, color: "var(--ink)" }}>Find Nearby Stores</span>
-                </div>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2" cursor="pointer"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-              </div>
-              <p style={{ fontSize: 12, color: "#64748b", textDecoration: "underline", cursor: "pointer", margin: 0, paddingLeft: 24 }}>Discover the Closest Vijay Sales Stores in your Area.</p>
-            </div>
-          </motion.div>
+    <main style={{ minHeight: "100vh", background: "#f8fafc", paddingTop: 80 }}>
+      {/* Dynamic Breadcrumbs */}
+      <div style={{ background: "#fff", borderBottom: "1px solid #e2e8f0" }}>
+        <div style={{ maxWidth: 1280, margin: "0 auto", padding: "16px 24px", fontSize: 13, color: "#64748b", display: "flex", flexWrap: "wrap", gap: 8, alignItems: "center" }}>
+          <Link to="/" style={{ textDecoration: "none", color: "#64748b" }} className="hover:text-brand">Home</Link>
+          <span>/</span>
+          <Link to="/products" style={{ textDecoration: "none", color: "#64748b" }} className="hover:text-brand">Products</Link>
+          <span>/</span>
+          <Link to={`/products/${typeObj.id}`} style={{ textDecoration: "none", color: "#64748b" }} className="hover:text-brand">{typeObj.name}</Link>
+          <span>/</span>
+          <Link to={`/products/${typeObj.id}/${seriesObj.id}`} style={{ textDecoration: "none", color: "#64748b" }} className="hover:text-brand">{seriesObj.name}</Link>
+          <span>/</span>
+          <span style={{ color: "var(--brand)", fontWeight: 600 }}>{prod.name}</span>
         </div>
       </div>
+
+      <div style={{ maxWidth: 1280, margin: "0 auto", padding: "48px 24px" }}>
+        <div className="md-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 64, alignItems: "start" }}>
+          
+          {/* Gallery */}
+          <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
+            <div style={{ background: "#fff", borderRadius: 24, overflow: "hidden", border: "1px solid #e2e8f0", padding: 24 }}>
+              <img src={prod.image} alt={prod.name} style={{ width: "100%", height: "auto", borderRadius: 16 }} />
+            </div>
+          </motion.div>
+
+          {/* Details */}
+          <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}>
+            <h1 style={{ fontFamily: "var(--font-display)", fontSize: 32, fontWeight: 800, color: "var(--ink)", marginBottom: 16 }}>{prod.name}</h1>
+            <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.6, marginBottom: 32 }}>{prod.description}</p>
+            
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginBottom: 40 }}>
+              {prod.applications.map(app => (
+                <span key={app} style={{ padding: "6px 12px", background: "rgba(0,102,255,0.1)", color: "#0066FF", fontSize: 12, fontWeight: 700, borderRadius: 999, textTransform: "uppercase" }}>
+                  {app}
+                </span>
+              ))}
+            </div>
+
+            <div style={{ background: "#fff", borderRadius: 16, border: "1px solid #e2e8f0", padding: 24, marginBottom: 40 }}>
+              <h3 style={{ fontSize: 14, fontWeight: 800, color: "var(--ink)", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 16 }}>Key Specifications</h3>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 16 }}>
+                <div>
+                  <p style={{ fontSize: 12, color: "#64748b", textTransform: "uppercase", fontWeight: 600 }}>Pixel Pitch</p>
+                  <p style={{ fontSize: 16, color: "var(--ink)", fontWeight: 700 }}>{prod.pixelPitch}</p>
+                </div>
+                <div>
+                  <p style={{ fontSize: 12, color: "#64748b", textTransform: "uppercase", fontWeight: 600 }}>Brightness</p>
+                  <p style={{ fontSize: 16, color: "var(--ink)", fontWeight: 700 }}>{prod.brightness}</p>
+                </div>
+                <div>
+                  <p style={{ fontSize: 12, color: "#64748b", textTransform: "uppercase", fontWeight: 600 }}>Refresh Rate</p>
+                  <p style={{ fontSize: 16, color: "var(--ink)", fontWeight: 700 }}>{prod.refreshRate}</p>
+                </div>
+              </div>
+            </div>
+
+            <button onClick={() => navigate("/contact")} style={{ width: "100%", padding: "16px", background: "#0066FF", color: "#fff", fontSize: 16, fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.05em", border: "none", borderRadius: 12, cursor: "pointer", boxShadow: "0 4px 15px rgba(0, 102, 255, 0.3)", transition: "background 0.2s" }} className="hover:bg-brand-dark">
+              Request a Quote
+            </button>
+          </motion.div>
+        </div>
+
+        {/* Tabs section */}
+        <div style={{ marginTop: 64, background: "#fff", borderRadius: 24, border: "1px solid #e2e8f0", overflow: "hidden" }}>
+          <div style={{ display: "flex", borderBottom: "1px solid #e2e8f0" }}>
+            {["overview", "features", "downloads"].map(tab => (
+              <button key={tab} onClick={() => setActiveTab(tab)} style={{ flex: 1, padding: "20px", background: activeTab === tab ? "rgba(0, 102, 255, 0.05)" : "transparent", color: activeTab === tab ? "#0066FF" : "#64748b", border: "none", borderBottom: activeTab === tab ? "2px solid #0066FF" : "2px solid transparent", fontSize: 14, fontWeight: 700, textTransform: "uppercase", cursor: "pointer", transition: "all 0.2s" }}>
+                {tab}
+              </button>
+            ))}
+          </div>
+          <div style={{ padding: 48 }}>
+            {activeTab === "overview" && (
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+                <h3 style={{ fontSize: 24, fontWeight: 800, color: "var(--ink)", marginBottom: 16 }}>Product Overview</h3>
+                <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.8 }}>The {prod.name} represents the pinnacle of our LED display technology. Designed with precision engineering, it offers unmatched reliability and visual performance for demanding professional environments. Whether it's for a high-profile corporate boardroom, a dynamic broadcast studio, or a vibrant retail space, this display delivers breathtaking clarity and true colors.</p>
+              </motion.div>
+            )}
+            {activeTab === "features" && (
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+                <h3 style={{ fontSize: 24, fontWeight: 800, color: "var(--ink)", marginBottom: 24 }}>Key Features</h3>
+                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 16 }}>
+                  {prod.features.map(f => (
+                    <li key={f} style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C853" strokeWidth="2"><path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                      <span style={{ fontSize: 16, color: "#475569", fontWeight: 500 }}>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            )}
+            {activeTab === "downloads" && (
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+                <h3 style={{ fontSize: 24, fontWeight: 800, color: "var(--ink)", marginBottom: 24 }}>Resources</h3>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16 }}>
+                  <button style={{ padding: "16px", background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 12, display: "flex", alignItems: "center", gap: 12, cursor: "pointer" }} className="hover:border-brand transition-colors">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" strokeWidth="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4m7-7l5 5 5-5M12 15V3"/></svg>
+                    <span style={{ fontSize: 14, fontWeight: 600, color: "var(--ink)" }}>Datasheet (PDF)</span>
+                  </button>
+                  <button style={{ padding: "16px", background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 12, display: "flex", alignItems: "center", gap: 12, cursor: "pointer" }} className="hover:border-brand transition-colors">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" strokeWidth="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4m7-7l5 5 5-5M12 15V3"/></svg>
+                    <span style={{ fontSize: 14, fontWeight: 600, color: "var(--ink)" }}>User Manual</span>
+                  </button>
+                </div>
+              </motion.div>
+            )}
+          </div>
+        </div>
+
+        {/* Related Products */}
+        {relatedProducts.length > 0 && (
+          <div style={{ marginTop: 96 }}>
+            <h2 style={{ fontSize: 28, fontWeight: 800, color: "var(--ink)", marginBottom: 32 }}>Related Products</h2>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 24 }}>
+              {relatedProducts.map((p, i) => (
+                <ProductCard key={p.id} name={p.name} description={p.description} image={p.image} tags={[p.pixelPitch]} link={`/products/${productType}/${series}/${p.id}`} index={i} />
+              ))}
+            </div>
+          </div>
+        )}
+
+      </div>
+      <style>{`
+        .md-grid-2 { display: grid; grid-template-columns: 1fr; }
+        @media (min-width: 768px) {
+          .md-grid-2 { grid-template-columns: 1fr 1fr; }
+        }
+      `}</style>
     </main>
   );
 }
