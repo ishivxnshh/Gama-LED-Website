@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import Hero from "../components/Hero";
+import HeroExpandable from "../components/HeroExpandable";
 import ProductCard from "../components/ProductCard";
 import { productCategories } from "../data/products";
 
@@ -31,18 +31,18 @@ export default function Home() {
 
   return (
     <main>
-      <Hero />
+      <HeroExpandable />
 
       {/* Featured Series */}
-      <section style={{ padding: "96px 0", background: "#f8fafc" }}>
+      <section style={{ padding: "96px 0", background: "var(--bg-secondary)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 24px" }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 48 }}>
             <div>
-              <span style={{ color: "#0066FF", fontSize: 12, fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase" }}>Industry Leading</span>
-              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 800, marginTop: 8, color: "var(--ink)", letterSpacing: "-0.025em" }}>Featured LED Series</h2>
+              <span style={{ color: "var(--brand)", fontSize: 12, fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase" }}>Industry Leading</span>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 800, marginTop: 8, color: "var(--text-primary)", letterSpacing: "-0.025em" }}>Featured LED Series</h2>
             </div>
-            <Link to="/products" style={{ display: "none", alignItems: "center", gap: 8, fontSize: 14, fontWeight: 700, color: "var(--ink)", textDecoration: "none", textTransform: "uppercase", letterSpacing: "0.05em" }}
+            <Link to="/products" style={{ display: "none", alignItems: "center", gap: 8, fontSize: 14, fontWeight: 700, color: "var(--text-primary)", textDecoration: "none", textTransform: "uppercase", letterSpacing: "0.05em" }}
               className="md-flex hover:text-brand transition-colors" onMouseEnter={(e) => { e.currentTarget.style.gap = "12px"; }} onMouseLeave={(e) => { e.currentTarget.style.gap = "8px"; }}>
               View All Products
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -58,20 +58,22 @@ export default function Home() {
       </section>
 
       {/* Applications */}
-      <section style={{ padding: "96px 0", background: "#fff" }}>
+      <section style={{ padding: "96px 0", background: "var(--bg-primary)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 24px" }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ textAlign: "center", marginBottom: 64 }}>
-            <span style={{ color: "#0066FF", fontSize: 12, fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase" }}>Versatile Deployments</span>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.5rem)", fontWeight: 800, marginTop: 8, color: "var(--ink)", letterSpacing: "-0.025em" }}>LED Applications</h2>
+            <span style={{ color: "var(--brand)", fontSize: 12, fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase" }}>Versatile Deployments</span>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.5rem)", fontWeight: 800, marginTop: 8, color: "var(--text-primary)", letterSpacing: "-0.025em" }}>LED Applications</h2>
           </motion.div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 24 }}>
+          <div className="md-grid-4" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24 }}>
             {applications.map((app, i) => (
               <motion.div key={app.name} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}
-                style={{ background: "#f8fafc", padding: "32px 16px", borderRadius: 16, textAlign: "center", border: "1px solid #e2e8f0" }} className="hover:shadow-md transition-all group">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ margin: "0 auto 16px" }} className="group-hover:text-[#0066FF] transition-colors">
-                  <path d={app.icon} />
-                </svg>
-                <h4 style={{ fontSize: 14, fontWeight: 700, color: "var(--ink)" }}>{app.name}</h4>
+                style={{ background: "var(--bg-secondary)", padding: "32px 16px", borderRadius: 16, textAlign: "center", border: "1px solid var(--border-color)" }} className="hover:shadow-md transition-all group hover:border-gray-900">
+                <div style={{ width: 64, height: 64, margin: "0 auto 20px", background: "var(--bg-primary)", color: "var(--text-primary)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "var(--shadow-sm)" }} className="group-hover:scale-105 transition-transform">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d={app.icon} />
+                  </svg>
+                </div>
+                <h4 style={{ fontSize: 14, fontWeight: 700, color: "var(--text-primary)" }}>{app.name}</h4>
               </motion.div>
             ))}
           </div>
@@ -79,11 +81,11 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us */}
-      <section style={{ padding: "96px 0", background: "#06133C", color: "#fff" }}>
+      <section style={{ padding: "96px 0", background: "var(--bg-secondary)", color: "var(--text-primary)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 24px" }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ textAlign: "center", marginBottom: 64 }}>
-            <span style={{ color: "#0066FF", fontSize: 12, fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase" }}>Our Strengths</span>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.5rem)", fontWeight: 800, marginTop: 8, color: "#fff", letterSpacing: "-0.025em" }}>Why Choose Gama LED</h2>
+            <span style={{ color: "var(--brand)", fontSize: 12, fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase" }}>Our Strengths</span>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.5rem)", fontWeight: 800, marginTop: 8, color: "var(--text-primary)", letterSpacing: "-0.025em" }}>Why Choose Gama LED</h2>
           </motion.div>
           <div className="md-grid-3" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 32 }}>
             {[
@@ -95,21 +97,95 @@ export default function Home() {
               { title: "Global Installation", desc: "Thousands of successful projects deployed across commercial, sports, and broadcast sectors worldwide." }
             ].map((item, i) => (
               <motion.div key={item.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                style={{ background: "rgba(255,255,255,0.05)", padding: 40, borderRadius: 24, border: "1px solid rgba(255,255,255,0.1)" }}>
-                <h3 style={{ fontFamily: "var(--font-display)", fontSize: 18, fontWeight: 800, marginBottom: 12, color: "#fff", letterSpacing: "-0.01em" }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: "#cbd5e1", lineHeight: 1.6 }}>{item.desc}</p>
+                style={{ background: "var(--glass-bg)", padding: 40, borderRadius: 24, border: "1px solid var(--glass-border)" }}>
+                <h3 style={{ fontFamily: "var(--font-display)", fontSize: 18, fontWeight: 800, marginBottom: 12, color: "var(--text-primary)", letterSpacing: "-0.01em" }}>{item.title}</h3>
+                <p style={{ fontSize: 14, color: "var(--text-secondary)", lineHeight: 1.6 }}>{item.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* Working Steps */}
+      <section style={{ padding: "128px 0", background: "var(--bg-primary)", color: "var(--text-primary)", position: "relative", overflow: "hidden" }}>
+        {/* Decorative background patterns */}
+        <div style={{ position: "absolute", top: 0, right: 0, width: "50%", height: "100%", background: "radial-gradient(circle at 100% 50%, var(--brand-alpha-08) 0%, transparent 50%)" }} />
+        <div style={{ position: "absolute", bottom: 0, left: 0, width: "50%", height: "100%", background: "radial-gradient(circle at 0% 100%, var(--brand-alpha-05) 0%, transparent 50%)" }} />
+        
+        <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 24px", position: "relative" }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ textAlign: "center", marginBottom: 80 }}>
+            <span style={{ color: "var(--brand)", fontSize: 13, fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase" }}>Efficient Process</span>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, marginTop: 12, color: "var(--text-primary)", letterSpacing: "-0.025em", lineHeight: 1.2 }}>Our Working Steps for Reliable<br />LED Supply Solutions</h2>
+          </motion.div>
+
+          {/* Steps Container */}
+          <div style={{ position: "relative" }}>
+            {/* Dotted Line */}
+            <div style={{ position: "absolute", top: 60, left: "10%", right: "10%", height: 2, borderTop: "2px dashed var(--border-color)", zIndex: 0 }} />
+            
+            <div className="md-grid-4" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 32, position: "relative", zIndex: 1 }}>
+              {[
+                { 
+                  num: 1, 
+                  title: "Requirements Gathering", 
+                  desc: "Understanding the specific requirements and objectives of the client for their LED display project.",
+                  icon: <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2 M23 21v-2a4 4 0 0 0-3-3.87 M16 3.13a4 4 0 0 1 0 7.75" />
+                },
+                {
+                  num: 2,
+                  title: "Planning & Manufacturing",
+                  desc: "We not only hear what customer needs but guide them correctly and start manufacturing processes to produce high-quality LED components.",
+                  icon: <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                },
+                {
+                  num: 3,
+                  title: "Wireframing & Installation",
+                  desc: "We design wireframes and provide professional installation services, ensuring seamless integration of the LED displays.",
+                  icon: <><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><line x1="3" y1="9" x2="21" y2="9" /><line x1="9" y1="21" x2="9" y2="9" /></>
+                },
+                {
+                  num: 4,
+                  title: "Happy Customer",
+                  desc: "We offer comprehensive support and maintenance service. At Gama LED, our ultimate goal is customer satisfaction.",
+                  icon: <><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><polyline points="17 11 19 13 23 9" /></>
+                }
+              ].map((step, i) => (
+                <motion.div key={step.num} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }} style={{ textAlign: "center" }}>
+                  <div style={{ position: "relative", width: 120, height: 120, margin: "0 auto 32px" }}>
+                    {/* White Circle Background */}
+                    <div style={{ width: "100%", height: "100%", background: "var(--bg-secondary)", borderRadius: "50%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", boxShadow: "var(--shadow-sm)" }}>
+                      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: step.num === 4 ? 4 : 0 }}>
+                        {step.num === 1 && <circle cx="9" cy="7" r="4" />}
+                        {step.num === 2 && <circle cx="12" cy="12" r="3" />}
+                        {step.num === 4 && <circle cx="8.5" cy="7" r="4" />}
+                        {step.icon}
+                      </svg>
+                      {step.num === 4 && (
+                        <div style={{ display: "flex", gap: 2 }}>
+                          {[1,2,3,4,5].map(star => <svg key={star} width="10" height="10" fill="var(--brand)" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>)}
+                        </div>
+                      )}
+                    </div>
+                    {/* Step Number Badge */}
+                    <div style={{ position: "absolute", bottom: 0, left: 0, width: 36, height: 36, background: "var(--brand)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: 16, color: "#fff", border: "4px solid var(--bg-primary)" }}>
+                      {step.num}
+                    </div>
+                  </div>
+                  <h3 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: "var(--text-primary)" }}>{step.title}</h3>
+                  <p style={{ fontSize: 14, color: "var(--text-secondary)", lineHeight: 1.6 }}>{step.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Projects Showcase */}
-      <section style={{ padding: "96px 0", background: "#f8fafc" }}>
+      <section style={{ padding: "96px 0", background: "var(--bg-primary)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 24px" }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ textAlign: "center", marginBottom: 64 }}>
-            <span style={{ color: "#0066FF", fontSize: 12, fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase" }}>Case Studies</span>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.5rem)", fontWeight: 800, marginTop: 8, color: "var(--ink)", letterSpacing: "-0.025em" }}>Global LED Installations</h2>
+            <span style={{ color: "var(--brand)", fontSize: 12, fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase" }}>Case Studies</span>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.5rem)", fontWeight: 800, marginTop: 8, color: "var(--text-primary)", letterSpacing: "-0.025em" }}>Global LED Installations</h2>
           </motion.div>
           <div className="md-grid-4" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 24 }}>
             {projects.map((proj, i) => (
@@ -126,31 +202,31 @@ export default function Home() {
       </section>
 
       {/* About Company */}
-      <section style={{ padding: "96px 0", background: "#fff" }}>
+      <section style={{ padding: "96px 0", background: "var(--bg-secondary)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 24px", display: "grid", gap: 64, alignItems: "center" }} className="md-grid-2">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <span style={{ color: "#0066FF", fontSize: 12, fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase" }}>About Gama LED</span>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.5rem)", fontWeight: 800, marginTop: 8, color: "var(--ink)", letterSpacing: "-0.025em" }}>Leading the Future of LED Display Manufacturing</h2>
-            <p style={{ marginTop: 24, fontSize: 16, color: "#64748b", lineHeight: 1.6 }}>
+            <span style={{ color: "var(--brand)", fontSize: 12, fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase" }}>About Gama LED</span>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.5rem)", fontWeight: 800, marginTop: 8, color: "var(--text-primary)", letterSpacing: "-0.025em" }}>Leading the Future of LED Display Manufacturing</h2>
+            <p style={{ marginTop: 24, fontSize: 16, color: "var(--text-secondary)", lineHeight: 1.6 }}>
               With over 15 years of industry experience, Gama LED is a leading manufacturer of high-end LED displays. Our state-of-the-art manufacturing facility produces innovative solutions for indoor, outdoor, and creative applications.
             </p>
-            <p style={{ marginTop: 16, fontSize: 16, color: "#64748b", lineHeight: 1.6 }}>
+            <p style={{ marginTop: 16, fontSize: 16, color: "var(--text-secondary)", lineHeight: 1.6 }}>
               We offer comprehensive OEM / ODM services, backed by our team of professional engineers and a robust quality control system.
             </p>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 24, marginTop: 32 }}>
               <div>
                 <h4 style={{ fontSize: 24, fontWeight: 800, color: "var(--brand)" }}>100+</h4>
-                <p style={{ fontSize: 14, color: "#64748b", fontWeight: 600 }}>Countries Served</p>
+                <p style={{ fontSize: 14, color: "var(--text-secondary)", fontWeight: 600 }}>Countries Served</p>
               </div>
               <div>
                 <h4 style={{ fontSize: 24, fontWeight: 800, color: "var(--brand)" }}>5000+</h4>
-                <p style={{ fontSize: 14, color: "#64748b", fontWeight: 600 }}>Completed Projects</p>
+                <p style={{ fontSize: 14, color: "var(--text-secondary)", fontWeight: 600 }}>Completed Projects</p>
               </div>
             </div>
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} style={{ position: "relative" }}>
-            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800" alt="Manufacturing Facility" style={{ width: "100%", borderRadius: 24, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }} />
-            <div style={{ position: "absolute", bottom: -24, left: -24, background: "#0066FF", color: "#fff", padding: "24px 32px", borderRadius: 16, boxShadow: "0 10px 25px rgba(0,102,255,0.3)" }} className="md-block hidden">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800" alt="Manufacturing Facility" style={{ width: "100%", borderRadius: 24, boxShadow: "0 20px 40px rgba(0,0,0,0.5)" }} />
+            <div style={{ position: "absolute", bottom: -24, left: -24, background: "var(--brand)", color: "#fff", padding: "24px 32px", borderRadius: 16, boxShadow: "0 10px 25px rgba(225,29,72,0.3)" }} className="md-block hidden">
               <p style={{ fontSize: 14, fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase" }}>ISO 9001:2015</p>
               <p style={{ fontSize: 12, opacity: 0.9 }}>Certified Manufacturer</p>
             </div>
@@ -159,13 +235,13 @@ export default function Home() {
       </section>
 
       {/* Contact CTA */}
-      <section style={{ padding: "128px 0", background: "linear-gradient(135deg, #06133C, #1a3673)", borderTop: "1px solid #1e293b", textAlign: "center", color: "#fff" }}>
+      <section style={{ padding: "128px 0", background: "linear-gradient(135deg, var(--bg-primary), var(--bg-secondary))", borderTop: "1px solid var(--border-color)", textAlign: "center", color: "var(--text-primary)" }}>
         <div style={{ maxWidth: 800, margin: "0 auto", padding: "0 24px" }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 800, letterSpacing: "-0.025em", lineHeight: 1.1 }}>Need the Right LED Display Solution?</h2>
-            <p style={{ marginTop: 24, color: "#cbd5e1", fontSize: 18, lineHeight: 1.6 }}>Our experts will help you choose the perfect LED display for your project. Contact us today for a free consultation and customized quote.</p>
+            <p style={{ marginTop: 24, color: "var(--text-secondary)", fontSize: 18, lineHeight: 1.6 }}>Our experts will help you choose the perfect LED display for your project. Contact us today for a free consultation and customized quote.</p>
             <div style={{ marginTop: 40, display: "flex", alignItems: "center", justifyContent: "center", gap: 16, flexWrap: "wrap" }}>
-              <Link to="/contact" style={{ padding: "16px 40px", background: "#0066FF", color: "#fff", fontSize: 14, fontWeight: 800, borderRadius: 999, textDecoration: "none", textTransform: "uppercase", letterSpacing: "0.05em", boxShadow: "0 4px 15px rgba(0, 102, 255, 0.4)" }} className="hover:bg-brand-dark transition-colors">
+              <Link to="/contact" style={{ padding: "16px 40px", background: "var(--brand)", color: "#fff", fontSize: 14, fontWeight: 800, borderRadius: 999, textDecoration: "none", textTransform: "uppercase", letterSpacing: "0.05em", boxShadow: "0 4px 15px rgba(225, 29, 72, 0.4)" }} className="hover:bg-brand-dark transition-colors">
                 Get Quote
               </Link>
               <Link to="/contact" style={{ padding: "16px 40px", background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff", fontSize: 14, fontWeight: 800, borderRadius: 999, textDecoration: "none", textTransform: "uppercase", letterSpacing: "0.05em" }} className="hover:bg-white/10 transition-colors">

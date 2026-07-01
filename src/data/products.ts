@@ -213,13 +213,13 @@ export const productCategories: LEDProductType[] = [
         id: "mys500-series",
         name: "MYS500 Series",
         description: "Quick setup rental cabinets for seamless stage backgrounds.",
-        image: "https://images.unsplash.com/photo-1540039155732-6762cb353279?w=800",
+        image: "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800",
         products: [
           {
             id: "mys500-p2-6",
             name: "MYS500 P2.6",
             description: "High-resolution rental display for premium indoor events.",
-            image: "https://images.unsplash.com/photo-1540039155732-6762cb353279?w=800",
+            image: "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800",
             pixelPitch: "2.6mm",
             brightness: "1000 nits",
             refreshRate: "3840Hz",
@@ -230,7 +230,7 @@ export const productCategories: LEDProductType[] = [
             id: "mys500-p2-9",
             name: "MYS500 P2.97",
             description: "Versatile indoor rental display with extreme stability.",
-            image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800",
+            image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800",
             pixelPitch: "2.97mm",
             brightness: "1000 nits",
             refreshRate: "3840Hz",
@@ -241,7 +241,7 @@ export const productCategories: LEDProductType[] = [
             id: "mys500-p3-91",
             name: "MYS500 P3.91",
             description: "Standard indoor/outdoor rental display for diverse staging needs.",
-            image: "https://images.unsplash.com/photo-1470229722913-7c092fb27318?w=800",
+            image: "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800",
             pixelPitch: "3.91mm",
             brightness: "4500 nits",
             refreshRate: "3840Hz",
@@ -254,13 +254,13 @@ export const productCategories: LEDProductType[] = [
         id: "xr-stage-series",
         name: "XR Stage Series",
         description: "Advanced LED panels designed for virtual production and XR studios.",
-        image: "https://images.unsplash.com/photo-1518342417757-12eb224422e6?w=800",
+        image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800",
         products: [
           {
             id: "xr-p1-9",
             name: "XR Stage P1.9",
             description: "Ultimate XR stage display with wide color gamut and ultra-high refresh.",
-            image: "https://images.unsplash.com/photo-1518342417757-12eb224422e6?w=800",
+            image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800",
             pixelPitch: "1.9mm",
             brightness: "1500 nits",
             refreshRate: "7680Hz",
@@ -316,6 +316,36 @@ export const productCategories: LEDProductType[] = [
             features: ["Soft Rubber Mask", "High Refresh Rate", "Adjustable Bracket"]
           }
         ]
+      },
+      {
+        id: "center-hung-series",
+        name: "Center Hung Series",
+        description: "Massive suspended cube displays for central arena viewing.",
+        image: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=800",
+        products: [
+          {
+            id: "center-hung-p4",
+            name: "Center Hung P4",
+            description: "High-definition center cube display for premium arenas.",
+            image: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=800",
+            pixelPitch: "4mm",
+            brightness: "2000 nits",
+            refreshRate: "3840Hz",
+            applications: ["Basketball Arenas", "Ice Hockey Rinks"],
+            features: ["Seamless Corners", "Customizable Shapes", "High Contrast"]
+          },
+          {
+            id: "center-hung-p5",
+            name: "Center Hung P5",
+            description: "Cost-effective suspended display for large stadiums.",
+            image: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=800",
+            pixelPitch: "5mm",
+            brightness: "2000 nits",
+            refreshRate: "3840Hz",
+            applications: ["Multipurpose Stadiums", "Event Centers"],
+            features: ["Lightweight Framework", "Wide Viewing Angle", "Easy Maintenance"]
+          }
+        ]
       }
     ]
   },
@@ -328,13 +358,13 @@ export const productCategories: LEDProductType[] = [
         id: "poster-led-display",
         name: "Poster LED Display",
         description: "Standalone digital posters for retail and hospitality.",
-        image: "https://images.unsplash.com/photo-1555529771-835f59bfc50c?w=800",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
         products: [
           {
             id: "poster-p2-5",
             name: "iPoster P2.5",
             description: "Plug-and-play digital poster with mobile app control.",
-            image: "https://images.unsplash.com/photo-1555529771-835f59bfc50c?w=800",
+            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
             pixelPitch: "2.5mm",
             brightness: "1000 nits",
             refreshRate: "3840Hz",
@@ -351,6 +381,36 @@ export const productCategories: LEDProductType[] = [
             refreshRate: "3840Hz",
             applications: ["Luxury Retail", "Car Showrooms", "Corporate Lobbies"],
             features: ["Cloud Management", "Wheeled Base", "Seamless Connection"]
+          }
+        ]
+      },
+      {
+        id: "floor-led-series",
+        name: "Interactive Floor Series",
+        description: "Durable, walkable LED floors with touch interactivity.",
+        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800",
+        products: [
+          {
+            id: "floor-p3-91",
+            name: "iFloor P3.91",
+            description: "High-resolution interactive floor display.",
+            image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800",
+            pixelPitch: "3.91mm",
+            brightness: "1500 nits",
+            refreshRate: "3840Hz",
+            applications: ["Museums", "Stage Floors", "Exhibitions"],
+            features: ["2000kg/sqm Load", "Anti-slip Surface", "Fast Interactive Response"]
+          },
+          {
+            id: "floor-p5-2",
+            name: "iFloor P5.2",
+            description: "Robust interactive floor display for high-traffic events.",
+            image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800",
+            pixelPitch: "5.2mm",
+            brightness: "1500 nits",
+            refreshRate: "3840Hz",
+            applications: ["Dance Clubs", "Auto Shows", "Theme Parks"],
+            features: ["Scratch Resistant", "Waterproof Design", "High Durability"]
           }
         ]
       }
@@ -388,6 +448,36 @@ export const productCategories: LEDProductType[] = [
             refreshRate: "3840Hz",
             applications: ["Building Facades", "Airports", "Auto Showrooms"],
             features: ["80% Transparency", "High Brightness", "Easy Maintenance"]
+          }
+        ]
+      },
+      {
+        id: "film-led-series",
+        name: "Adhesive LED Film Series",
+        description: "Ultra-thin, flexible LED film that sticks directly to glass.",
+        image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800",
+        products: [
+          {
+            id: "film-p6",
+            name: "Film LED P6",
+            description: "Invisible LED film for storefront windows.",
+            image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800",
+            pixelPitch: "6mm",
+            brightness: "3000 nits",
+            refreshRate: "3840Hz",
+            applications: ["Retail Windows", "Glass Railings", "Bank Facades"],
+            features: ["Self-adhesive", "90% Transparency", "Cuttable"]
+          },
+          {
+            id: "film-p10",
+            name: "Film LED P10",
+            description: "Cost-effective LED film for large glass surfaces.",
+            image: "https://images.unsplash.com/photo-1517502884422-41eaead166d4?w=800",
+            pixelPitch: "10mm",
+            brightness: "3500 nits",
+            refreshRate: "3840Hz",
+            applications: ["Skyscrapers", "Transit Hubs", "Elevator Glass"],
+            features: ["Flexible PCB", "High Transmittance", "Easy Application"]
           }
         ]
       }
