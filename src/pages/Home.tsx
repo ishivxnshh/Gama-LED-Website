@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import HeroExpandable from "../components/HeroExpandable";
 import ProductCard from "../components/ProductCard";
 import FAQ from "../components/FAQ";
+import GoogleReviews from "../components/GoogleReviews";
 import { productCategories } from "../data/products";
 
 export default function Home() {
@@ -219,12 +220,12 @@ export default function Home() {
             </p>
             <div className="md-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 24, marginTop: 32 }}>
               <div>
-                <h4 style={{ fontSize: 24, fontWeight: 800, color: "var(--brand)" }}>100+</h4>
-                <p style={{ fontSize: 14, color: "var(--text-secondary)", fontWeight: 600 }}>Countries Served</p>
+                <h4 style={{ fontSize: 18, fontWeight: 800, color: "var(--brand)" }}>Premium Quality</h4>
+                <p style={{ fontSize: 14, color: "var(--text-secondary)", fontWeight: 500, marginTop: 4 }}>Engineered for durability and visual excellence.</p>
               </div>
               <div>
-                <h4 style={{ fontSize: 24, fontWeight: 800, color: "var(--brand)" }}>5000+</h4>
-                <p style={{ fontSize: 14, color: "var(--text-secondary)", fontWeight: 600 }}>Completed Projects</p>
+                <h4 style={{ fontSize: 18, fontWeight: 800, color: "var(--brand)" }}>Custom Solutions</h4>
+                <p style={{ fontSize: 14, color: "var(--text-secondary)", fontWeight: 500, marginTop: 4 }}>End-to-end OEM & ODM manufacturing.</p>
               </div>
             </div>
           </motion.div>
@@ -238,6 +239,8 @@ export default function Home() {
         </div>
       </section>
 
+      <GoogleReviews />
+      
       <FAQ />
 
       {/* Contact CTA */}

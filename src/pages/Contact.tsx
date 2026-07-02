@@ -10,26 +10,43 @@ const labelStyle: React.CSSProperties = {
 };
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+  const [form, setForm] = useState({ name: "", company: "", phone: "", email: "", message: "", source: "Contact Page" });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
 
   const update = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setForm({ ...form, [field]: e.target.value });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!form.name || !form.email || !form.subject || !form.message) {
-      alert("Please fill in all fields.");
+    setError("");
+
+    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
+      setError("Please fill in all required fields.");
       return;
     }
-    setLoading(true);
 
-    // Simulate sending message
-    setTimeout(() => {
+    setLoading(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || "Something went wrong. Please try again.");
+      } else {
+        setSuccess(true);
+        setForm({ name: "", company: "", phone: "", email: "", message: "", source: "Contact Page" });
+      }
+    } catch {
+      setError("Network error. Please check your connection and try again.");
+    } finally {
       setLoading(false);
-      setSuccess(true);
-      setForm({ name: "", email: "", subject: "", message: "" });
-    }, 1500);
+    }
   };
 
   return (
@@ -67,11 +84,10 @@ export default function Contact() {
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   </div>
                   <div>
-                    <h4 style={{ fontSize: 14, fontWeight: 700, color: "var(--text-primary)" }}>Address</h4>
+                    <h4 style={{ fontSize: 14, fontWeight: 700, color: "var(--text-primary)" }}>Office and Works</h4>
                     <p style={{ fontSize: 14, color: "var(--text-secondary)", marginTop: 4, lineHeight: 1.5 }}>
-                      Gama LED Electronics India<br />
-                      404 Tech Park, Phase 2, Bandra West<br />
-                      Mumbai, MH — 400050
+                      160, 161, Vill. Yusufpur, Ishapur<br />
+                      Hapur Road, Modinagar, UP - 245304
                     </p>
                   </div>
                 </div>
@@ -93,8 +109,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 style={{ fontSize: 14, fontWeight: 700, color: "var(--text-primary)" }}>Email Support</h4>
-                    <p style={{ fontSize: 14, color: "var(--text-secondary)", marginTop: 4 }}>sales@gamaled.in</p>
-                    <p style={{ fontSize: 14, color: "var(--text-secondary)", marginTop: 2 }}>support@gamaled.in</p>
+                    <p style={{ fontSize: 14, color: "var(--text-secondary)", marginTop: 4 }}>gamaled2026@gmail.com</p>
                   </div>
                 </div>
               </div>
@@ -115,25 +130,43 @@ export default function Contact() {
                     <h2 style={{ fontFamily: "var(--font-display)", fontSize: 24, fontWeight: 700, color: "var(--text-primary)" }}>Send Inquiry</h2>
                     
                     <div>
-                      <label style={labelStyle}>Your Name</label>
-                      <input value={form.name} onChange={update("name")} placeholder="John Doe" style={inputStyle} />
+                      <label style={labelStyle}>Full Name *</label>
+                      <input required name="name" value={form.name} onChange={update("name")} placeholder="John Doe" style={inputStyle} />
+                    </div>
+
+                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+                      <div>
+                        <label style={labelStyle}>Company (Optional)</label>
+                        <input name="company" value={form.company} onChange={update("company")} placeholder="Acme Inc" style={inputStyle} />
+                      </div>
+                      <div>
+                        <label style={labelStyle}>Phone Number *</label>
+                        <input required name="phone" type="tel" value={form.phone} onChange={update("phone")} placeholder="+1 (555) 000-0000" style={inputStyle} />
+                      </div>
                     </div>
 
                     <div>
-                      <label style={labelStyle}>Your Email</label>
-                      <input type="email" value={form.email} onChange={update("email")} placeholder="john@example.com" style={inputStyle} />
+                      <label style={labelStyle}>Email Address *</label>
+                      <input required name="email" type="email" value={form.email} onChange={update("email")} placeholder="john@example.com" style={inputStyle} />
                     </div>
 
                     <div>
-                      <label style={labelStyle}>Subject</label>
-                      <input value={form.subject} onChange={update("subject")} placeholder="Project Consultation or Quotation" style={inputStyle} />
-                    </div>
-
-                    <div>
-                      <label style={labelStyle}>Message</label>
-                      <textarea value={form.message} onChange={update("message")} placeholder="Write your requirements here..." rows={4} 
+                      <label style={labelStyle}>Message / Requirement *</label>
+                      <textarea required name="message" value={form.message} onChange={update("message")} placeholder="Write your requirements here..." rows={4} 
                         style={{ ...inputStyle, resize: "vertical", fontFamily: "inherit" }} />
                     </div>
+                    
+                    <input type="hidden" name="source" value={form.source} />
+
+                    {error && (
+                      <div style={{
+                        padding: "12px 16px", background: "rgba(225, 29, 72, 0.08)", border: "1px solid rgba(225, 29, 72, 0.3)",
+                        borderRadius: 10, fontSize: 13, color: "var(--brand)", display: "flex", alignItems: "center", gap: 8
+                      }}>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        {error}
+                      </div>
+                    )}
 
                     <button type="submit" disabled={loading}
                       style={{
@@ -142,7 +175,7 @@ export default function Contact() {
                         opacity: loading ? 0.7 : 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
                         boxShadow: "0 4px 6px -1px rgba(225, 29, 72, 0.2)"
                       }}>
-                      {loading ? <><span className="spinner" style={{ width: 16, height: 16, borderWidth: 2, borderTopColor: "transparent" }} /> Sending...</> : "Submit Message"}
+                      {loading ? <><span className="spinner" style={{ width: 16, height: 16, borderWidth: 2, borderTopColor: "transparent" }} /> Sending...</> : "Submit Enquiry"}
                     </button>
                   </motion.form>
                 ) : (

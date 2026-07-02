@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { X, Check, ArrowRight, Monitor, Globe2 } from "lucide-react";
+import { X, Check, Monitor, Globe2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { GodRays, MeshGradient } from "@paper-design/shaders-react";
 import { AnimatedHeroButton } from "./AnimatedHeroButton";
@@ -7,6 +7,7 @@ import { AnimatedHeroButton } from "./AnimatedHeroButton";
 export default function HeroExpandable() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [formStep, setFormStep] = useState<"idle" | "submitting" | "success">("idle");
+  const [formError, setFormError] = useState("");
 
   const handleExpand = () => setIsExpanded(true);
   
@@ -18,16 +19,32 @@ export default function HeroExpandable() {
   const handleClose = () => {
     setIsExpanded(false);
     // Reset form after a brief delay so the user doesn't see it reset while closing
-    setTimeout(() => setFormStep("idle"), 500);
+    setTimeout(() => { setFormStep("idle"); setFormError(""); }, 500);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setFormError("");
     setFormStep("submitting");
-    // Simulate API call
-    setTimeout(() => {
-      setFormStep("success");
-    }, 1500);
+    const formData = new FormData(e.target as HTMLFormElement);
+    const payload = Object.fromEntries(formData);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setFormError(data.error || "Something went wrong. Please try again.");
+        setFormStep("idle");
+      } else {
+        setFormStep("success");
+      }
+    } catch {
+      setFormError("Network error. Please check your connection and try again.");
+      setFormStep("idle");
+    }
   };
 
   // Lock body scroll when modal is open
@@ -305,24 +322,9 @@ export default function HeroExpandable() {
                             </label>
                             <input
                               required
+                              name="name"
                               type="text"
                               placeholder="Jane Doe"
-                              style={{
-                                width: "100%", padding: "12px 16px", borderRadius: 8, background: "rgba(0,0,0,0.2)",
-                                border: "1px solid rgba(255,255,255,0.1)", color: "#fff", fontSize: 14, outline: "none", boxSizing: "border-box"
-                              }}
-                              className="focus-ring hero-input"
-                            />
-                          </div>
-
-                          <div>
-                            <label style={{ display: "block", fontSize: 12, fontWeight: 500, color: "rgba(255,255,255,0.8)", marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.05em" }}>
-                              Work Email
-                            </label>
-                            <input
-                              required
-                              type="email"
-                              placeholder="jane@company.com"
                               style={{
                                 width: "100%", padding: "12px 16px", borderRadius: 8, background: "rgba(0,0,0,0.2)",
                                 border: "1px solid rgba(255,255,255,0.1)", color: "#fff", fontSize: 14, outline: "none", boxSizing: "border-box"
@@ -334,9 +336,10 @@ export default function HeroExpandable() {
                           <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
                             <div style={{ flex: 1 }}>
                               <label style={{ display: "block", fontSize: 12, fontWeight: 500, color: "rgba(255,255,255,0.8)", marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.05em" }}>
-                                Company
+                                Company (Optional)
                               </label>
                               <input
+                                name="company"
                                 type="text"
                                 placeholder="Acme Inc"
                                 style={{
@@ -348,29 +351,46 @@ export default function HeroExpandable() {
                             </div>
                             <div style={{ flex: 1 }}>
                               <label style={{ display: "block", fontSize: 12, fontWeight: 500, color: "rgba(255,255,255,0.8)", marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.05em" }}>
-                                Application
+                                Phone Number
                               </label>
-                              <select
+                              <input
+                                required
+                                name="phone"
+                                type="tel"
+                                placeholder="+1 (555) 000-0000"
                                 style={{
                                   width: "100%", padding: "12px 16px", borderRadius: 8, background: "rgba(0,0,0,0.2)",
-                                  border: "1px solid rgba(255,255,255,0.1)", color: "#fff", fontSize: 14, outline: "none",
-                                  boxSizing: "border-box", cursor: "pointer"
+                                  border: "1px solid rgba(255,255,255,0.1)", color: "#fff", fontSize: 14, outline: "none", boxSizing: "border-box"
                                 }}
                                 className="focus-ring hero-input"
-                              >
-                                <option style={{ background: "#1e1e1e" }}>Indoor</option>
-                                <option style={{ background: "#1e1e1e" }}>Outdoor</option>
-                                <option style={{ background: "#1e1e1e" }}>Rental</option>
-                                <option style={{ background: "#1e1e1e" }}>Custom</option>
-                              </select>
+                              />
                             </div>
                           </div>
 
                           <div>
                             <label style={{ display: "block", fontSize: 12, fontWeight: 500, color: "rgba(255,255,255,0.8)", marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.05em" }}>
-                              Requirements
+                              Email Address
+                            </label>
+                            <input
+                              required
+                              name="email"
+                              type="email"
+                              placeholder="jane@company.com"
+                              style={{
+                                width: "100%", padding: "12px 16px", borderRadius: 8, background: "rgba(0,0,0,0.2)",
+                                border: "1px solid rgba(255,255,255,0.1)", color: "#fff", fontSize: 14, outline: "none", boxSizing: "border-box"
+                              }}
+                              className="focus-ring hero-input"
+                            />
+                          </div>
+
+                          <div>
+                            <label style={{ display: "block", fontSize: 12, fontWeight: 500, color: "rgba(255,255,255,0.8)", marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                              Message / Requirement
                             </label>
                             <textarea
+                              required
+                              name="message"
                               rows={3}
                               placeholder="Tell us about your project..."
                               style={{
@@ -382,6 +402,18 @@ export default function HeroExpandable() {
                             />
                           </div>
                         </div>
+
+                        <input type="hidden" name="source" value="Quote Popup" />
+
+                        {formError && (
+                          <div style={{
+                            padding: "10px 14px", background: "rgba(225, 29, 72, 0.2)", border: "1px solid rgba(225, 29, 72, 0.5)",
+                            borderRadius: 8, fontSize: 13, color: "#fca5a5", display: "flex", alignItems: "center", gap: 8
+                          }}>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                            {formError}
+                          </div>
+                        )}
 
                         <button
                           disabled={formStep === "submitting"}
