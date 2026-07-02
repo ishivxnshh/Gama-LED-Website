@@ -40,13 +40,7 @@ export function AnimatedHeroButton({
         }
         setStatus("saved");
         setBounce(true);
-        confetti({
-          particleCount: 100,
-          spread: 70,
-          origin: { y: 0.6 },
-          colors: ["#e11d48", "#f43f5e", "#be123c", "#ffffff"], // Gama LED brand colors
-          shapes: ["star", "circle"],
-        });
+
         setTimeout(() => {
           setStatus("idle");
           setBounce(false);

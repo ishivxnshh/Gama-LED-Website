@@ -12,8 +12,9 @@ interface B2BProductCardProps {
 
 export default function ProductCard({ name, description, image, tags, link, index }: B2BProductCardProps) {
   return (
-    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }}
-      className="group" style={{ background: "var(--bg-secondary)", borderRadius: 24, overflow: "hidden", border: "1px solid var(--border-color)", display: "flex", flexDirection: "column", height: "100%" }}>
+    <motion.div initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1, type: "spring", stiffness: 100 }}
+      whileHover={{ y: -8, scale: 1.02 }}
+      className="group" style={{ background: "var(--bg-secondary)", borderRadius: 24, overflow: "hidden", border: "1px solid var(--border-color)", display: "flex", flexDirection: "column", height: "100%", cursor: "pointer" }}>
       
       <div style={{ position: "relative", width: "100%", paddingTop: "75%", background: "var(--bg-primary)", overflow: "hidden" }}>
         <img src={image} alt={name} style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.5s ease" }} className="group-hover:scale-105" />

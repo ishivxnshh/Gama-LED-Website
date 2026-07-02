@@ -67,13 +67,14 @@ export default function Home() {
           </motion.div>
           <div className="md-grid-4" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 24 }}>
             {applications.map((app, i) => (
-              <motion.div key={app.name} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}
-                style={{ background: "var(--bg-secondary)", padding: "32px 16px", borderRadius: 16, textAlign: "center", border: "1px solid var(--border-color)" }} className="hover:shadow-md transition-all group hover:border-gray-900">
-                <div style={{ width: 64, height: 64, margin: "0 auto 20px", background: "var(--bg-primary)", color: "var(--text-primary)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "var(--shadow-sm)" }} className="group-hover:scale-105 transition-transform">
+              <motion.div key={app.name} initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05, type: "spring", stiffness: 100 }}
+                whileHover={{ y: -8, scale: 1.02 }}
+                style={{ background: "var(--bg-secondary)", padding: "32px 16px", borderRadius: 16, textAlign: "center", border: "1px solid var(--border-color)", cursor: "default" }} className="hover:shadow-md transition-all group hover:border-gray-900">
+                <motion.div style={{ width: 64, height: 64, margin: "0 auto 20px", background: "var(--bg-primary)", color: "var(--text-primary)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "var(--shadow-sm)" }} whileHover={{ rotate: 10, scale: 1.15 }} transition={{ type: "spring", stiffness: 300 }}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d={app.icon} />
                   </svg>
-                </div>
+                </motion.div>
                 <h4 style={{ fontSize: 14, fontWeight: 700, color: "var(--text-primary)" }}>{app.name}</h4>
               </motion.div>
             ))}
@@ -97,8 +98,9 @@ export default function Home() {
               { title: "24×7 Technical Support", desc: "Global support network ready to assist you round the clock for any technical challenges." },
               { title: "Global Installation", desc: "Thousands of successful projects deployed across commercial, sports, and broadcast sectors worldwide." }
             ].map((item, i) => (
-              <motion.div key={item.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                style={{ background: "var(--glass-bg)", padding: 40, borderRadius: 24, border: "1px solid var(--glass-border)" }}>
+              <motion.div key={item.title} initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, type: "spring", stiffness: 100 }}
+                whileHover={{ y: -8, scale: 1.02 }}
+                style={{ background: "var(--glass-bg)", padding: 40, borderRadius: 24, border: "1px solid var(--glass-border)", cursor: "default" }}>
                 <h3 style={{ fontFamily: "var(--font-display)", fontSize: 18, fontWeight: 800, marginBottom: 12, color: "var(--text-primary)", letterSpacing: "-0.01em" }}>{item.title}</h3>
                 <p style={{ fontSize: 14, color: "var(--text-secondary)", lineHeight: 1.6 }}>{item.desc}</p>
               </motion.div>
@@ -151,8 +153,8 @@ export default function Home() {
                   icon: <><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><polyline points="17 11 19 13 23 9" /></>
                 }
               ].map((step, i) => (
-                <motion.div key={step.num} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }} style={{ textAlign: "center" }}>
-                  <div style={{ position: "relative", width: 120, height: 120, margin: "0 auto 32px" }}>
+                <motion.div key={step.num} initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15, type: "spring", stiffness: 100 }} whileHover={{ y: -8 }} style={{ textAlign: "center", cursor: "default" }}>
+                  <motion.div style={{ position: "relative", width: 120, height: 120, margin: "0 auto 32px" }} whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 300 }}>
                     {/* White Circle Background */}
                     <div style={{ width: "100%", height: "100%", background: "var(--bg-secondary)", borderRadius: "50%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", boxShadow: "var(--shadow-sm)" }}>
                       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: step.num === 4 ? 4 : 0 }}>
@@ -171,7 +173,7 @@ export default function Home() {
                     <div style={{ position: "absolute", bottom: 0, left: 0, width: 36, height: 36, background: "var(--brand)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: 16, color: "#fff", border: "4px solid var(--bg-primary)" }}>
                       {step.num}
                     </div>
-                  </div>
+                  </motion.div>
                   <h3 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: "var(--text-primary)" }}>{step.title}</h3>
                   <p style={{ fontSize: 14, color: "var(--text-secondary)", lineHeight: 1.6 }}>{step.desc}</p>
                 </motion.div>
@@ -190,8 +192,9 @@ export default function Home() {
           </motion.div>
           <div className="md-grid-4" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 24 }}>
             {projects.map((proj, i) => (
-              <motion.div key={proj.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }} className="group">
+              <motion.div key={proj.title} initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, type: "spring", stiffness: 100 }}
+                whileHover={{ scale: 1.02, y: -8 }}
+                style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3", cursor: "pointer" }} className="group shadow-lg">
                 <img src={proj.image} alt={proj.title} style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.5s ease" }} className="group-hover:scale-105" />
                 <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.8), transparent)", display: "flex", alignItems: "flex-end", padding: 24 }}>
                   <h4 style={{ color: "#fff", fontSize: 18, fontWeight: 700 }}>{proj.title}</h4>

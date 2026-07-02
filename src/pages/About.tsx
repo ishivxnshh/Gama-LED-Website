@@ -50,7 +50,9 @@ export default function About() {
       <section style={{ padding: "96px 0", background: "var(--bg-primary)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 24px" }}>
           <div className="md-grid-2" style={{ display: "grid", gap: 32 }}>
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ background: "var(--glass-bg)", padding: 48, borderRadius: 24, border: "1px solid var(--glass-border)" }}>
+            <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ type: "spring", stiffness: 100 }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              style={{ background: "var(--glass-bg)", padding: 48, borderRadius: 24, border: "1px solid var(--glass-border)", cursor: "default" }}>
               <div style={{ width: 64, height: 64, background: "var(--brand)", borderRadius: 16, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 32, color: "#fff" }}>
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
               </div>
@@ -60,7 +62,9 @@ export default function About() {
               </p>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} style={{ background: "var(--glass-bg)", padding: 48, borderRadius: 24, border: "1px solid var(--glass-border)" }}>
+            <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.1, type: "spring", stiffness: 100 }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              style={{ background: "var(--glass-bg)", padding: 48, borderRadius: 24, border: "1px solid var(--glass-border)", cursor: "default" }}>
               <div style={{ width: 64, height: 64, background: "var(--brand)", borderRadius: 16, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 32, color: "#fff" }}>
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
               </div>
@@ -90,8 +94,9 @@ export default function About() {
               { title: "Custom OEM/ODM", desc: "Our R&D team partners with clients to design tailored cabinet structures, PCB layouts, and pixel pitches." },
               { title: "Rigorous QA", desc: "Every module undergoes 72+ hours of aging tests, extreme temperature exposure, and waterproof certification." }
             ].map((item, i) => (
-              <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                style={{ background: "var(--bg-primary)", padding: 32, borderRadius: 16, border: "1px solid var(--border-color)", textAlign: "center" }}>
+              <motion.div key={item.title} initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, type: "spring", stiffness: 100 }}
+                whileHover={{ y: -8, scale: 1.02 }}
+                style={{ background: "var(--bg-primary)", padding: 32, borderRadius: 16, border: "1px solid var(--border-color)", textAlign: "center", cursor: "default" }} className="hover:shadow-md transition-all">
                 <h4 style={{ fontSize: 18, fontWeight: 700, color: "var(--text-primary)", marginBottom: 12 }}>{item.title}</h4>
                 <p style={{ fontSize: 14, color: "var(--text-secondary)", lineHeight: 1.6 }}>{item.desc}</p>
               </motion.div>

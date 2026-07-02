@@ -199,7 +199,7 @@ export default function HeroExpandable() {
                 className="modal-inner"
               >
                 {/* Left Side: Testimonials & Info */}
-                <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: "48px 32px", gap: 32, color: "#fff" }} className="modal-left">
+                <div style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column", justifyContent: "center", padding: "48px 32px", gap: 32, color: "#fff" }} className="modal-left">
                   <div style={{ gap: 16, display: "flex", flexDirection: "column" }}>
                     <h2 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, lineHeight: 1.1, margin: 0 }}>
                       Ready to scale?
@@ -262,7 +262,7 @@ export default function HeroExpandable() {
                 </div>
 
                 {/* Right Side: Form */}
-                <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", padding: "32px 16px" }} className="modal-right">
+                <div style={{ flex: 1, minWidth: 0, display: "flex", alignItems: "center", justifyContent: "center", padding: "64px" }} className="modal-right">
                   <div style={{
                     width: "100%", maxWidth: 450, background: "rgba(255,255,255,0.1)", backdropFilter: "blur(12px)",
                     border: "1px solid rgba(255,255,255,0.2)", borderRadius: 24, padding: "32px", boxShadow: "0 25px 50px -12px rgba(0,0,0,0.25)"
@@ -311,7 +311,7 @@ export default function HeroExpandable() {
                                 width: "100%", padding: "12px 16px", borderRadius: 8, background: "rgba(0,0,0,0.2)",
                                 border: "1px solid rgba(255,255,255,0.1)", color: "#fff", fontSize: 14, outline: "none", boxSizing: "border-box"
                               }}
-                              className="focus-ring"
+                              className="focus-ring hero-input"
                             />
                           </div>
 
@@ -327,7 +327,7 @@ export default function HeroExpandable() {
                                 width: "100%", padding: "12px 16px", borderRadius: 8, background: "rgba(0,0,0,0.2)",
                                 border: "1px solid rgba(255,255,255,0.1)", color: "#fff", fontSize: 14, outline: "none", boxSizing: "border-box"
                               }}
-                              className="focus-ring"
+                              className="focus-ring hero-input"
                             />
                           </div>
 
@@ -343,7 +343,7 @@ export default function HeroExpandable() {
                                   width: "100%", padding: "12px 16px", borderRadius: 8, background: "rgba(0,0,0,0.2)",
                                   border: "1px solid rgba(255,255,255,0.1)", color: "#fff", fontSize: 14, outline: "none", boxSizing: "border-box"
                                 }}
-                                className="focus-ring"
+                                className="focus-ring hero-input"
                               />
                             </div>
                             <div style={{ flex: 1 }}>
@@ -356,7 +356,7 @@ export default function HeroExpandable() {
                                   border: "1px solid rgba(255,255,255,0.1)", color: "#fff", fontSize: 14, outline: "none",
                                   boxSizing: "border-box", cursor: "pointer"
                                 }}
-                                className="focus-ring"
+                                className="focus-ring hero-input"
                               >
                                 <option style={{ background: "#1e1e1e" }}>Indoor</option>
                                 <option style={{ background: "#1e1e1e" }}>Outdoor</option>
@@ -378,7 +378,7 @@ export default function HeroExpandable() {
                                 border: "1px solid rgba(255,255,255,0.1)", color: "#fff", fontSize: 14, outline: "none",
                                 boxSizing: "border-box", resize: "none"
                               }}
-                              className="focus-ring"
+                              className="focus-ring hero-input"
                             />
                           </div>
                         </div>
@@ -422,7 +422,10 @@ export default function HeroExpandable() {
         .hover-bg-gray-100:hover { background: #f3f4f6 !important; }
         .focus-ring:focus { border-color: #fff !important; box-shadow: 0 0 0 2px rgba(255,255,255,0.2) !important; }
         
-        .modal-inner { flex-direction: row; }
+        .hero-input::placeholder { color: rgba(255, 255, 255, 0.5) !important; opacity: 1; }
+
+        .modal-inner { flex-direction: row; scrollbar-width: none; -ms-overflow-style: none; }
+        .modal-inner::-webkit-scrollbar { display: none; }
         
         @keyframes spin {
           to { transform: rotate(360deg); }
@@ -431,15 +434,15 @@ export default function HeroExpandable() {
           animation: spin 1s linear infinite;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
           .hidden-sm { display: none; }
           .modal-wrapper { padding: 0 !important; }
           .modal-content { border-radius: 0 !important; }
           .modal-inner { flex-direction: column !important; }
-          .modal-left { padding: 32px 24px !important; }
-          .modal-right { padding: 24px 16px !important; background: rgba(0,0,0,0.1); }
+          .modal-left { padding: 48px 24px 24px !important; }
+          .modal-right { padding: 24px 16px 48px !important; background: rgba(0,0,0,0.1); }
         }
-        @media (min-width: 769px) {
+        @media (min-width: 1025px) {
           .modal-wrapper { padding: 16px !important; }
           .modal-content { border-radius: 24px !important; }
         }
