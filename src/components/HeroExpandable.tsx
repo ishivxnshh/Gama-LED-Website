@@ -43,7 +43,7 @@ export default function HeroExpandable() {
   return (
     <>
       <div style={{
-        position: "relative", display: "flex", minHeight: "90vh", flexDirection: "column",
+        position: "relative", display: "flex", minHeight: "100vh", flexDirection: "column",
         alignItems: "center", justifyContent: "center", overflow: "hidden",
         background: "var(--bg-primary)", padding: "120px 16px 48px", transition: "background 0.3s"
       }}>

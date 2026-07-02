@@ -4,7 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { productCategories } from "../data/products";
 import { useTheme } from "../context/ThemeContext";
 import { ThemeToggle } from "./ThemeToggle";
-import logoUrl from "../assets/LOGO.jpeg";
+import logoUrl from "../assets/LOGO_Bright-removebg-preview.png";
+import darkLogoUrl from "../assets/LOGO_Dark-removebg-preview.png";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -16,7 +17,7 @@ export default function Navbar() {
     <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 50, background: "var(--glass-bg)", backdropFilter: "blur(20px)", borderBottom: "1px solid var(--glass-border)" }}>
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 24px", height: 80, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <Link to="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
-          <img src={logoUrl} alt="Gama LED Logo" style={{ height: 48, objectFit: "contain" }} />
+          <img src={theme === "dark" ? darkLogoUrl : logoUrl} alt="Gama LED Logo" style={{ height: 72, objectFit: "contain" }} />
         </Link>
  
         <div className="md-flex" style={{ display: "none", gap: 32, alignItems: "center" }}>

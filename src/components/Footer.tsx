@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
-import logoUrl from "../assets/LOGO.jpeg";
+import logoUrl from "../assets/LOGO_Bright-removebg-preview.png";
+import darkLogoUrl from "../assets/LOGO_Dark-removebg-preview.png";
+import { useTheme } from "../context/ThemeContext";
 
 export default function Footer() {
+  const { theme } = useTheme();
+
   return (
     <footer style={{ background: "var(--bg-primary)", color: "var(--text-secondary)", borderTop: "1px solid var(--border-color)" }}>
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "64px 24px" }}>
@@ -9,7 +13,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link to="/" style={{ textDecoration: "none", display: "inline-block", marginBottom: 24 }}>
-              <img src={logoUrl} alt="Gama LED Logo" style={{ height: 48, objectFit: "contain", background: "white", padding: 4, borderRadius: 4 }} />
+              <img src={theme === "dark" ? darkLogoUrl : logoUrl} alt="Gama LED Logo" style={{ height: 80, objectFit: "contain", background: theme === "dark" ? "transparent" : "white", padding: theme === "dark" ? 0 : 4, borderRadius: 4 }} />
             </Link>
             <p style={{ fontSize: 14, lineHeight: 1.6, maxWidth: 320 }}>Professional LED Display Manufacturer providing high-quality indoor, outdoor, and rental LED screens for global clients. Innovation, reliability, and true colors.</p>
           </div>

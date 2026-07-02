@@ -188,7 +188,7 @@ export default function Home() {
             <span style={{ color: "var(--brand)", fontSize: 12, fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase" }}>Case Studies</span>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.5rem)", fontWeight: 800, marginTop: 8, color: "var(--text-primary)", letterSpacing: "-0.025em" }}>Global LED Installations</h2>
           </motion.div>
-          <div className="md-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 24 }}>
+          <div className="md-grid-4" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 24 }}>
             {projects.map((proj, i) => (
               <motion.div key={proj.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                 style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3" }} className="group">
