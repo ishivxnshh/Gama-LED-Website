@@ -5,8 +5,7 @@ const TwitterIcon = () => <svg width="18" height="18" viewBox="0 0 24 24" fill="
 const InstagramIcon = () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>;
 const LinkedinIcon = () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>;
 
-import logoUrl from "../assets/LOGO_Bright-removebg-preview.png";
-import darkLogoUrl from "../assets/LOGO_Dark-removebg-preview.png";
+import logoUrl from "../assets/GAMA LED VC.png";
 import kaliLogo from "../assets/KALI INDUSTRIES.jpg.jpeg";
 import { useTheme } from "../context/ThemeContext";
 
@@ -20,7 +19,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link to="/" style={{ textDecoration: "none", display: "inline-block", marginBottom: 24 }}>
-              <img src={theme === "dark" ? darkLogoUrl : logoUrl} alt="Gama LED Logo" style={{ height: 80, objectFit: "contain", background: theme === "dark" ? "transparent" : "white", padding: theme === "dark" ? 0 : 4, borderRadius: 4 }} />
+              <img src={logoUrl} alt="Gama LED Logo" style={{ height: 60, objectFit: "contain" }} />
             </Link>
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24, padding: "12px 16px", background: "var(--bg-secondary)", borderRadius: 12, border: "1px solid var(--border-color)", width: "fit-content" }}>
               <span style={{ fontSize: 11, color: "var(--text-secondary)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em" }}>A Brand Of</span>
