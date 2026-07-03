@@ -117,8 +117,8 @@ export default async function handler(req, res) {
 
   try {
     const { error } = await resend.emails.send({
-      from: 'Gama LED Website <onboarding@resend.dev>',
-      to: ['www.shivansh065@gmail.com'],
+      from: 'Gama LED Website <noreply@mail.gamaled.co.in>',
+      to: ['GAMALED2026@gmail.com'],
       replyTo: email,
       subject: `New Website Enquiry - ${name}`,
       html: emailHtml,
