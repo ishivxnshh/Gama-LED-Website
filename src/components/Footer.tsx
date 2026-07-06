@@ -15,7 +15,7 @@ export default function Footer() {
   return (
     <footer style={{ background: "var(--bg-primary)", color: "var(--text-secondary)", borderTop: "1px solid var(--border-color)" }}>
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "64px 24px" }}>
-        <div className="md-grid-4" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 48, marginBottom: 64 }}>
+        <div className="md-grid-3" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 48, marginBottom: 64 }}>
           {/* Brand */}
           <div>
             <Link to="/" style={{ textDecoration: "none", display: "inline-block", marginBottom: 24 }}>
@@ -30,29 +30,18 @@ export default function Footer() {
           <div>
             <h4 style={{ color: "var(--text-primary)", fontWeight: 600, fontSize: 14, letterSpacing: "0.025em", textTransform: "uppercase", marginBottom: 16 }}>Products</h4>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-              <Link to="/products/indoor-led-display" style={{ color: "var(--text-secondary)", textDecoration: "none", fontSize: 14 }}>Indoor LED Display</Link>
-              <Link to="/products/outdoor-led-display" style={{ color: "var(--text-secondary)", textDecoration: "none", fontSize: 14 }}>Outdoor LED Display</Link>
-              <Link to="/products/rental-led-display" style={{ color: "var(--text-secondary)", textDecoration: "none", fontSize: 14 }}>Rental LED Display</Link>
-              <Link to="/products/sports-led-display" style={{ color: "var(--text-secondary)", textDecoration: "none", fontSize: 14 }}>Sports LED Display</Link>
-              <Link to="/products/commercial-led-display" style={{ color: "var(--text-secondary)", textDecoration: "none", fontSize: 14 }}>Commercial LED Display</Link>
+              <Link to="/products/led-modules" style={{ color: "var(--text-secondary)", textDecoration: "none", fontSize: 14 }}>LED Modules</Link>
+              <Link to="/products/indoor-screens" style={{ color: "var(--text-secondary)", textDecoration: "none", fontSize: 14 }}>Indoor LED Screens</Link>
+              <Link to="/products/outdoor-screens" style={{ color: "var(--text-secondary)", textDecoration: "none", fontSize: 14 }}>Outdoor LED Screens</Link>
+              <Link to="/products/rental-screens" style={{ color: "var(--text-secondary)", textDecoration: "none", fontSize: 14 }}>Rental & Stage LED Screens</Link>
+              <Link to="/products/creative-screens" style={{ color: "var(--text-secondary)", textDecoration: "none", fontSize: 14 }}>Creative & Transparent Displays</Link>
             </div>
           </div>
           <div>
             <h4 style={{ color: "var(--text-primary)", fontWeight: 600, fontSize: 14, letterSpacing: "0.025em", textTransform: "uppercase", marginBottom: 16 }}>Company</h4>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               <Link to="/about" style={{ color: "var(--text-secondary)", textDecoration: "none", fontSize: 14 }}>About Us</Link>
-              <span style={{ fontSize: 14, cursor: "pointer" }}>Projects</span>
-              <span style={{ fontSize: 14, cursor: "pointer" }}>Solutions</span>
               <Link to="/contact" style={{ color: "var(--text-secondary)", textDecoration: "none", fontSize: 14 }}>Contact Us</Link>
-            </div>
-          </div>
-          <div>
-            <h4 style={{ color: "var(--text-primary)", fontWeight: 600, fontSize: 14, letterSpacing: "0.025em", textTransform: "uppercase", marginBottom: 16 }}>Support</h4>
-            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-              <span style={{ fontSize: 14, cursor: "pointer" }}>Downloads</span>
-              <span style={{ fontSize: 14, cursor: "pointer" }}>Catalogues</span>
-              <span style={{ fontSize: 14, cursor: "pointer" }}>Datasheets</span>
-              <span style={{ fontSize: 14, cursor: "pointer" }}>Warranty Policy</span>
             </div>
           </div>
         </div>
@@ -60,8 +49,8 @@ export default function Footer() {
           className="md-flex-row">
           <p style={{ fontSize: 12 }}>&copy; 2026 Gama LED. All rights reserved.</p>
           <div style={{ display: "flex", gap: 24, marginLeft: "auto", alignItems: "center" }}>
-            <span style={{ fontSize: 12, cursor: "pointer" }}>Privacy Policy</span>
-            <span style={{ fontSize: 12, cursor: "pointer" }}>Terms of Service</span>
+            <Link to="/privacy-policy" style={{ fontSize: 12, color: "var(--text-secondary)", textDecoration: "none" }} className="hover:text-brand transition-colors">Privacy Policy</Link>
+            <Link to="/terms-of-service" style={{ fontSize: 12, color: "var(--text-secondary)", textDecoration: "none" }} className="hover:text-brand transition-colors">Terms of Service</Link>
             <div style={{ display: "flex", gap: 16, alignItems: "center", borderLeft: "1px solid var(--border-color)", paddingLeft: 24 }}>
               <a href="https://facebook.com" target="_blank" rel="noreferrer" style={{ color: "var(--text-secondary)", display: "flex" }} className="hover:text-brand transition-colors"><FacebookIcon /></a>
               <a href="https://twitter.com" target="_blank" rel="noreferrer" style={{ color: "var(--text-secondary)", display: "flex" }} className="hover:text-brand transition-colors"><TwitterIcon /></a>
@@ -74,3 +63,4 @@ export default function Footer() {
     </footer>
   );
 }
+

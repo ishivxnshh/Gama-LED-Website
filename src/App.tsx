@@ -10,6 +10,8 @@ import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 
 export default function App() {
   const location = useLocation();
@@ -26,6 +28,8 @@ export default function App() {
           <Route path="/products/:productType/:series/:product" element={<PageWrapper><ProductDetail /></PageWrapper>} />
           <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
           <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
+          <Route path="/privacy-policy" element={<PageWrapper><PrivacyPolicy /></PageWrapper>} />
+          <Route path="/terms-of-service" element={<PageWrapper><TermsOfService /></PageWrapper>} />
         </Routes>
       </AnimatePresence>
       <Footer />
