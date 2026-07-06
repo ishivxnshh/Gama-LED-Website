@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { getProductBySlug, getProductTypeBySlug, getSeriesBySlug, type LEDProduct } from "../data/products";
+import { getProductBySlug, getProductTypeBySlug, getSeriesBySlug } from "../data/products";
 import ProductCard from "../components/ProductCard";
 
 export default function ProductDetail() {
   const { productType, series, product } = useParams();
   const navigate = useNavigate();
   
-  const [activeTab, setActiveTab] = useState("overview");
+  const [activeTab, setActiveTab] = useState("specifications");
 
   if (!productType || !series || !product) {
     return <div style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>Invalid URL parameters</div>;
@@ -63,7 +63,7 @@ export default function ProductDetail() {
             <p style={{ fontSize: 16, color: "var(--text-secondary)", lineHeight: 1.6, marginBottom: 32 }}>{prod.description}</p>
             
             <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginBottom: 40 }}>
-              {prod.applications.map(app => (
+              {prod.applications?.map(app => (
                 <span key={app} style={{ padding: "6px 12px", background: "var(--brand-alpha-10)", color: "var(--brand)", fontSize: 12, fontWeight: 700, borderRadius: 999, textTransform: "uppercase" }}>
                   {app}
                 </span>
@@ -71,19 +71,19 @@ export default function ProductDetail() {
             </div>
 
             <div style={{ background: "var(--bg-secondary)", borderRadius: 16, border: "1px solid var(--border-color)", padding: 24, marginBottom: 40 }}>
-              <h3 style={{ fontSize: 14, fontWeight: 800, color: "var(--text-primary)", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 16 }}>Key Specifications</h3>
+              <h3 style={{ fontSize: 14, fontWeight: 800, color: "var(--text-primary)", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 16 }}>Quick Specs</h3>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 16 }}>
                 <div>
                   <p style={{ fontSize: 12, color: "var(--text-secondary)", textTransform: "uppercase", fontWeight: 600 }}>Pixel Pitch</p>
-                  <p style={{ fontSize: 16, color: "var(--text-primary)", fontWeight: 700 }}>{prod.pixelPitch}</p>
+                  <p style={{ fontSize: 16, color: "var(--text-primary)", fontWeight: 700 }}>{prod.pixelPitch || "N/A"}</p>
                 </div>
                 <div>
                   <p style={{ fontSize: 12, color: "var(--text-secondary)", textTransform: "uppercase", fontWeight: 600 }}>Brightness</p>
-                  <p style={{ fontSize: 16, color: "var(--text-primary)", fontWeight: 700 }}>{prod.brightness}</p>
+                  <p style={{ fontSize: 16, color: "var(--text-primary)", fontWeight: 700 }}>{prod.brightness || "N/A"}</p>
                 </div>
                 <div>
                   <p style={{ fontSize: 12, color: "var(--text-secondary)", textTransform: "uppercase", fontWeight: 600 }}>Refresh Rate</p>
-                  <p style={{ fontSize: 16, color: "var(--text-primary)", fontWeight: 700 }}>{prod.refreshRate}</p>
+                  <p style={{ fontSize: 16, color: "var(--text-primary)", fontWeight: 700 }}>{prod.refreshRate || (prod.specifications && prod.specifications["Refresh Rate"]) || "N/A"}</p>
                 </div>
               </div>
             </div>
@@ -96,14 +96,27 @@ export default function ProductDetail() {
 
         {/* Tabs section */}
         <div style={{ marginTop: 64, background: "var(--bg-secondary)", borderRadius: 24, border: "1px solid var(--border-color)", overflow: "hidden" }}>
-          <div style={{ display: "flex", borderBottom: "1px solid var(--border-color)" }}>
-            {["overview", "features", "downloads"].map(tab => (
-              <button key={tab} onClick={() => setActiveTab(tab)} style={{ flex: 1, padding: "20px", background: activeTab === tab ? "var(--brand-alpha-05)" : "transparent", color: activeTab === tab ? "var(--brand)" : "var(--text-secondary)", border: "none", borderBottom: activeTab === tab ? "2px solid var(--brand)" : "2px solid transparent", fontSize: 14, fontWeight: 700, textTransform: "uppercase", cursor: "pointer", transition: "all 0.2s" }}>
+          <div style={{ display: "flex", borderBottom: "1px solid var(--border-color)", overflowX: "auto" }}>
+            {["specifications", "overview", "features", "downloads"].map(tab => (
+              <button key={tab} onClick={() => setActiveTab(tab)} style={{ flex: 1, padding: "20px", background: activeTab === tab ? "var(--brand-alpha-05)" : "transparent", color: activeTab === tab ? "var(--brand)" : "var(--text-secondary)", border: "none", borderBottom: activeTab === tab ? "2px solid var(--brand)" : "2px solid transparent", fontSize: 14, fontWeight: 700, textTransform: "uppercase", cursor: "pointer", transition: "all 0.2s", whiteSpace: "nowrap" }}>
                 {tab}
               </button>
             ))}
           </div>
-          <div style={{ padding: 48 }}>
+          <div style={{ padding: "32px 24px" }}>
+            {activeTab === "specifications" && prod.specifications && (
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+                <h3 style={{ fontSize: 24, fontWeight: 800, color: "var(--text-primary)", marginBottom: 24 }}>Full Specifications</h3>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: 1 }}>
+                  {Object.entries(prod.specifications).map(([key, value], idx) => (
+                    <div key={key} style={{ display: "grid", gridTemplateColumns: "1fr 2fr", background: idx % 2 === 0 ? "var(--bg-primary)" : "var(--bg-secondary)", padding: "16px", borderRadius: 8 }}>
+                      <span style={{ fontWeight: 700, color: "var(--text-primary)", fontSize: 14 }}>{key}</span>
+                      <span style={{ color: "var(--text-secondary)", fontSize: 14 }}>{value as string}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            )}
             {activeTab === "overview" && (
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
                 <h3 style={{ fontSize: 24, fontWeight: 800, color: "var(--text-primary)", marginBottom: 16 }}>Product Overview</h3>
@@ -114,12 +127,15 @@ export default function ProductDetail() {
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
                 <h3 style={{ fontSize: 24, fontWeight: 800, color: "var(--text-primary)", marginBottom: 24 }}>Key Features</h3>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 16 }}>
-                  {prod.features.map(f => (
+                  {prod.features?.map(f => (
                     <li key={f} style={{ display: "flex", alignItems: "center", gap: 12 }}>
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C853" strokeWidth="2"><path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                       <span style={{ fontSize: 16, color: "var(--text-secondary)", fontWeight: 500 }}>{f}</span>
                     </li>
                   ))}
+                  {(!prod.features || prod.features.length === 0) && (
+                    <li style={{ color: "var(--text-secondary)" }}>Features list coming soon.</li>
+                  )}
                 </ul>
               </motion.div>
             )}
@@ -147,7 +163,7 @@ export default function ProductDetail() {
             <h2 style={{ fontSize: 28, fontWeight: 800, color: "var(--text-primary)", marginBottom: 32 }}>Related Products</h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 24 }}>
               {relatedProducts.map((p, i) => (
-                <ProductCard key={p.id} name={p.name} description={p.description} image={p.image} tags={[p.pixelPitch]} link={`/products/${productType}/${series}/${p.id}`} index={i} />
+                <ProductCard key={p.id} name={p.name} description={p.description} image={p.image} tags={[p.pixelPitch || ""]} link={`/products/${productType}/${series}/${p.id}`} index={i} />
               ))}
             </div>
           </div>

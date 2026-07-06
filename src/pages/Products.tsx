@@ -135,7 +135,7 @@ export default function Products() {
           {productType && series && breadcrumbSeries && (
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 32 }}>
               {breadcrumbSeries.products.map((p, i) => (
-                <ProductCard key={p.id} name={p.name} description={p.description} image={p.image} tags={[p.pixelPitch, p.brightness]} link={`/products/${productType}/${series}/${p.id}`} index={i} />
+                <ProductCard key={p.id} name={p.name} description={p.description} image={p.image} tags={[p.pixelPitch, p.brightness].filter(Boolean) as string[]} link={`/products/${productType}/${series}/${p.id}`} index={i} />
               ))}
             </div>
           )}
