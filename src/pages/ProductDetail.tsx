@@ -97,7 +97,7 @@ export default function ProductDetail() {
         {/* Tabs section */}
         <div style={{ marginTop: 64, background: "var(--bg-secondary)", borderRadius: 24, border: "1px solid var(--border-color)", overflow: "hidden" }}>
           <div style={{ display: "flex", borderBottom: "1px solid var(--border-color)", overflowX: "auto" }}>
-            {["specifications", "overview", "features", "downloads"].map(tab => (
+            {["specifications", "overview", "features"].map(tab => (
               <button key={tab} onClick={() => setActiveTab(tab)} style={{ flex: 1, padding: "20px", background: activeTab === tab ? "var(--brand-alpha-05)" : "transparent", color: activeTab === tab ? "var(--brand)" : "var(--text-secondary)", border: "none", borderBottom: activeTab === tab ? "2px solid var(--brand)" : "2px solid transparent", fontSize: 14, fontWeight: 700, textTransform: "uppercase", cursor: "pointer", transition: "all 0.2s", whiteSpace: "nowrap" }}>
                 {tab}
               </button>
@@ -137,21 +137,6 @@ export default function ProductDetail() {
                     <li style={{ color: "var(--text-secondary)" }}>Features list coming soon.</li>
                   )}
                 </ul>
-              </motion.div>
-            )}
-            {activeTab === "downloads" && (
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-                <h3 style={{ fontSize: 24, fontWeight: 800, color: "var(--text-primary)", marginBottom: 24 }}>Resources</h3>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16 }}>
-                  <button style={{ padding: "16px", background: "var(--bg-primary)", border: "1px solid var(--border-color)", borderRadius: 12, display: "flex", alignItems: "center", gap: 12, cursor: "pointer" }} className="hover:border-brand transition-colors">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" strokeWidth="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4m7-7l5 5 5-5M12 15V3"/></svg>
-                    <span style={{ fontSize: 14, fontWeight: 600, color: "var(--text-secondary)" }}>Datasheet (PDF)</span>
-                  </button>
-                  <button style={{ padding: "16px", background: "var(--bg-primary)", border: "1px solid var(--border-color)", borderRadius: 12, display: "flex", alignItems: "center", gap: 12, cursor: "pointer" }} className="hover:border-brand transition-colors">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" strokeWidth="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4m7-7l5 5 5-5M12 15V3"/></svg>
-                    <span style={{ fontSize: 14, fontWeight: 600, color: "var(--text-secondary)" }}>User Manual</span>
-                  </button>
-                </div>
               </motion.div>
             )}
           </div>

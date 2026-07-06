@@ -14,3 +14,17 @@ export const productCategories: LEDProductType[] = [
 ];
 
 export type { LEDProductType, LEDSeries, LEDProduct };
+
+export function getProductTypeBySlug(slug: string): LEDProductType | undefined {
+  return productCategories.find(c => c.id === slug);
+}
+
+export function getSeriesBySlug(typeSlug: string, seriesSlug: string): LEDSeries | undefined {
+  const type = getProductTypeBySlug(typeSlug);
+  return type?.series.find(s => s.id === seriesSlug);
+}
+
+export function getProductBySlug(typeSlug: string, seriesSlug: string, productSlug: string): LEDProduct | undefined {
+  const series = getSeriesBySlug(typeSlug, seriesSlug);
+  return series?.products.find(p => p.id === productSlug);
+}
