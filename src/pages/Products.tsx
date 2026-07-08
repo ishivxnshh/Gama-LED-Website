@@ -1,3 +1,4 @@
+import { useState, useMemo } from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { productCategories, getProductTypeBySlug, getSeriesBySlug } from "../data/products";
@@ -5,11 +6,36 @@ import ProductCard from "../components/ProductCard";
 
 export default function Products() {
   const { productType, series } = useParams();
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const allProducts = useMemo(() => {
+    const products: any[] = [];
+    productCategories.forEach(c => {
+      c.series.forEach(s => {
+        s.products.forEach(p => {
+          products.push({ ...p, categoryId: c.id, seriesId: s.id, categoryName: c.name, seriesName: s.name });
+        });
+      });
+    });
+    return products;
+  }, []);
+
+  const searchResults = useMemo(() => {
+    if (!searchQuery.trim()) return [];
+    const query = searchQuery.toLowerCase();
+    return allProducts.filter(p => 
+      p.name.toLowerCase().includes(query) || 
+      (p.description && p.description.toLowerCase().includes(query)) ||
+      p.categoryName.toLowerCase().includes(query) ||
+      p.seriesName.toLowerCase().includes(query)
+    );
+  }, [searchQuery, allProducts]);
 
   let headerTitle = "Professional LED Display Solutions";
   let headerDesc = "Explore our comprehensive range of indoor, outdoor, rental, and commercial LED displays designed for every industry.";
   let breadcrumbType = null;
   let breadcrumbSeries = null;
+
 
   let isFilter = false;
   if (productType) {
@@ -92,6 +118,21 @@ export default function Products() {
         
         {/* Sidebar Navigation */}
         <div style={{ width: "100%", maxWidth: 300, background: "var(--bg-secondary)", padding: 24, borderRadius: 16, border: "1px solid var(--border-color)", height: "fit-content", flexShrink: 0 }}>
+          
+          <div style={{ marginBottom: 32 }}>
+            <h3 style={{ fontSize: 16, fontWeight: 800, color: "var(--text-primary)", marginBottom: 16, textTransform: "uppercase", letterSpacing: "0.05em" }}>Search</h3>
+            <div style={{ position: "relative" }}>
+              <input 
+                type="text" 
+                placeholder="Search products, series..." 
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                style={{ width: "100%", padding: "12px 16px", paddingLeft: 40, borderRadius: 8, border: "1px solid var(--border-color)", background: "var(--bg-primary)", color: "var(--text-primary)", fontSize: 14 }}
+              />
+              <svg style={{ position: 'absolute', left: 12, top: '50%', transform: 'translateY(-50%)', color: 'var(--text-secondary)' }} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            </div>
+          </div>
+
           <h3 style={{ fontSize: 16, fontWeight: 800, color: "var(--text-primary)", marginBottom: 16, textTransform: "uppercase", letterSpacing: "0.05em" }}>Product Types</h3>
           <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
             <Link to="/products" style={{ textDecoration: "none", padding: "12px 16px", borderRadius: 8, border: "1px solid", borderColor: !productType ? "var(--brand)" : "transparent", background: !productType ? "var(--brand-alpha-05)" : "transparent", color: !productType ? "var(--brand)" : "var(--text-secondary)", fontWeight: !productType ? 700 : 500, transition: "all 0.2s" }} className="hover-bg-gray">
@@ -134,54 +175,79 @@ export default function Products() {
         {/* Content Area */}
         <div style={{ flex: 1 }}>
           
-          {/* Level 1: All Categories (No productType or series) */}
-          {!productType && (
-            <div style={{ display: "flex", flexDirection: "column", gap: 64 }}>
-              {productCategories.map(cat => (
-                <div key={cat.id}>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 24 }}>
-                    <h2 style={{ fontSize: 28, fontWeight: 800, color: "var(--text-primary)" }}>{cat.name}</h2>
-                    <Link to={`/products/${cat.id}`} style={{ fontSize: 14, fontWeight: 700, color: "var(--brand)", textDecoration: "none" }} className="hover:underline">View All &rarr;</Link>
-                  </div>
-                  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 32 }}>
-                    {cat.series.slice(0, 3).map((s, i) => (
-                      <ProductCard key={s.id} name={s.name} description={s.description} image={s.image} tags={[]} link={`/products/${cat.id}/${s.id}`} index={i} />
-                    ))}
-                  </div>
+          {searchQuery.trim() ? (
+            <div>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 24 }}>
+                <h2 style={{ fontSize: 24, fontWeight: 800, color: "var(--text-primary)" }}>Search Results for "{searchQuery}"</h2>
+                <span style={{ fontSize: 14, color: "var(--text-secondary)" }}>{searchResults.length} products found</span>
+              </div>
+              
+              {searchResults.length > 0 ? (
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 32 }}>
+                  {searchResults.map((p, i) => (
+                    <ProductCard key={`${p.categoryId}-${p.seriesId}-${p.id}`} name={p.name} description={p.description || p.categoryName} image={p.image} tags={[p.pixelPitch, p.brightness].filter(Boolean) as string[]} link={`/products/${p.categoryId}/${p.seriesId}/${p.id}`} index={i} />
+                  ))}
                 </div>
-              ))}
+              ) : (
+                <div style={{ textAlign: "center", padding: "64px 0", background: "var(--bg-secondary)", borderRadius: 16, border: "1px solid var(--border-color)" }}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ color: "var(--text-secondary)", margin: "0 auto 16px" }}><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                  <h3 style={{ fontSize: 18, fontWeight: 700, color: "var(--text-primary)", marginBottom: 8 }}>No products found</h3>
+                  <p style={{ color: "var(--text-secondary)", fontSize: 14 }}>Try adjusting your search terms or browsing the categories.</p>
+                </div>
+              )}
             </div>
-          )}
+          ) : (
+            <>
+              {/* Level 1: All Categories (No productType or series) */}
+              {!productType && (
+                <div style={{ display: "flex", flexDirection: "column", gap: 64 }}>
+                  {productCategories.map(cat => (
+                    <div key={cat.id}>
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 24 }}>
+                        <h2 style={{ fontSize: 28, fontWeight: 800, color: "var(--text-primary)" }}>{cat.name}</h2>
+                        <Link to={`/products/${cat.id}`} style={{ fontSize: 14, fontWeight: 700, color: "var(--brand)", textDecoration: "none" }} className="hover:underline">View All &rarr;</Link>
+                      </div>
+                      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 32 }}>
+                        {cat.series.slice(0, 3).map((s, i) => (
+                          <ProductCard key={s.id} name={s.name} description={s.description} image={s.image} tags={[]} link={`/products/${cat.id}/${s.id}`} index={i} />
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
 
-          {/* Level 2: Specific Category (Has productType, No series) */}
-          {productType && !series && breadcrumbType && (
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 32 }}>
-              {breadcrumbType.series.map((s, i) => (
-                <ProductCard key={s.id} name={s.name} description={s.description} image={s.image} tags={[]} link={`/products/${breadcrumbType.id}/${s.id}`} index={i} />
-              ))}
-            </div>
-          )}
+              {/* Level 2: Specific Category (Has productType, No series) */}
+              {productType && !series && breadcrumbType && (
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 32 }}>
+                  {breadcrumbType.series.map((s, i) => (
+                    <ProductCard key={s.id} name={s.name} description={s.description} image={s.image} tags={[]} link={`/products/${breadcrumbType.id}/${s.id}`} index={i} />
+                  ))}
+                </div>
+              )}
 
-          {/* Level 2 (Filtered: Indoor/Outdoor) */}
-          {productType && series && isFilter && breadcrumbType && (
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 32 }}>
-              {(series === 'indoor' ? sideGroups.Indoor : sideGroups.Outdoor).map((s, i) => (
-                <ProductCard key={s.id} name={s.name} description={s.description} image={s.image} tags={[]} link={`/products/${breadcrumbType.id}/${s.id}`} index={i} />
-              ))}
-            </div>
-          )}
+              {/* Level 2 (Filtered: Indoor/Outdoor) */}
+              {productType && series && isFilter && breadcrumbType && (
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 32 }}>
+                  {(series === 'indoor' ? sideGroups.Indoor : sideGroups.Outdoor).map((s, i) => (
+                    <ProductCard key={s.id} name={s.name} description={s.description} image={s.image} tags={[]} link={`/products/${breadcrumbType.id}/${s.id}`} index={i} />
+                  ))}
+                </div>
+              )}
 
-          {/* Level 3: Specific Series (Has productType and series and not filter) */}
-          {productType && series && !isFilter && breadcrumbSeries && (
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 32 }}>
-              {breadcrumbSeries.products.map((p, i) => (
-                <ProductCard key={p.id} name={p.name} description={p.description} image={p.image} tags={[p.pixelPitch, p.brightness].filter(Boolean) as string[]} link={`/products/${productType}/${series}/${p.id}`} index={i} />
-              ))}
-            </div>
+              {/* Level 3: Specific Series (Has productType and series and not filter) */}
+              {productType && series && !isFilter && breadcrumbSeries && (
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 32 }}>
+                  {breadcrumbSeries.products.map((p, i) => (
+                    <ProductCard key={p.id} name={p.name} description={p.description} image={p.image} tags={[p.pixelPitch, p.brightness].filter(Boolean) as string[]} link={`/products/${productType}/${series}/${p.id}`} index={i} />
+                  ))}
+                </div>
+              )}
+            </>
           )}
 
           {/* Error state */}
-          {productType && !breadcrumbType && (
+          {!searchQuery.trim() && productType && !breadcrumbType && (
             <div style={{ textAlign: "center", padding: "64px 0" }}>
               <h2 style={{ fontSize: 24, fontWeight: 700, color: "var(--text-primary)" }}>Category Not Found</h2>
               <Link to="/products" style={{ display: "inline-block", marginTop: 16, color: "var(--brand)" }}>Back to Products</Link>
