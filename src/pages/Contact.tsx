@@ -98,7 +98,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 style={{ fontSize: 14, fontWeight: 700, color: "var(--text-primary)" }}>Phone Support</h4>
-                    <p style={{ fontSize: 14, color: "var(--text-secondary)", marginTop: 4 }}>+91 (022) 8432-1000</p>
+                    <p style={{ fontSize: 14, color: "var(--text-secondary)", marginTop: 4 }}>+91 9811219083, +91 9667051071</p>
                     <p style={{ fontSize: 12, color: "var(--text-secondary)", marginTop: 2 }}>Mon-Sat (9:00 AM – 6:00 PM IST)</p>
                   </div>
                 </div>
