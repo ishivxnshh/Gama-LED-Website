@@ -42,22 +42,50 @@ export default function Navbar() {
             <AnimatePresence>
               {shopMenuOpen && (
                 <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }} transition={{ duration: 0.2 }}
-                  style={{ position: "fixed", top: 80, left: 0, right: 0, margin: "0 auto", width: "100%", maxWidth: 900, background: "var(--bg-secondary)", border: "1px solid var(--border-color)", borderRadius: 16, boxShadow: "var(--shadow-sm)", padding: 32, display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24, cursor: "default", zIndex: 100 }}>
+                  style={{ position: "fixed", top: 80, left: 0, right: 0, margin: "0 auto", width: "100%", maxWidth: 1200, background: "var(--bg-secondary)", border: "1px solid var(--border-color)", borderTop: "none", borderBottomLeftRadius: 16, borderBottomRightRadius: 16, boxShadow: "var(--shadow-md)", padding: "32px 48px", display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 32, cursor: "default", zIndex: 100 }}>
                   
-                  {productCategories.map((category) => (
-                    <div key={category.id}>
-                      <h4 style={{ fontSize: 13, fontWeight: 800, color: "var(--brand)", letterSpacing: "0.02em", marginBottom: 12 }}>{category.name}</h4>
-                      <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                        {category.series.map(series => (
-                           <Link key={series.id} to={`/products/${category.id}/${series.id}`} onClick={() => setShopMenuOpen(false)} style={{ fontSize: 13, color: "var(--text-secondary)", textDecoration: "none", fontWeight: 500 }} className="hover-brand-color">
-                             • {series.name}
-                           </Link>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
+                  {productCategories.map((category) => {
+                    const groups = { Indoor: [] as any[], Outdoor: [] as any[], Others: [] as any[] };
+                    category.series.forEach(series => {
+                      const name = series.name.toLowerCase();
+                      if (name.includes('indoor') || category.id === 'indoor-screens') {
+                        groups.Indoor.push(series);
+                      } else if (name.includes('outdoor') || category.id === 'outdoor-screens') {
+                        groups.Outdoor.push(series);
+                      } else {
+                        groups.Others.push(series);
+                      }
+                    });
 
-                  <div style={{ gridColumn: "span 4", borderTop: "1px solid var(--border-color)", paddingTop: 16, marginTop: 8, display: "flex", justifyContent: "flex-end" }}>
+                    return (
+                      <div key={category.id}>
+                        <h4 style={{ fontSize: 14, fontWeight: 800, color: "var(--text-primary)", marginBottom: 16, borderBottom: "2px solid var(--brand)", paddingBottom: 8, display: "inline-block" }}>{category.name}</h4>
+                        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                          
+                          {groups.Indoor.length > 0 && (
+                            <Link to={`/products/${category.id}/indoor`} onClick={() => setShopMenuOpen(false)} style={{ fontSize: 13, color: "var(--text-secondary)", textDecoration: "none", fontWeight: 500, lineHeight: 1.4 }} className="hover-brand-color">
+                              Indoor LED Display
+                            </Link>
+                          )}
+                          
+                          {groups.Outdoor.length > 0 && (
+                            <Link to={`/products/${category.id}/outdoor`} onClick={() => setShopMenuOpen(false)} style={{ fontSize: 13, color: "var(--text-secondary)", textDecoration: "none", fontWeight: 500, lineHeight: 1.4 }} className="hover-brand-color">
+                              Outdoor LED Display
+                            </Link>
+                          )}
+
+                          {groups.Others.map(series => (
+                            <Link key={series.id} to={`/products/${category.id}/${series.id}`} onClick={() => setShopMenuOpen(false)} style={{ fontSize: 13, color: "var(--text-secondary)", textDecoration: "none", fontWeight: 500, lineHeight: 1.4 }} className="hover-brand-color">
+                              {series.name}
+                            </Link>
+                          ))}
+
+                        </div>
+                      </div>
+                    );
+                  })}
+
+                  <div style={{ gridColumn: "span 5", borderTop: "1px solid var(--border-color)", paddingTop: 16, marginTop: 16, display: "flex", justifyContent: "flex-end" }}>
                     <Link to="/products" onClick={() => setShopMenuOpen(false)} style={{ fontSize: 14, color: "var(--text-primary)", textDecoration: "none", fontWeight: 700 }} className="hover-brand-color">
                       View All Products &rarr;
                     </Link>

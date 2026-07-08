@@ -11,6 +11,7 @@ export default function Products() {
   let breadcrumbType = null;
   let breadcrumbSeries = null;
 
+  let isFilter = false;
   if (productType) {
     const typeObj = getProductTypeBySlug(productType);
     if (typeObj) {
@@ -18,14 +19,34 @@ export default function Products() {
       headerDesc = typeObj.description;
       breadcrumbType = typeObj;
       if (series) {
-        const seriesObj = getSeriesBySlug(productType, series);
-        if (seriesObj) {
-          headerTitle = seriesObj.name;
-          headerDesc = seriesObj.description;
-          breadcrumbSeries = seriesObj;
+        if (series === 'indoor' || series === 'outdoor') {
+          isFilter = true;
+          headerTitle = `${series === 'indoor' ? 'Indoor' : 'Outdoor'} ${typeObj.name}`;
+          breadcrumbSeries = { id: series, name: series === 'indoor' ? 'Indoor LED Display' : 'Outdoor LED Display', description: '', products: [] } as any;
+        } else {
+          const seriesObj = getSeriesBySlug(productType, series);
+          if (seriesObj) {
+            headerTitle = seriesObj.name;
+            headerDesc = seriesObj.description;
+            breadcrumbSeries = seriesObj;
+          }
         }
       }
     }
+  }
+
+  let sideGroups = { Indoor: [] as any[], Outdoor: [] as any[], Others: [] as any[] };
+  if (breadcrumbType) {
+    breadcrumbType.series.forEach(s => {
+      const name = s.name.toLowerCase();
+      if (name.includes('indoor') || breadcrumbType.id === 'indoor-screens') {
+        sideGroups.Indoor.push(s);
+      } else if (name.includes('outdoor') || breadcrumbType.id === 'outdoor-screens') {
+        sideGroups.Outdoor.push(s);
+      } else {
+        sideGroups.Others.push(s);
+      }
+    });
   }
 
   return (
@@ -85,12 +106,22 @@ export default function Products() {
 
           {breadcrumbType && (
             <div style={{ marginTop: 32 }}>
-              <h3 style={{ fontSize: 16, fontWeight: 800, color: "var(--text-primary)", marginBottom: 16, textTransform: "uppercase", letterSpacing: "0.05em" }}>{breadcrumbType.name} Series</h3>
+              <h3 style={{ fontSize: 16, fontWeight: 800, color: "var(--text-primary)", marginBottom: 16, textTransform: "uppercase", letterSpacing: "0.05em" }}>{breadcrumbType.name}</h3>
               <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                 <Link to={`/products/${breadcrumbType.id}`} style={{ textDecoration: "none", padding: "12px 16px", borderRadius: 8, border: "1px solid", borderColor: !series ? "var(--brand)" : "transparent", background: !series ? "var(--brand-alpha-05)" : "transparent", color: !series ? "var(--brand)" : "var(--text-secondary)", fontWeight: !series ? 700 : 500, transition: "all 0.2s" }} className="hover-bg-gray">
                   All Series
                 </Link>
-                {breadcrumbType.series.map(s => (
+                {sideGroups.Indoor.length > 0 && (
+                  <Link to={`/products/${breadcrumbType.id}/indoor`} style={{ textDecoration: "none", padding: "12px 16px", borderRadius: 8, border: "1px solid", borderColor: series === 'indoor' ? "var(--brand)" : "transparent", background: series === 'indoor' ? "var(--brand-alpha-05)" : "transparent", color: series === 'indoor' ? "var(--brand)" : "var(--text-secondary)", fontWeight: series === 'indoor' ? 700 : 500, transition: "all 0.2s" }} className="hover-bg-gray">
+                    Indoor LED Display
+                  </Link>
+                )}
+                {sideGroups.Outdoor.length > 0 && (
+                  <Link to={`/products/${breadcrumbType.id}/outdoor`} style={{ textDecoration: "none", padding: "12px 16px", borderRadius: 8, border: "1px solid", borderColor: series === 'outdoor' ? "var(--brand)" : "transparent", background: series === 'outdoor' ? "var(--brand-alpha-05)" : "transparent", color: series === 'outdoor' ? "var(--brand)" : "var(--text-secondary)", fontWeight: series === 'outdoor' ? 700 : 500, transition: "all 0.2s" }} className="hover-bg-gray">
+                    Outdoor LED Display
+                  </Link>
+                )}
+                {sideGroups.Others.map(s => (
                   <Link key={s.id} to={`/products/${breadcrumbType.id}/${s.id}`} style={{ textDecoration: "none", padding: "12px 16px", borderRadius: 8, border: "1px solid", borderColor: series === s.id ? "var(--brand)" : "transparent", background: series === s.id ? "var(--brand-alpha-05)" : "transparent", color: series === s.id ? "var(--brand)" : "var(--text-secondary)", fontWeight: series === s.id ? 700 : 500, transition: "all 0.2s" }} className="hover-bg-gray">
                     {s.name}
                   </Link>
@@ -131,8 +162,17 @@ export default function Products() {
             </div>
           )}
 
-          {/* Level 3: Specific Series (Has productType and series) */}
-          {productType && series && breadcrumbSeries && (
+          {/* Level 2 (Filtered: Indoor/Outdoor) */}
+          {productType && series && isFilter && breadcrumbType && (
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 32 }}>
+              {(series === 'indoor' ? sideGroups.Indoor : sideGroups.Outdoor).map((s, i) => (
+                <ProductCard key={s.id} name={s.name} description={s.description} image={s.image} tags={[]} link={`/products/${breadcrumbType.id}/${s.id}`} index={i} />
+              ))}
+            </div>
+          )}
+
+          {/* Level 3: Specific Series (Has productType and series and not filter) */}
+          {productType && series && !isFilter && breadcrumbSeries && (
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 32 }}>
               {breadcrumbSeries.products.map((p, i) => (
                 <ProductCard key={p.id} name={p.name} description={p.description} image={p.image} tags={[p.pixelPitch, p.brightness].filter(Boolean) as string[]} link={`/products/${productType}/${series}/${p.id}`} index={i} />
