@@ -20,22 +20,10 @@ export default function Products() {
     return products;
   }, []);
 
-  const searchResults = useMemo(() => {
-    if (!searchQuery.trim()) return [];
-    const query = searchQuery.toLowerCase();
-    return allProducts.filter(p => 
-      p.name.toLowerCase().includes(query) || 
-      (p.description && p.description.toLowerCase().includes(query)) ||
-      p.categoryName.toLowerCase().includes(query) ||
-      p.seriesName.toLowerCase().includes(query)
-    );
-  }, [searchQuery, allProducts]);
-
   let headerTitle = "Professional LED Display Solutions";
   let headerDesc = "Explore our comprehensive range of indoor, outdoor, rental, and commercial LED displays designed for every industry.";
-  let breadcrumbType = null;
-  let breadcrumbSeries = null;
-
+  let breadcrumbType: any = null;
+  let breadcrumbSeries: any = null;
 
   let isFilter = false;
   if (productType) {
@@ -48,7 +36,7 @@ export default function Products() {
         if (series === 'indoor' || series === 'outdoor') {
           isFilter = true;
           headerTitle = `${series === 'indoor' ? 'Indoor' : 'Outdoor'} ${typeObj.name}`;
-          breadcrumbSeries = { id: series, name: series === 'indoor' ? 'Indoor LED Display' : 'Outdoor LED Display', description: '', products: [] } as any;
+          breadcrumbSeries = { id: series, name: series === 'indoor' ? 'Indoor LED Display' : 'Outdoor LED Display', description: '', products: [] };
         } else {
           const seriesObj = getSeriesBySlug(productType, series);
           if (seriesObj) {
@@ -60,6 +48,36 @@ export default function Products() {
       }
     }
   }
+
+  const searchPlaceholder = breadcrumbSeries 
+    ? `Search in ${breadcrumbSeries.name}...` 
+    : breadcrumbType 
+      ? `Search in ${breadcrumbType.name}...` 
+      : "Search all products...";
+
+  const searchResults = useMemo(() => {
+    if (!searchQuery.trim()) return [];
+    const query = searchQuery.toLowerCase();
+    
+    let contextProducts = allProducts;
+    if (productType) {
+      contextProducts = contextProducts.filter(p => p.categoryId === productType);
+      if (series) {
+        if (series === 'indoor' || series === 'outdoor') {
+          contextProducts = contextProducts.filter(p => p.seriesName.toLowerCase().includes(series));
+        } else {
+          contextProducts = contextProducts.filter(p => p.seriesId === series);
+        }
+      }
+    }
+
+    return contextProducts.filter(p => 
+      p.name.toLowerCase().includes(query) || 
+      (p.description && p.description.toLowerCase().includes(query)) ||
+      p.categoryName.toLowerCase().includes(query) ||
+      p.seriesName.toLowerCase().includes(query)
+    );
+  }, [searchQuery, allProducts, productType, series]);
 
   let sideGroups = { Indoor: [] as any[], Outdoor: [] as any[], Others: [] as any[] };
   if (breadcrumbType) {
@@ -124,7 +142,7 @@ export default function Products() {
             <div style={{ position: "relative" }}>
               <input 
                 type="text" 
-                placeholder="Search products, series..." 
+                placeholder={searchPlaceholder} 
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 style={{ width: "100%", padding: "12px 16px", paddingLeft: 40, borderRadius: 8, border: "1px solid var(--border-color)", background: "var(--bg-primary)", color: "var(--text-primary)", fontSize: 14 }}
