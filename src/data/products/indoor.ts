@@ -9,29 +9,29 @@ export const indoorScreens: LEDProductType = {
       id: "ma960-indoor",
       name: "MA960 Indoor LED Screen",
       description: "Premium die-casting magnesium alloy indoor LED screens.",
-      image: "/products/INDOOR FIXED.png",
+      image: "/products/MA 960 INDOOR-OUTDOOR.png",
       products: [
         {
-          id: "ma960-2-5", name: "MA960 2.5mm", description: "2.5mm Indoor LED Screen", image: "/products/INDOOR FIXED.png", pixelPitch: "2.5mm", brightness: "800-900 Nits",
+          id: "ma960-2-5", name: "MA960 2.5mm", description: "2.5mm Indoor LED Screen", image: "/products/MA 960 INDOOR-OUTDOOR.png", pixelPitch: "2.5mm", brightness: "800-900 Nits",
           specifications: { "Pixel Pitch": "2.5mm", "LED": "SMD 3in1", "Module size": "320*160mm", "Module resolution": "128*64dots", "Density": "384x384dots", "LED cabinet size": "960*960*87(mm)", "Cabinet weight": "24kg/pc", "Material": "Die Casting Magnesium Alloy", "Brightness": "800-900 cd/m2 (Nits)", "Avg power consumption": "270w", "Max power consumption": "450w", "Grey level": "14 bits", "Refresh frequency": "1920-3840Hz", "Humidity-operating": "10% ~ 95%", "Screen life": "≥100000 hours", "Controlling mode": "Synch or Async", "Certificates": "CE, RoHs, FCC, UL", "Protective grade": "IP50" }
         },
         {
-          id: "ma960-3-07", name: "MA960 3.07mm", description: "3.07mm Indoor LED Screen", image: "/products/INDOOR FIXED.png", pixelPitch: "3.07mm", brightness: "800-900 Nits",
+          id: "ma960-3-07", name: "MA960 3.07mm", description: "3.07mm Indoor LED Screen", image: "/products/MA 960 INDOOR-OUTDOOR.png", pixelPitch: "3.07mm", brightness: "800-900 Nits",
           specifications: { "Pixel Pitch": "3.07mm", "LED": "SMD 3in1", "Module size": "320*160mm", "Module resolution": "104*52dots", "Density": "312x312dots", "LED cabinet size": "960*960*87(mm)", "Cabinet weight": "24kg/pc", "Material": "Die Casting Magnesium Alloy", "Brightness": "800-900 cd/m2 (Nits)", "Avg power consumption": "270w", "Max power consumption": "450w", "Grey level": "14 bits", "Refresh frequency": "1920-3840Hz", "Humidity-operating": "10% ~ 95%", "Screen life": "≥100000 hours", "Controlling mode": "Synch or Async", "Certificates": "CE, RoHs, FCC, UL", "Protective grade": "IP50" }
         },
         {
-          id: "ma960-4", name: "MA960 4mm", description: "4mm Indoor LED Screen", image: "/products/INDOOR FIXED.png", pixelPitch: "4mm", brightness: "700-800 Nits",
+          id: "ma960-4", name: "MA960 4mm", description: "4mm Indoor LED Screen", image: "/products/MA 960 INDOOR-OUTDOOR.png", pixelPitch: "4mm", brightness: "700-800 Nits",
           specifications: { "Pixel Pitch": "4mm", "LED": "SMD 3in1", "Module size": "320*160mm", "Module resolution": "80*40dots", "Density": "240x240dots", "LED cabinet size": "960*960*87(mm)", "Cabinet weight": "24kg/pc", "Material": "Die Casting Magnesium Alloy", "Brightness": "700-800 cd/m2 (Nits)", "Avg power consumption": "270w", "Max power consumption": "450w", "Grey level": "14 bits", "Refresh frequency": "1920-3840Hz", "Humidity-operating": "10% ~ 95%", "Screen life": "≥100000 hours", "Controlling mode": "Synch or Async", "Certificates": "CE, RoHs, FCC, UL", "Protective grade": "IP50" }
         },
         {
-          id: "ma960-5", name: "MA960 5mm", description: "5mm Indoor LED Screen", image: "/products/INDOOR FIXED.png", pixelPitch: "5mm", brightness: "700-800 Nits",
+          id: "ma960-5", name: "MA960 5mm", description: "5mm Indoor LED Screen", image: "/products/MA 960 INDOOR-OUTDOOR.png", pixelPitch: "5mm", brightness: "700-800 Nits",
           specifications: { "Pixel Pitch": "5mm", "LED": "SMD 3in1", "Module size": "320*160mm", "Module resolution": "64*32dots", "Density": "192x192dots", "LED cabinet size": "960*960*87(mm)", "Cabinet weight": "24kg/pc", "Material": "Die Casting Magnesium Alloy", "Brightness": "700-800 cd/m2 (Nits)", "Avg power consumption": "270w", "Max power consumption": "450w", "Grey level": "14 bits", "Refresh frequency": "1920-3840Hz", "Humidity-operating": "10% ~ 95%", "Screen life": "≥100000 hours", "Controlling mode": "Synch or Async", "Certificates": "CE, RoHs, FCC, UL", "Protective grade": "IP50" }
         }
       ]
     },
     {
       id: "ev960",
-      name: "EV 960 SERIES",
+      name: "EV 960 INDOOR SERIES",
       description: "High brightness EV 960 series indoor displays.",
       image: "/products/OUTDOOR SCREEN EV 960 - GAMA OV 960.png",
       products: [

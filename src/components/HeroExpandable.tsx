@@ -110,12 +110,12 @@ export default function HeroExpandable() {
               letterSpacing: "-0.02em", color: "var(--text-primary)", margin: 0, lineHeight: 1.1
             }}
           >
-            Orchestrate your entire <br className="hidden-sm" />
+            Brighter Screens. <br className="hidden-sm" />
             <span style={{
               background: "linear-gradient(to bottom right, var(--brand), #fb7185)",
               WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"
             }}>
-              visual experience
+              Bigger Impact.
             </span>
           </motion.h1>
 

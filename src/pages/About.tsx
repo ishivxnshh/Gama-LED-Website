@@ -14,8 +14,8 @@ export default function About() {
         <div style={{ position: "relative", zIndex: 1, textAlign: "center", maxWidth: 800 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <span style={{ color: "var(--brand)", fontSize: 14, fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase" }}>Welcome to GAMA LED</span>
-            <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(3rem, 6vw, 4.5rem)", fontWeight: 800, marginTop: 16, letterSpacing: "-0.025em", lineHeight: 1.1 }}>
-              Brighter Screens.<br/><span style={{ color: "var(--brand)" }}>Bigger Impact.</span>
+            <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(3rem, 6vw, 4.5rem)", fontWeight: 800, marginTop: 16, letterSpacing: "-0.025em", lineHeight: 1.1, color: "var(--text-primary)" }}>
+              Orchestrate your entire<br/><span style={{ color: "var(--brand)" }}>visual experience</span>
             </h1>
             <p style={{ marginTop: 24, fontSize: "clamp(1.125rem, 2vw, 1.25rem)", color: "var(--text-secondary)", lineHeight: 1.6 }}>
               A premium LED display solutions brand backed by over 15 years of expertise in the signage and visual branding industry.

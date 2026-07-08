@@ -45,10 +45,12 @@ export default function Navbar() {
                   style={{ position: "fixed", top: 80, left: 0, right: 0, margin: "0 auto", width: "100%", maxWidth: 1200, background: "var(--bg-secondary)", border: "1px solid var(--border-color)", borderTop: "none", borderBottomLeftRadius: 16, borderBottomRightRadius: 16, boxShadow: "var(--shadow-md)", padding: "32px 48px", display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 32, cursor: "default", zIndex: 100 }}>
                   
                   {productCategories.map((category) => {
-                    const groups = { Indoor: [] as any[], Outdoor: [] as any[], Others: [] as any[] };
+                    const groups = { Indoor: [] as any[], Outdoor: [] as any[], Transparent: [] as any[], Others: [] as any[] };
                     category.series.forEach(series => {
                       const name = series.name.toLowerCase();
-                      if (name.includes('indoor') || category.id === 'indoor-screens') {
+                      if (category.id === 'creative-screens' && (name.includes('indoor') || name.includes('outdoor'))) {
+                        groups.Transparent.push(series);
+                      } else if (name.includes('indoor') || category.id === 'indoor-screens') {
                         groups.Indoor.push(series);
                       } else if (name.includes('outdoor') || category.id === 'outdoor-screens') {
                         groups.Outdoor.push(series);
@@ -64,13 +66,19 @@ export default function Navbar() {
                           
                           {groups.Indoor.length > 0 && (
                             <Link to={`/products/${category.id}/indoor`} onClick={() => setShopMenuOpen(false)} style={{ fontSize: 13, color: "var(--text-secondary)", textDecoration: "none", fontWeight: 500, lineHeight: 1.4 }} className="hover-brand-color">
-                              Indoor LED Display
+                              {category.id === 'rental-screens' ? 'Rental Indoor LED Screens' : category.id === 'led-modules' ? 'Indoor LED Modules' : 'Indoor LED Display'}
                             </Link>
                           )}
                           
                           {groups.Outdoor.length > 0 && (
                             <Link to={`/products/${category.id}/outdoor`} onClick={() => setShopMenuOpen(false)} style={{ fontSize: 13, color: "var(--text-secondary)", textDecoration: "none", fontWeight: 500, lineHeight: 1.4 }} className="hover-brand-color">
-                              Outdoor LED Display
+                              {category.id === 'rental-screens' ? 'Rental Outdoor LED Screens' : category.id === 'led-modules' ? 'Outdoor LED Modules' : 'Outdoor LED Display'}
+                            </Link>
+                          )}
+
+                          {groups.Transparent && groups.Transparent.length > 0 && (
+                            <Link to={`/products/${category.id}/transparent`} onClick={() => setShopMenuOpen(false)} style={{ fontSize: 13, color: "var(--text-secondary)", textDecoration: "none", fontWeight: 500, lineHeight: 1.4 }} className="hover-brand-color">
+                              Transparent LED Displays
                             </Link>
                           )}
 

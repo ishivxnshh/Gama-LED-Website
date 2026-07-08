@@ -3,14 +3,25 @@ import { indoorScreens } from "./indoor";
 import { outdoorScreens } from "./outdoor";
 import { rentalScreens } from "./rental";
 import { creativeScreens } from "./creative";
+import { ledStandees } from "./standees";
 import type { LEDProductType, LEDSeries, LEDProduct } from "./types";
+
+export const fixedScreens: LEDProductType = {
+  id: "fixed-screens",
+  name: "Indoor & Outdoor LED Screens",
+  description: "High-resolution seamless indoor and outdoor displays for commercial and architectural applications.",
+  series: [
+    ...indoorScreens.series,
+    ...outdoorScreens.series
+  ]
+};
 
 export const productCategories: LEDProductType[] = [
   ledModules,
-  indoorScreens,
-  outdoorScreens,
+  fixedScreens,
   rentalScreens,
-  creativeScreens
+  creativeScreens,
+  ledStandees
 ];
 
 export type { LEDProductType, LEDSeries, LEDProduct };

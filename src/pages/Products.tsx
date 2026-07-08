@@ -33,10 +33,15 @@ export default function Products() {
       headerDesc = typeObj.description;
       breadcrumbType = typeObj;
       if (series) {
-        if (series === 'indoor' || series === 'outdoor') {
+        if (series === 'indoor' || series === 'outdoor' || series === 'transparent') {
           isFilter = true;
-          headerTitle = `${series === 'indoor' ? 'Indoor' : 'Outdoor'} ${typeObj.name}`;
-          breadcrumbSeries = { id: series, name: series === 'indoor' ? 'Indoor LED Display' : 'Outdoor LED Display', description: '', products: [] };
+          if (series === 'transparent') {
+            headerTitle = `Transparent LED Displays`;
+            breadcrumbSeries = { id: series, name: 'Transparent LED Displays', description: '', products: [] };
+          } else {
+            headerTitle = `${series === 'indoor' ? 'Indoor' : 'Outdoor'} ${typeObj.name}`;
+            breadcrumbSeries = { id: series, name: typeObj.id === 'rental-screens' ? (series === 'indoor' ? 'Rental Indoor LED Screens' : 'Rental Outdoor LED Screens') : typeObj.id === 'led-modules' ? (series === 'indoor' ? 'Indoor LED Modules' : 'Outdoor LED Modules') : (series === 'indoor' ? 'Indoor LED Display' : 'Outdoor LED Display'), description: '', products: [] };
+          }
         } else {
           const seriesObj = getSeriesBySlug(productType, series);
           if (seriesObj) {
@@ -63,8 +68,12 @@ export default function Products() {
     if (productType) {
       contextProducts = contextProducts.filter(p => p.categoryId === productType);
       if (series) {
-        if (series === 'indoor' || series === 'outdoor') {
-          contextProducts = contextProducts.filter(p => p.seriesName.toLowerCase().includes(series));
+        if (series === 'indoor' || series === 'outdoor' || series === 'transparent') {
+          if (series === 'transparent') {
+            contextProducts = contextProducts.filter(p => p.seriesName.toLowerCase().includes('indoor') || p.seriesName.toLowerCase().includes('outdoor'));
+          } else {
+            contextProducts = contextProducts.filter(p => p.seriesName.toLowerCase().includes(series));
+          }
         } else {
           contextProducts = contextProducts.filter(p => p.seriesId === series);
         }
@@ -79,11 +88,13 @@ export default function Products() {
     );
   }, [searchQuery, allProducts, productType, series]);
 
-  let sideGroups = { Indoor: [] as any[], Outdoor: [] as any[], Others: [] as any[] };
+  let sideGroups = { Indoor: [] as any[], Outdoor: [] as any[], Transparent: [] as any[], Others: [] as any[] };
   if (breadcrumbType) {
-    breadcrumbType.series.forEach(s => {
+    breadcrumbType.series.forEach((s: any) => {
       const name = s.name.toLowerCase();
-      if (name.includes('indoor') || breadcrumbType.id === 'indoor-screens') {
+      if (breadcrumbType.id === 'creative-screens' && (name.includes('indoor') || name.includes('outdoor'))) {
+        sideGroups.Transparent.push(s);
+      } else if (name.includes('indoor') || breadcrumbType.id === 'indoor-screens') {
         sideGroups.Indoor.push(s);
       } else if (name.includes('outdoor') || breadcrumbType.id === 'outdoor-screens') {
         sideGroups.Outdoor.push(s);
@@ -172,15 +183,20 @@ export default function Products() {
                 </Link>
                 {sideGroups.Indoor.length > 0 && (
                   <Link to={`/products/${breadcrumbType.id}/indoor`} style={{ textDecoration: "none", padding: "12px 16px", borderRadius: 8, border: "1px solid", borderColor: series === 'indoor' ? "var(--brand)" : "transparent", background: series === 'indoor' ? "var(--brand-alpha-05)" : "transparent", color: series === 'indoor' ? "var(--brand)" : "var(--text-secondary)", fontWeight: series === 'indoor' ? 700 : 500, transition: "all 0.2s" }} className="hover-bg-gray">
-                    Indoor LED Display
+                    {breadcrumbType.id === 'rental-screens' ? 'Rental Indoor LED Screens' : breadcrumbType.id === 'led-modules' ? 'Indoor LED Modules' : 'Indoor LED Display'}
                   </Link>
                 )}
                 {sideGroups.Outdoor.length > 0 && (
                   <Link to={`/products/${breadcrumbType.id}/outdoor`} style={{ textDecoration: "none", padding: "12px 16px", borderRadius: 8, border: "1px solid", borderColor: series === 'outdoor' ? "var(--brand)" : "transparent", background: series === 'outdoor' ? "var(--brand-alpha-05)" : "transparent", color: series === 'outdoor' ? "var(--brand)" : "var(--text-secondary)", fontWeight: series === 'outdoor' ? 700 : 500, transition: "all 0.2s" }} className="hover-bg-gray">
-                    Outdoor LED Display
+                    {breadcrumbType.id === 'rental-screens' ? 'Rental Outdoor LED Screens' : breadcrumbType.id === 'led-modules' ? 'Outdoor LED Modules' : 'Outdoor LED Display'}
                   </Link>
                 )}
-                {sideGroups.Others.map(s => (
+                {sideGroups.Transparent.length > 0 && (
+                  <Link to={`/products/${breadcrumbType.id}/transparent`} style={{ textDecoration: "none", padding: "12px 16px", borderRadius: 8, border: "1px solid", borderColor: series === 'transparent' ? "var(--brand)" : "transparent", background: series === 'transparent' ? "var(--brand-alpha-05)" : "transparent", color: series === 'transparent' ? "var(--brand)" : "var(--text-secondary)", fontWeight: series === 'transparent' ? 700 : 500, transition: "all 0.2s" }} className="hover-bg-gray">
+                    Transparent LED Displays
+                  </Link>
+                )}
+                {sideGroups.Others.map((s: any) => (
                   <Link key={s.id} to={`/products/${breadcrumbType.id}/${s.id}`} style={{ textDecoration: "none", padding: "12px 16px", borderRadius: 8, border: "1px solid", borderColor: series === s.id ? "var(--brand)" : "transparent", background: series === s.id ? "var(--brand-alpha-05)" : "transparent", color: series === s.id ? "var(--brand)" : "var(--text-secondary)", fontWeight: series === s.id ? 700 : 500, transition: "all 0.2s" }} className="hover-bg-gray">
                     {s.name}
                   </Link>
@@ -244,10 +260,10 @@ export default function Products() {
                 </div>
               )}
 
-              {/* Level 2 (Filtered: Indoor/Outdoor) */}
+              {/* Level 2 (Filtered: Indoor/Outdoor/Transparent) */}
               {productType && series && isFilter && breadcrumbType && (
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 32 }}>
-                  {(series === 'indoor' ? sideGroups.Indoor : sideGroups.Outdoor).map((s, i) => (
+                  {(series === 'indoor' ? sideGroups.Indoor : series === 'outdoor' ? sideGroups.Outdoor : sideGroups.Transparent).map((s: any, i: number) => (
                     <ProductCard key={s.id} name={s.name} description={s.description} image={s.image} tags={[]} link={`/products/${breadcrumbType.id}/${s.id}`} index={i} />
                   ))}
                 </div>

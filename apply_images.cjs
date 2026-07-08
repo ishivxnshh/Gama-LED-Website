@@ -9,7 +9,7 @@ const mappings = {
   'gob-modules': 'GOB MODULE GAMA GOB MODULE.png',
 
   // indoor.ts
-  'ma960-indoor': 'INDOOR FIXED.png',
+  'ma960-indoor': 'MA 960 INDOOR-OUTDOOR.png',
   'ev960': 'OUTDOOR SCREEN EV 960 - GAMA OV 960.png',
   'ma640s-indoor': 'INDOOR SCREEN MA640S - GAMA I- 640.png',
   'ma600-smd': 'INDOOR SCREEN MA600 - GAMA I-600.png',
@@ -18,9 +18,8 @@ const mappings = {
   'indoor-fixed': 'INDOOR FIXED.png',
 
   // outdoor.ts
-  'ma960-outdoor': 'OUTDOOR FIXED.png',
+  'ma960-outdoor': 'MA 960 INDOOR-OUTDOOR.png',
   'es960-outdoor': 'OUTDOOR SCREEN ES 960 - GAMA OS960.png',
-  'of800-outdoor': 'OUTDOOR FIXED.png',
   'of1000-outdoor': 'OUTDOOR SCREEN OF 1000 - GAMA OF 1000.png',
   'outdoor-fixed': 'OUTDOOR FIXED.png',
   'ev1000-outdoor-3d': 'OUTDOOR SCREEN EV 1000 - GAMA OEV 1000.png',
