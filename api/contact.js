@@ -33,7 +33,7 @@ export default async function handler(req, res) {
   // Guard: make sure API key is loaded
   if (!process.env.RESEND_API_KEY) {
     console.error('RESEND_API_KEY is not set in environment variables');
-    return res.status(500).json({ error: 'Server configuration error. Please contact us directly at GAMALED2026@gmail.com' });
+    return res.status(500).json({ error: 'Server configuration error. Please contact us directly at contact@gamaled.co.in' });
   }
 
   const resend = new Resend(process.env.RESEND_API_KEY);
@@ -118,7 +118,7 @@ export default async function handler(req, res) {
   try {
     const { error } = await resend.emails.send({
       from: 'Gama LED Website <noreply@mail.gamaled.co.in>',
-      to: ['GAMALED2026@gmail.com'],
+      to: ['contact@gamaled.co.in'],
       replyTo: email,
       subject: `New Website Enquiry - ${name}`,
       html: emailHtml,

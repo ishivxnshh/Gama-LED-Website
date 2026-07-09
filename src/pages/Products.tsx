@@ -39,7 +39,9 @@ export default function Products() {
             headerTitle = `Transparent LED Displays`;
             breadcrumbSeries = { id: series, name: 'Transparent LED Displays', description: '', products: [] };
           } else {
-            headerTitle = `${series === 'indoor' ? 'Indoor' : 'Outdoor'} ${typeObj.name}`;
+            headerTitle = typeObj.id === 'fixed-screens'
+              ? (series === 'indoor' ? 'Indoor LED Screens' : 'Outdoor LED Screens')
+              : `${series === 'indoor' ? 'Indoor' : 'Outdoor'} ${typeObj.name}`;
             breadcrumbSeries = { id: series, name: typeObj.id === 'rental-screens' ? (series === 'indoor' ? 'Rental Indoor LED Screens' : 'Rental Outdoor LED Screens') : typeObj.id === 'led-modules' ? (series === 'indoor' ? 'Indoor LED Modules' : 'Outdoor LED Modules') : (series === 'indoor' ? 'Indoor LED Display' : 'Outdoor LED Display'), description: '', products: [] };
           }
         } else {
