@@ -109,7 +109,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 style={{ fontSize: 14, fontWeight: 700, color: "var(--text-primary)" }}>Email Support</h4>
-                    <p style={{ fontSize: 14, color: "var(--text-secondary)", marginTop: 4 }}>gamaled2026@gmail.com</p>
+                    <p style={{ fontSize: 14, color: "var(--text-secondary)", marginTop: 4 }}>contact@gamaled.co.in</p>
                   </div>
                 </div>
               </div>

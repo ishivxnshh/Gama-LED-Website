@@ -54,8 +54,8 @@ export default function Footer() {
             <div style={{ display: "flex", gap: 16, alignItems: "center", borderLeft: "1px solid var(--border-color)", paddingLeft: 24 }}>
               <a href="https://facebook.com" target="_blank" rel="noreferrer" style={{ color: "var(--text-secondary)", display: "flex" }} className="hover:text-brand transition-colors"><FacebookIcon /></a>
               <a href="https://twitter.com" target="_blank" rel="noreferrer" style={{ color: "var(--text-secondary)", display: "flex" }} className="hover:text-brand transition-colors"><TwitterIcon /></a>
-              <a href="https://instagram.com" target="_blank" rel="noreferrer" style={{ color: "var(--text-secondary)", display: "flex" }} className="hover:text-brand transition-colors"><InstagramIcon /></a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" style={{ color: "var(--text-secondary)", display: "flex" }} className="hover:text-brand transition-colors"><LinkedinIcon /></a>
+              <a href="https://www.instagram.com/gamaled2026?igsh=MWdhMXJvemEwN2I4Zg==" target="_blank" rel="noreferrer" style={{ color: "var(--text-secondary)", display: "flex" }} className="hover:text-brand transition-colors"><InstagramIcon /></a>
+              <a href="https://www.linkedin.com/in/gama-led-ba380241b" target="_blank" rel="noreferrer" style={{ color: "var(--text-secondary)", display: "flex" }} className="hover:text-brand transition-colors"><LinkedinIcon /></a>
             </div>
           </div>
         </div>

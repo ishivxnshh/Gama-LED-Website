@@ -95,68 +95,68 @@ export const ledModules: LEDProductType = {
     },
     {
       id: "flexible-modules",
-      name: "320x160 Flexible Modules",
+      name: "320x160 GAMA FLEXIBLE MODULEs",
       description: "Bendable and flexible 320x160mm LED modules for curved and creative shapes.",
-      image: "/products/FLEXIBLE MODULE GAMA FLEXIBLE MODULE.png",
+      image: "/products/GAMA FLEXIBLE MODULE.png",
       products: [
         {
-          id: "flex-mod-p1-86", name: "Flexible Module P1.86", description: "P1.86mm Flexible LED Module", image: "/products/FLEXIBLE MODULE GAMA FLEXIBLE MODULE.png", pixelPitch: "1.86mm", brightness: "700-750 Nits",
+          id: "flex-mod-p1-86", name: "GAMA FLEXIBLE MODULE P1.86", description: "P1.86mm Flexible LED Module", image: "/products/GAMA FLEXIBLE MODULE.png", pixelPitch: "1.86mm", brightness: "700-750 Nits",
           specifications: { "Pixel Pitch": "1.86mm", "LED Type": "SMD1515", "Density": "288906 dot/m²", "Module Pixel": "172*86", "Module Size": "320*160 mm", "Driving Mode": "1/43 Scan", "Brightness": "700-750 Nits" }
         },
         {
-          id: "flex-mod-p2", name: "Flexible Module P2", description: "P2mm Flexible LED Module", image: "/products/FLEXIBLE MODULE GAMA FLEXIBLE MODULE.png", pixelPitch: "2mm", brightness: "700-750 Nits",
+          id: "flex-mod-p2", name: "GAMA FLEXIBLE MODULE P2", description: "P2mm Flexible LED Module", image: "/products/GAMA FLEXIBLE MODULE.png", pixelPitch: "2mm", brightness: "700-750 Nits",
           specifications: { "Pixel Pitch": "2mm", "LED Type": "SMD1515", "Density": "250000 dot/m²", "Module Pixel": "160*80", "Module Size": "320*160 mm", "Driving Mode": "1/40 Scan", "Brightness": "700-750 Nits" }
         },
         {
-          id: "flex-mod-p2-5", name: "Flexible Module P2.5", description: "P2.5mm Flexible LED Module", image: "/products/FLEXIBLE MODULE GAMA FLEXIBLE MODULE.png", pixelPitch: "2.5mm", brightness: "700-750 Nits",
+          id: "flex-mod-p2-5", name: "GAMA FLEXIBLE MODULE P2.5", description: "P2.5mm Flexible LED Module", image: "/products/GAMA FLEXIBLE MODULE.png", pixelPitch: "2.5mm", brightness: "700-750 Nits",
           specifications: { "Pixel Pitch": "2.5mm", "LED Type": "SMD1515", "Density": "160000 dot/m²", "Module Pixel": "128*64", "Module Size": "320*160 mm", "Driving Mode": "1/32 Scan", "Brightness": "700-750 Nits" }
         },
         {
-          id: "flex-mod-p3", name: "Flexible Module P3", description: "P3mm Flexible LED Module", image: "/products/FLEXIBLE MODULE GAMA FLEXIBLE MODULE.png", pixelPitch: "3mm", brightness: "650-750 Nits",
+          id: "flex-mod-p3", name: "GAMA FLEXIBLE MODULE P3", description: "P3mm Flexible LED Module", image: "/products/GAMA FLEXIBLE MODULE.png", pixelPitch: "3mm", brightness: "650-750 Nits",
           specifications: { "Pixel Pitch": "3mm", "LED Type": "SMD1515", "Density": "105625 dot/m²", "Module Pixel": "104*52", "Module Size": "320*160 mm", "Driving Mode": "1/26 Scan", "Brightness": "650-750 Nits" }
         },
         {
-          id: "flex-mod-p4", name: "Flexible Module P4", description: "P4mm Flexible LED Module", image: "/products/FLEXIBLE MODULE GAMA FLEXIBLE MODULE.png", pixelPitch: "4mm", brightness: "700-750 Nits",
+          id: "flex-mod-p4", name: "GAMA FLEXIBLE MODULE P4", description: "P4mm Flexible LED Module", image: "/products/GAMA FLEXIBLE MODULE.png", pixelPitch: "4mm", brightness: "700-750 Nits",
           specifications: { "Pixel Pitch": "4mm", "LED Type": "SMD2020", "Density": "62500 dot/m²", "Module Pixel": "80*40", "Module Size": "320*160 mm", "Driving Mode": "1/20 Scan", "Brightness": "700-750 Nits" }
         }
       ]
     },
     {
       id: "gob-modules",
-      name: "320x160 GOB Modules",
+      name: "320x160 GAMA GOB MODULEs",
       description: "Glue-on-Board (GOB) protected 320x160mm modules for maximum durability and protection.",
-      image: "/products/GOB MODULE GAMA GOB MODULE.png",
+      image: "/products/GAMA GOB MODULE.png",
       products: [
         {
-          id: "gob-mod-p1-25", name: "GOB Module P1.25", description: "P1.25mm GOB LED Module", image: "/products/GOB MODULE GAMA GOB MODULE.png", pixelPitch: "1.25mm", brightness: "600-800 Nits",
+          id: "gob-mod-p1-25", name: "GAMA GOB MODULE P1.25", description: "P1.25mm GOB LED Module", image: "/products/GAMA GOB MODULE.png", pixelPitch: "1.25mm", brightness: "600-800 Nits",
           specifications: { "Pixel Pitch": "P1.25mm", "LED": "1010 (Black LED)", "Module Resolution": "256*128", "IC Number": "96", "Brightness": "600-800 Nits", "Module Size": "320*160 mm", "Driving Mode": "1/64 Scan" }
         },
         {
-          id: "gob-mod-p1-538", name: "GOB Module P1.538", description: "P1.538mm GOB LED Module", image: "/products/GOB MODULE GAMA GOB MODULE.png", pixelPitch: "1.538mm", brightness: "600-800 Nits",
+          id: "gob-mod-p1-538", name: "GAMA GOB MODULE P1.538", description: "P1.538mm GOB LED Module", image: "/products/GAMA GOB MODULE.png", pixelPitch: "1.538mm", brightness: "600-800 Nits",
           specifications: { "Pixel Pitch": "P1.538mm", "LED": "1010 (Black LED)", "Module Resolution": "208*104", "IC Number": "84", "Brightness": "600-800 Nits", "Module Size": "320*160 mm", "Driving Mode": "1/52 Scan" }
         },
         {
-          id: "gob-mod-p1-667", name: "GOB Module P1.667", description: "P1.667mm GOB LED Module", image: "/products/GOB MODULE GAMA GOB MODULE.png", pixelPitch: "1.667mm", brightness: "600-800 Nits",
+          id: "gob-mod-p1-667", name: "GAMA GOB MODULE P1.667", description: "P1.667mm GOB LED Module", image: "/products/GAMA GOB MODULE.png", pixelPitch: "1.667mm", brightness: "600-800 Nits",
           specifications: { "Pixel Pitch": "P1.667mm", "LED": "1010 (Black LED)", "Module Resolution": "192*96", "IC Number": "72", "Brightness": "600-800 Nits", "Module Size": "320*160 mm", "Driving Mode": "1/64 Scan" }
         },
         {
-          id: "gob-mod-p1-839", name: "GOB Module P1.839", description: "P1.839mm GOB LED Module", image: "/products/GOB MODULE GAMA GOB MODULE.png", pixelPitch: "1.839mm", brightness: "600-800 Nits",
+          id: "gob-mod-p1-839", name: "GAMA GOB MODULE P1.839", description: "P1.839mm GOB LED Module", image: "/products/GAMA GOB MODULE.png", pixelPitch: "1.839mm", brightness: "600-800 Nits",
           specifications: { "Pixel Pitch": "P1.839mm", "LED": "1515 (Black LED)", "Module Resolution": "174*87", "IC Number": "52", "Brightness": "600-800 Nits", "Module Size": "320*160 mm", "Driving Mode": "1/58 Scan" }
         },
         {
-          id: "gob-mod-p1-86", name: "GOB Module P1.86", description: "P1.86mm GOB LED Module", image: "/products/GOB MODULE GAMA GOB MODULE.png", pixelPitch: "1.86mm", brightness: "600-800 Nits",
+          id: "gob-mod-p1-86", name: "GAMA GOB MODULE P1.86", description: "P1.86mm GOB LED Module", image: "/products/GAMA GOB MODULE.png", pixelPitch: "1.86mm", brightness: "600-800 Nits",
           specifications: { "Pixel Pitch": "P1.86mm", "LED": "1515 (Black LED)", "Module Resolution": "172*86", "IC Number": "66", "Brightness": "600-800 Nits", "Module Size": "320*160 mm", "Driving Mode": "1/43 Scan" }
         },
         {
-          id: "gob-mod-p2", name: "GOB Module P2", description: "P2mm GOB LED Module", image: "/products/GOB MODULE GAMA GOB MODULE.png", pixelPitch: "2mm", brightness: "600-800 Nits",
+          id: "gob-mod-p2", name: "GAMA GOB MODULE P2", description: "P2mm GOB LED Module", image: "/products/GAMA GOB MODULE.png", pixelPitch: "2mm", brightness: "600-800 Nits",
           specifications: { "Pixel Pitch": "P2mm", "LED": "1515 (Black LED)", "Module Resolution": "160*80", "IC Number": "60", "Brightness": "600-800 Nits", "Module Size": "320*160 mm", "Driving Mode": "1/40 Scan" }
         },
         {
-          id: "gob-mod-p2-5", name: "GOB Module P2.5", description: "P2.5mm GOB LED Module", image: "/products/GOB MODULE GAMA GOB MODULE.png", pixelPitch: "2.5mm", brightness: "800-1000 Nits",
+          id: "gob-mod-p2-5", name: "GAMA GOB MODULE P2.5", description: "P2.5mm GOB LED Module", image: "/products/GAMA GOB MODULE.png", pixelPitch: "2.5mm", brightness: "800-1000 Nits",
           specifications: { "Pixel Pitch": "P2.5mm", "LED": "2121 (Black LED)", "Module Resolution": "128*64", "IC Number": "48", "Brightness": "800-1000 Nits", "Module Size": "320*160 mm", "Driving Mode": "1/32 Scan" }
         },
         {
-          id: "gob-mod-p3-076", name: "GOB Module P3.076", description: "P3.076mm GOB LED Module", image: "/products/GOB MODULE GAMA GOB MODULE.png", pixelPitch: "3.076mm", brightness: "800-1000 Nits",
+          id: "gob-mod-p3-076", name: "GAMA GOB MODULE P3.076", description: "P3.076mm GOB LED Module", image: "/products/GAMA GOB MODULE.png", pixelPitch: "3.076mm", brightness: "800-1000 Nits",
           specifications: { "Pixel Pitch": "P3.076mm", "LED": "2121 (Black LED)", "Module Resolution": "104*52", "IC Number": "42", "Brightness": "800-1000 Nits", "Module Size": "320*160 mm", "Driving Mode": "1/26 Scan" }
         }
       ]

@@ -83,7 +83,11 @@ export default function ProductDetail() {
                 </div>
                 <div>
                   <p style={{ fontSize: 12, color: "var(--text-secondary)", textTransform: "uppercase", fontWeight: 600 }}>Refresh Rate</p>
-                  <p style={{ fontSize: 16, color: "var(--text-primary)", fontWeight: 700 }}>{prod.refreshRate || (prod.specifications && prod.specifications["Refresh Rate"]) || "N/A"}</p>
+                  <p style={{ fontSize: 16, color: "var(--text-primary)", fontWeight: 700 }}>
+                    {prod.refreshRate || 
+                     (prod.specifications && Object.entries(prod.specifications).find(([k]) => k.toLowerCase().includes("refresh"))?.[1]) || 
+                     "N/A"}
+                  </p>
                 </div>
               </div>
             </div>

@@ -97,7 +97,7 @@ export default function Home() {
               { title: "Front & Rear Maintenance", desc: "Innovative cabinet designs allow for easy installation and maintenance in any environment." },
               { title: "Customized Solutions", desc: "From unique shapes to specific pixel pitches, we engineer solutions tailored to your project." },
               { title: "24×7 Technical Support", desc: "Global support network ready to assist you round the clock for any technical challenges." },
-              { title: "Global Installation", desc: "Thousands of successful projects deployed across commercial, sports, and broadcast sectors worldwide." }
+              { title: "Pan India Installation", desc: "Thousands of successful projects deployed across commercial, sports, and broadcast sectors nationwide." }
             ].map((item, i) => (
               <motion.div key={item.title} initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, type: "spring", stiffness: 100 }}
                 whileHover={{ y: -8, scale: 1.02 }}
