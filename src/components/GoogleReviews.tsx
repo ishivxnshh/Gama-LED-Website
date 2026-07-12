@@ -39,7 +39,7 @@ export default function GoogleReviews() {
 
         <div className="md-grid-3" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 24 }}>
           {reviews.map((review, i) => (
-            <motion.div key={i} initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, type: "spring", stiffness: 100 }}
+            <motion.div key={i} initial={{ opacity: 0, x: i % 3 === 0 ? -50 : (i % 3 === 2 ? 50 : 0), y: i % 3 === 1 ? 50 : 0 }} whileInView={{ opacity: 1, x: 0, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, type: "spring", stiffness: 100 }}
               whileHover={{ y: -8, scale: 1.02 }}
               style={{ background: "var(--bg-secondary)", padding: 32, borderRadius: 24, border: "1px solid var(--border-color)", cursor: "default", display: "flex", flexDirection: "column" }} className="hover:shadow-md transition-all">
               

@@ -68,7 +68,7 @@ export default function Home() {
           </motion.div>
           <div className="md-grid-4" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 24 }}>
             {applications.map((app, i) => (
-              <motion.div key={app.name} initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05, type: "spring", stiffness: 100 }}
+              <motion.div key={app.name} initial={{ opacity: 0, x: i % 4 < 2 ? -50 : 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05, type: "spring", stiffness: 100 }}
                 whileHover={{ y: -8, scale: 1.02 }}
                 style={{ background: "var(--bg-secondary)", padding: "32px 16px", borderRadius: 16, textAlign: "center", border: "1px solid var(--border-color)", cursor: "default" }} className="hover:shadow-md transition-all group hover:border-gray-900">
                 <motion.div style={{ width: 64, height: 64, margin: "0 auto 20px", background: "var(--bg-primary)", color: "var(--text-primary)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "var(--shadow-sm)" }} whileHover={{ rotate: 10, scale: 1.15 }} transition={{ type: "spring", stiffness: 300 }}>
@@ -99,7 +99,7 @@ export default function Home() {
               { title: "24×7 Technical Support", desc: "Global support network ready to assist you round the clock for any technical challenges." },
               { title: "Pan India Installation", desc: "Thousands of successful projects deployed across commercial, sports, and broadcast sectors nationwide." }
             ].map((item, i) => (
-              <motion.div key={item.title} initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, type: "spring", stiffness: 100 }}
+              <motion.div key={item.title} initial={{ opacity: 0, x: i % 3 === 0 ? -50 : (i % 3 === 2 ? 50 : 0), y: i % 3 === 1 ? 50 : 0 }} whileInView={{ opacity: 1, x: 0, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, type: "spring", stiffness: 100 }}
                 whileHover={{ y: -8, scale: 1.02 }}
                 style={{ background: "var(--glass-bg)", padding: 40, borderRadius: 24, border: "1px solid var(--glass-border)", cursor: "default" }}>
                 <h3 style={{ fontFamily: "var(--font-display)", fontSize: 18, fontWeight: 800, marginBottom: 12, color: "var(--text-primary)", letterSpacing: "-0.01em" }}>{item.title}</h3>
@@ -154,7 +154,7 @@ export default function Home() {
                   icon: <><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><polyline points="17 11 19 13 23 9" /></>
                 }
               ].map((step, i) => (
-                <motion.div key={step.num} initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15, type: "spring", stiffness: 100 }} whileHover={{ y: -8 }} style={{ textAlign: "center", cursor: "default" }}>
+                <motion.div key={step.num} initial={{ opacity: 0, x: i % 4 < 2 ? -50 : 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15, type: "spring", stiffness: 100 }} whileHover={{ y: -8 }} style={{ textAlign: "center", cursor: "default" }}>
                   <motion.div style={{ position: "relative", width: 120, height: 120, margin: "0 auto 32px" }} whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 300 }}>
                     {/* White Circle Background */}
                     <div style={{ width: "100%", height: "100%", background: "var(--bg-secondary)", borderRadius: "50%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", boxShadow: "var(--shadow-sm)" }}>
@@ -193,7 +193,7 @@ export default function Home() {
           </motion.div>
           <div className="md-grid-4" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 24 }}>
             {projects.map((proj, i) => (
-              <motion.div key={proj.title} initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, type: "spring", stiffness: 100 }}
+              <motion.div key={proj.title} initial={{ opacity: 0, x: i % 3 === 0 ? -50 : (i % 3 === 2 ? 50 : 0), y: i % 3 === 1 ? 50 : 0 }} whileInView={{ opacity: 1, x: 0, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, type: "spring", stiffness: 100 }}
                 whileHover={{ scale: 1.02, y: -8 }}
                 style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "4/3", cursor: "pointer" }} className="group shadow-lg">
                 <img src={proj.image} alt={proj.title} style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.5s ease" }} className="group-hover:scale-105" />
