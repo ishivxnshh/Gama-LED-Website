@@ -6,41 +6,41 @@ export const outdoorScreens: LEDProductType = {
   description: "Durable, high-brightness LED displays engineered for outdoor advertising and events.",
   series: [
     {
-      id: "ma960-outdoor",
-      name: "MA960 OUTDOOR LED SCREEN",
+      id: "oa960-outdoor",
+      name: "OA960 OUTDOOR LED SCREEN",
       description: "Die-casting magnesium alloy outdoor displays.",
       image: "/products/MA 960 INDOOR-OUTDOOR.png",
       products: [
         {
-          id: "ma960-out-2-5", name: "MA960 Outdoor 2.5mm", description: "2.5mm Outdoor Screen", image: "/products/MA 960 INDOOR-OUTDOOR.png", pixelPitch: "2.5mm", brightness: "5000-5500 Nits",
+          id: "oa960-out-2-5", name: "OA960 Outdoor 2.5mm", description: "2.5mm Outdoor Screen", image: "/products/MA 960 INDOOR-OUTDOOR.png", pixelPitch: "2.5mm", brightness: "5000-5500 Nits",
           specifications: { "Pixel Pitch": "2.5mm", "LED": "SMD 3in1", "Module size": "320*160mm", "Module resolution": "128*64dots", "Density": "384×384 pixels/pc", "LED cabinet size": "960*960*87(mm)", "Cabinet weight": "28kg/pc", "Material": "Die Casting Magnesium Alloy", "Brightness": "5000-5500 cd/m2 (Nits)", "Avg power consumption": "408W/PC", "Max power consumption": "680W/PC", "Grey level": "14 bits", "Refresh frequency": "3840Hz or 7680Hz", "Humidity-operating": "10% ~ 95%", "Screen life": "≥100000 hours", "Controlling mode": "Synch or Async", "Certificates": "CE, RoHs, FCC, UL", "Protective grade": "IP65 Waterproof" }
         },
         {
-          id: "ma960-out-3-07", name: "MA960 Outdoor 3.07mm", description: "3.07mm Outdoor Screen", image: "/products/MA 960 INDOOR-OUTDOOR.png", pixelPitch: "3.07mm", brightness: "5000-5500 Nits",
+          id: "oa960-out-3-07", name: "OA960 Outdoor 3.07mm", description: "3.07mm Outdoor Screen", image: "/products/MA 960 INDOOR-OUTDOOR.png", pixelPitch: "3.07mm", brightness: "5000-5500 Nits",
           specifications: { "Pixel Pitch": "3.07mm", "LED": "SMD 3in1", "Module size": "320*160mm", "Module resolution": "104*52dots", "Density": "312×312 pixels/pc", "LED cabinet size": "960*960*87(mm)", "Cabinet weight": "28kg/pc", "Material": "Die Casting Magnesium Alloy", "Brightness": "5000-5500 cd/m2 (Nits)", "Avg power consumption": "432W/PC", "Max power consumption": "720W/PC", "Grey level": "14 bits", "Refresh frequency": "3840Hz or 7680Hz", "Humidity-operating": "10% ~ 95%", "Screen life": "≥100000 hours", "Controlling mode": "Synch or Async", "Certificates": "CE, RoHs, FCC, UL", "Protective grade": "IP65 Waterproof" }
         },
         {
-          id: "ma960-out-3-33", name: "MA960 Outdoor 3.33mm", description: "3.33mm Outdoor Screen", image: "/products/MA 960 INDOOR-OUTDOOR.png", pixelPitch: "3.33mm", brightness: "5000-5500 Nits",
+          id: "oa960-out-3-33", name: "OA960 Outdoor 3.33mm", description: "3.33mm Outdoor Screen", image: "/products/MA 960 INDOOR-OUTDOOR.png", pixelPitch: "3.33mm", brightness: "5000-5500 Nits",
           specifications: { "Pixel Pitch": "3.33mm", "LED": "SMD 3in1", "Module size": "320*160mm", "Module resolution": "96*48dots", "Density": "288×288 pixels/pc", "LED cabinet size": "960*960*87(mm)", "Cabinet weight": "28kg/pc", "Material": "Die Casting Magnesium Alloy", "Brightness": "5000-5500 cd/m2 (Nits)", "Avg power consumption": "432W/PC", "Max power consumption": "720W/PC", "Grey level": "14 bits", "Refresh frequency": "3840Hz or 7680Hz", "Humidity-operating": "10% ~ 95%", "Screen life": "≥100000 hours", "Controlling mode": "Synch or Async", "Certificates": "CE, RoHs, FCC, UL", "Protective grade": "IP65 Waterproof" }
         },
         {
-          id: "ma960-out-4", name: "MA960 Outdoor 4mm", description: "4mm Outdoor Screen", image: "/products/MA 960 INDOOR-OUTDOOR.png", pixelPitch: "4mm", brightness: "5000-5500 Nits",
+          id: "oa960-out-4", name: "OA960 Outdoor 4mm", description: "4mm Outdoor Screen", image: "/products/MA 960 INDOOR-OUTDOOR.png", pixelPitch: "4mm", brightness: "5000-5500 Nits",
           specifications: { "Pixel Pitch": "4mm", "LED": "SMD 3in1", "Module size": "320*160mm", "Module resolution": "80*40dots", "Density": "240×240 pixels/pc", "LED cabinet size": "960*960*87(mm)", "Cabinet weight": "28kg/pc", "Material": "Die Casting Magnesium Alloy", "Brightness": "5000-5500 cd/m2 (Nits)", "Avg power consumption": "408W/PC", "Max power consumption": "680W/PC", "Grey level": "14 bits", "Refresh frequency": "3840Hz or 7680Hz", "Humidity-operating": "10% ~ 95%", "Screen life": "≥100000 hours", "Controlling mode": "Synch or Async", "Certificates": "CE, RoHs, FCC, UL", "Protective grade": "IP65 Waterproof" }
         },
         {
-          id: "ma960-out-5", name: "MA960 Outdoor 5mm", description: "5mm Outdoor Screen", image: "/products/MA 960 INDOOR-OUTDOOR.png", pixelPitch: "5mm", brightness: "5000-5500 Nits",
+          id: "oa960-out-5", name: "OA960 Outdoor 5mm", description: "5mm Outdoor Screen", image: "/products/MA 960 INDOOR-OUTDOOR.png", pixelPitch: "5mm", brightness: "5000-5500 Nits",
           specifications: { "Pixel Pitch": "5mm", "LED": "SMD 3in1", "Module size": "320*160mm", "Module resolution": "64*32dots", "Density": "192×192 pixels/pc", "LED cabinet size": "960*960*87(mm)", "Cabinet weight": "28kg/pc", "Material": "Die Casting Magnesium Alloy", "Brightness": "5000-5500 cd/m2 (Nits)", "Avg power consumption": "380W/PC", "Max power consumption": "630W/PC", "Grey level": "14 bits", "Refresh frequency": "3840Hz or 7680Hz", "Humidity-operating": "10% ~ 95%", "Screen life": "≥100000 hours", "Controlling mode": "Synch or Async", "Certificates": "CE, RoHs, FCC, UL", "Protective grade": "IP65 Waterproof" }
         },
         {
-          id: "ma960-out-6-67", name: "MA960 Outdoor 6.67mm", description: "6.67mm Outdoor Screen", image: "/products/MA 960 INDOOR-OUTDOOR.png", pixelPitch: "6.67mm", brightness: "5000-5500 Nits",
+          id: "oa960-out-6-67", name: "OA960 Outdoor 6.67mm", description: "6.67mm Outdoor Screen", image: "/products/MA 960 INDOOR-OUTDOOR.png", pixelPitch: "6.67mm", brightness: "5000-5500 Nits",
           specifications: { "Pixel Pitch": "6.67mm", "LED": "SMD 3in1", "Module size": "320*160mm", "Module resolution": "48*24dots", "Density": "144×144 pixels/pc", "LED cabinet size": "960*960*87(mm)", "Cabinet weight": "28kg/pc", "Material": "Die Casting Magnesium Alloy", "Brightness": "5000-5500 cd/m2 (Nits)", "Avg power consumption": "408W/PC", "Max power consumption": "680W/PC", "Grey level": "14 bits", "Refresh frequency": "3840Hz or 7680Hz", "Humidity-operating": "10% ~ 95%", "Screen life": "≥100000 hours", "Controlling mode": "Synch or Async", "Certificates": "CE, RoHs, FCC, UL", "Protective grade": "IP65 Waterproof" }
         },
         {
-          id: "ma960-out-8", name: "MA960 Outdoor 8mm", description: "8mm Outdoor Screen", image: "/products/MA 960 INDOOR-OUTDOOR.png", pixelPitch: "8mm", brightness: "5000-5500 Nits",
+          id: "oa960-out-8", name: "OA960 Outdoor 8mm", description: "8mm Outdoor Screen", image: "/products/MA 960 INDOOR-OUTDOOR.png", pixelPitch: "8mm", brightness: "5000-5500 Nits",
           specifications: { "Pixel Pitch": "8mm", "LED": "SMD 3in1", "Module size": "320*160mm", "Module resolution": "40*20dots", "Density": "120x120 pixels/pc", "LED cabinet size": "960*960*87(mm)", "Cabinet weight": "28kg/pc", "Material": "Die Casting Magnesium Alloy", "Brightness": "5000-5500 cd/m2 (Nits)", "Avg power consumption": "408W/PC", "Max power consumption": "680W/PC", "Grey level": "14 bits", "Refresh frequency": "3840Hz or 7680Hz", "Humidity-operating": "10% ~ 95%", "Screen life": "≥100000 hours", "Controlling mode": "Synch or Async", "Certificates": "CE, RoHs, FCC, UL", "Protective grade": "IP65 Waterproof" }
         },
         {
-          id: "ma960-out-10", name: "MA960 Outdoor 10mm", description: "10mm Outdoor Screen", image: "/products/MA 960 INDOOR-OUTDOOR.png", pixelPitch: "10mm", brightness: "6000-6500 Nits",
+          id: "oa960-out-10", name: "OA960 Outdoor 10mm", description: "10mm Outdoor Screen", image: "/products/MA 960 INDOOR-OUTDOOR.png", pixelPitch: "10mm", brightness: "6000-6500 Nits",
           specifications: { "Pixel Pitch": "10mm", "LED": "SMD 3in1", "Module size": "320*160mm", "Module resolution": "32*16dots", "Density": "96×96 pixels/pc", "LED cabinet size": "960*960*87(mm)", "Cabinet weight": "28kg/pc", "Material": "Die Casting Magnesium Alloy", "Brightness": "6000-6500 cd/m2 (Nits)", "Avg power consumption": "408W/PC", "Max power consumption": "680W/PC", "Grey level": "14 bits", "Refresh frequency": "3840Hz or 7680Hz", "Humidity-operating": "10% ~ 95%", "Screen life": "≥100000 hours", "Controlling mode": "Synch or Async", "Certificates": "CE, RoHs, FCC, UL", "Protective grade": "IP65 Waterproof" }
         }
       ]

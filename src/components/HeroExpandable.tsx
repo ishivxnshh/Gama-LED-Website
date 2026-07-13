@@ -249,9 +249,9 @@ export default function HeroExpandable() {
                         <Globe2 size={24} color="#fff" />
                       </div>
                       <div>
-                        <h3 style={{ fontWeight: 600, fontSize: 18, margin: 0 }}>Global Support</h3>
+                        <h3 style={{ fontWeight: 600, fontSize: 18, margin: 0 }}>Pan India Support</h3>
                         <p style={{ color: "rgba(255,255,255,0.7)", fontSize: 14, lineHeight: 1.6, marginTop: 4 }}>
-                          Deploy anywhere with our extensive automated edge network and local support.
+                          Deploy anywhere with our extensive nationwide network and local support.
                         </p>
                       </div>
                     </div>
@@ -267,11 +267,11 @@ export default function HeroExpandable() {
                           height: 48, width: 48, borderRadius: 999, background: "linear-gradient(to top right, #fb923c, #ec4899)",
                           display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, fontWeight: 700, color: "#fff"
                         }}>
-                          ER
+                          MD
                         </div>
                         <div>
-                          <div style={{ fontWeight: 600 }}>Elena Rodriguez</div>
-                          <div style={{ fontSize: 14, color: "rgba(255,255,255,0.7)" }}>Creative Director, Lumina</div>
+                          <div style={{ fontWeight: 600 }}>Manas Daruka</div>
+                          <div style={{ fontSize: 14, color: "rgba(255,255,255,0.7)" }}>Co Founder, Gama LED</div>
                         </div>
                       </figcaption>
                     </figure>
