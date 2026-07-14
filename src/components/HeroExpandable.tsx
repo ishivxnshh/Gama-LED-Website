@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { X, Check, Monitor, Globe2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { GodRays, MeshGradient } from "@paper-design/shaders-react";
@@ -22,12 +22,12 @@ export default function HeroExpandable() {
     setTimeout(() => { setFormStep("idle"); setFormError(""); }, 500);
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormError("");
     setFormStep("submitting");
-    const formData = new FormData(e.target as HTMLFormElement);
-    const payload = Object.fromEntries(formData);
+    const formData = new FormData(e.currentTarget);
+    const payload = Object.fromEntries(formData.entries());
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -41,7 +41,8 @@ export default function HeroExpandable() {
       } else {
         setFormStep("success");
       }
-    } catch {
+    } catch (error) {
+      console.error(error);
       setFormError("Network error. Please check your connection and try again.");
       setFormStep("idle");
     }
@@ -260,7 +261,7 @@ export default function HeroExpandable() {
                   <div style={{ marginTop: "auto", paddingTop: 32, borderTop: "1px solid rgba(255,255,255,0.2)" }}>
                     <figure style={{ margin: 0 }}>
                       <blockquote style={{ fontSize: 20, fontWeight: 500, lineHeight: 1.6, marginBottom: 24, margin: 0 }}>
-                        "Gama LED transformed how we display content. We went from dull screens to vibrant digital art with zero downtime."
+                        {'"Gama LED transformed how we display content. We went from dull screens to vibrant digital art with zero downtime."'}
                       </blockquote>
                       <figcaption style={{ display: "flex", alignItems: "center", gap: 16 }}>
                         <div style={{
@@ -312,7 +313,7 @@ export default function HeroExpandable() {
                       <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 20 }}>
                         <div>
                           <h3 style={{ fontSize: 20, fontWeight: 600, color: "#fff", margin: "0 0 4px 0" }}>Get a Quote</h3>
-                          <p style={{ fontSize: 14, color: "rgba(255,255,255,0.8)", margin: 0 }}>Fill out the form below and we'll contact you.</p>
+                          <p style={{ fontSize: 14, color: "rgba(255,255,255,0.8)", margin: 0 }}>{"Fill out the form below and we'll contact you."}</p>
                         </div>
 
                         <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
