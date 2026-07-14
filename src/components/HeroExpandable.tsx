@@ -222,9 +222,6 @@ export default function HeroExpandable() {
                     <h2 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, lineHeight: 1.1, margin: 0 }}>
                       Ready to scale?
                     </h2>
-                    <p style={{ color: "rgba(255,255,255,0.8)", fontSize: 18, maxWidth: 450, margin: 0 }}>
-                      Join 4,000+ forward-thinking companies building the future with Gama LED.
-                    </p>
                   </div>
 
                   <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
