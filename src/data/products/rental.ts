@@ -9,10 +9,10 @@ export const rentalScreens: LEDProductType = {
       id: "ms500-ms1000-indoor",
       name: "GAMA RS500/RS1000 INDOOR RENTAL SERIES",
       description: "Premium indoor rental screens with versatile 500x500mm and 500x1000mm cabinet options.",
-      image: "/products/RENTAL SERIES GAMA RS SERIES.png",
+      image: "/products/GAMA RS500-RS1000 INDOOR RENTAL SERIES.png",
       products: [
         {
-          id: "ms-in-1-953", name: "GAMA RS Indoor 1.953mm", description: "1.953mm Indoor Rental Screen", image: "/products/RENTAL SERIES GAMA RS SERIES.png", pixelPitch: "1.953mm", brightness: "600-800 nits",
+          id: "ms-in-1-953", name: "GAMA RS Indoor 1.953mm", description: "1.953mm Indoor Rental Screen", image: "/products/GAMA RS500-RS1000 INDOOR RENTAL SERIES.png", pixelPitch: "1.953mm", brightness: "600-800 nits",
           specifications: { "Pixel pitch": "1.953mm", "Pixels (500x500)": "256×256", "Pixels (500x1000)": "256×512", "LED lifetime": "100,000h", "Brightness": "Indoor: 600-800nits", "Module size": "250*250mm", "Module resolution": "128*128dots", "Refresh rate": "3840Hz or 7680Hz", "Hor. viewing angle": "140° +/-5°", "Vert. viewing angle": "140° +/-5°", "Brightness uniformity": ">98%", "Dimming": "0-100%", "Grey Level": "14 bits", "Avg Power": "200 W/m²", "Max Power": "400 W/m²", "Voltage": "100-240V/50-60Hz", "Temp": "-10°C to +40°C", "Humidity": "10-80%", "IP rating": "IP50 for indoor, IP65 for outdoor", "Dimensions": "500 x 500 x 80 mm/500 x 1000 x 80 mm (WxHxD)", "Weight": "7.25kg (500x500)/12.5kg (500x1000)", "Serviceability": "Frontal & rear service for indoor, rear service for outdoor.", "Certifications": "CE, UL, FCC class A, RoHS, WEE, REACH" }
         },
         {
@@ -33,10 +33,10 @@ export const rentalScreens: LEDProductType = {
       id: "ms500-ms1000-outdoor",
       name: "GAMA RS500/RS1000 OUTDOOR RENTAL SERIES",
       description: "High brightness outdoor rental screens with rugged construction.",
-      image: "/products/RENTAL SERIES GAMA RS SERIES.png",
+      image: "/products/GAMA RS500-RS1000 OUTDOOR RENTAL SERIES.png",
       products: [
         {
-          id: "ms-out-2-604", name: "GAMA RS Outdoor 2.604mm", description: "2.604mm Outdoor Rental Screen", image: "/products/RENTAL SERIES GAMA RS SERIES.png", pixelPitch: "2.604mm", brightness: "4500-5000 nits",
+          id: "ms-out-2-604", name: "GAMA RS Outdoor 2.604mm", description: "2.604mm Outdoor Rental Screen", image: "/products/GAMA RS500-RS1000 OUTDOOR RENTAL SERIES.png", pixelPitch: "2.604mm", brightness: "4500-5000 nits",
           specifications: { "Pixel pitch": "2.604mm", "Pixels (500x500)": "192×192", "Pixels (500x1000)": "192×384", "LED lifetime": "100,000h", "Brightness": "Outdoor: 4500-5000 nits", "Module size": "250*250mm", "Module resolution": "96*96dots", "Refresh rate": "3840Hz or 7680Hz", "Hor. viewing angle": "140° +/-5°", "Vert. viewing angle": "140° +/-5°", "Brightness uniformity": ">98%", "Dimming": "0-100%", "Grey Level": "14 bits", "Avg Power": "320 W/m²", "Max Power": "640 W/m²", "Voltage": "100-240V/50-60Hz", "Temp": "-10°C to +40°C", "Humidity": "10-80%", "IP rating": "IP50 for indoor, IP65 for outdoor", "Dimensions": "500 x 500 x 80 mm/500 x 1000 x 80 mm (WxHxD)", "Weight": "7.25kg (500x500)/12.5kg (500x1000)", "Serviceability": "Frontal & rear service for indoor, rear service for outdoor.", "Certifications": "CE, UL, FCC class A, RoHS, WEE, REACH" }
         },
         {
@@ -57,10 +57,10 @@ export const rentalScreens: LEDProductType = {
       id: "my500-my1000-indoor",
       name: "GAMA RY500/RY1000 INDOOR SERIES",
       description: "Alternative indoor rental series with different cabinet specifications.",
-      image: "/products/RENTAL SERIES GAMA RY SERIES.png",
+      image: "/products/GAMA RY500-RY1000 INDOOR SERIES.png",
       products: [
         {
-          id: "my-in-1-5625", name: "GAMA RY Indoor 1.5625mm", description: "1.5625mm Indoor Rental Screen", image: "/products/RENTAL SERIES GAMA RY SERIES.png", pixelPitch: "1.5625mm", brightness: "600-800nits",
+          id: "my-in-1-5625", name: "GAMA RY Indoor 1.5625mm", description: "1.5625mm Indoor Rental Screen", image: "/products/GAMA RY500-RY1000 INDOOR SERIES.png", pixelPitch: "1.5625mm", brightness: "600-800nits",
           specifications: { "Pixel pitch": "1.5625mm", "Pixels (500x500)": "320×320", "Pixels (500x1000)": "320×640", "LED lifetime": "100,000h", "Brightness": "600-800nits", "Module size": "250*250mm", "Module resolution": "160*160dots", "Refresh rate": "3840Hz or 7680Hz", "Hor. viewing angle": "140° +/-5°", "Vert. viewing angle": "140° +/-5°", "Brightness uniformity": ">98%", "Dimming": "0-100%", "Grey Level": "14 bits", "Avg Power": "270 W/m²", "Max Power": "450 W/m²", "Voltage": "100-240V/50-60Hz", "Temp": "-10°C to +40°C", "Humidity": "10-80%", "IP rating": "IP50 for indoor", "Dimensions": "500 x 500 x 80 mm/500 x 1000 x 80 mm (WxHxD)", "Weight": "6kg (500x500)/11kg (500x1000)", "Serviceability": "Frontal & rear service for indoor", "Certifications": "CE, UL, FCC class A, RoHS, WEE, REACH" }
         },
         {
@@ -85,10 +85,10 @@ export const rentalScreens: LEDProductType = {
       id: "my500-my1000-outdoor",
       name: "GAMA RY500/RY1000 OUTDOOR SERIES",
       description: "Alternative outdoor rental series for all weather conditions.",
-      image: "/products/RENTAL SERIES GAMA RY SERIES.png",
+      image: "/products/GAMA RY500-RY1000 OUTDOOR SERIES.png",
       products: [
         {
-          id: "my-out-2-604", name: "GAMA RY Outdoor 2.604mm", description: "2.604mm Outdoor Rental Screen", image: "/products/RENTAL SERIES GAMA RY SERIES.png", pixelPitch: "2.604mm", brightness: "4500-5000 nits",
+          id: "my-out-2-604", name: "GAMA RY Outdoor 2.604mm", description: "2.604mm Outdoor Rental Screen", image: "/products/GAMA RY500-RY1000 OUTDOOR SERIES.png", pixelPitch: "2.604mm", brightness: "4500-5000 nits",
           specifications: { "Pixel pitch": "2.604mm", "Pixels (500x500)": "192×192", "Pixels (500x1000)": "192×384", "LED lifetime": "100,000h", "Brightness": "Outdoor: 4500-5000 nits", "Module size": "250*250mm", "Module resolution": "96*96dots", "Refresh rate": "3840Hz or 7680Hz", "Hor. viewing angle": "140° +/-5°", "Vert. viewing angle": "140° +/-5°", "Brightness uniformity": ">98%", "Dimming": "0-100%", "Grey Level": "14 bits", "Avg Power": "384 W/m²", "Max Power": "640 W/m²", "Voltage": "100-240V/50-60Hz", "Temp": "-10°C to +40°C", "Humidity": "10-80%", "IP rating": "IP65 for outdoor", "Dimensions": "500 x 500 x 80 mm/500 x 1000 x 80 mm (WxHxD)", "Weight": "6kg (500x500)/11kg (500x1000)", "Serviceability": "Front and rear service for outdoor", "Certifications": "CE, UL, FCC class A, RoHS, WEE, REACH" }
         },
         {
@@ -109,10 +109,10 @@ export const rentalScreens: LEDProductType = {
       id: "xr500-stage",
       name: "GAMA RX 500 STAGE SERIES",
       description: "High-performance stage display designed for virtual production and GAMA RX STAGE SCREENs.",
-      image: "/products/STAGE SCREEN GAMA RX STAGE SCREEN.png",
+      image: "/products/GAMA RX 500 STAGE SERIES.png",
       products: [
         {
-          id: "xr500-p2-604", name: "GAMA RX 500 P2.604", description: "P2.604mm GAMA RX STAGE SCREEN Display", image: "/products/STAGE SCREEN GAMA RX STAGE SCREEN.png", pixelPitch: "2.604mm", brightness: "≥1200 nit",
+          id: "xr500-p2-604", name: "GAMA RX 500 P2.604", description: "P2.604mm GAMA RX STAGE SCREEN Display", image: "/products/GAMA RX 500 STAGE SERIES.png", pixelPitch: "2.604mm", brightness: "≥1200 nit",
           specifications: { "LED Type": "1415", "Pixel Pitch": "P2.604mm", "Cabinet Size": "500 × 500 × 92 mm", "Cabinet Resolution": "192 × 192", "Cabinet Weight": "6.5kg", "Cabinet Material": "Die-cast Aluminum", "Module Size": "250 × 250 mm", "Brightness": "≥1200 (after calibration)", "Grayscale": "≥16 bit", "Refresh Rate": "3840Hz or 7680Hz", "Standard Color Temperature": "6500 ± 500 K", "Viewing Angle": "160 / 160 °", "Scanning Method": "1/8", "AC Operating Voltage": "100-240V", "Power Consumption (Max/Avg)": "450 / 150 W/m²", "Color Gamut": "≥95% DCI-P3", "HDR10": "Supported", "Storage Temperature": "-40 ~ +60 ℃", "Operating Temperature": "-10 ~ +40 ℃", "Storage Humidity": "10% ~ 90%", "Operating Humidity": "10% ~ 90%", "IP Rating (Front/Rear)": "IP60", "LED Lifetime": "100,000h", "Module Maintenance": "Front Maintenance", "Power & Others Maintenance": "Rear Maintenance", "Installation Method": "Front or Rear Installation" }
         }
       ]

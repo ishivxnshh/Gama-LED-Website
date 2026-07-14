@@ -9,10 +9,10 @@ export const outdoorScreens: LEDProductType = {
       id: "oa960-outdoor",
       name: "GAMA OA960 OUTDOOR LED SCREEN",
       description: "Die-casting magnesium alloy outdoor displays.",
-      image: "/products/MA 960 INDOOR-OUTDOOR.png",
+      image: "/products/GAMA OA960 OUTDOOR LED SCREEN.png",
       products: [
         {
-          id: "oa960-out-2-5", name: "GAMA OA960 Outdoor 2.5mm", description: "2.5mm Outdoor Screen", image: "/products/MA 960 INDOOR-OUTDOOR.png", pixelPitch: "2.5mm", brightness: "5000-5500 Nits",
+          id: "oa960-out-2-5", name: "GAMA OA960 Outdoor 2.5mm", description: "2.5mm Outdoor Screen", image: "/products/GAMA OA960 OUTDOOR LED SCREEN.png", pixelPitch: "2.5mm", brightness: "5000-5500 Nits",
           specifications: { "Pixel Pitch": "2.5mm", "LED": "SMD 3in1", "Module size": "320*160mm", "Module resolution": "128*64dots", "Density": "384×384 pixels/pc", "LED cabinet size": "960*960*87(mm)", "Cabinet weight": "28kg/pc", "Material": "Die Casting Magnesium Alloy", "Brightness": "5000-5500 cd/m2 (Nits)", "Avg power consumption": "408W/PC", "Max power consumption": "680W/PC", "Grey level": "14 bits", "Refresh frequency": "3840Hz or 7680Hz", "Humidity-operating": "10% ~ 95%", "Screen life": "≥100000 hours", "Controlling mode": "Synch or Async", "Certificates": "CE, RoHs, FCC, UL", "Protective grade": "IP65 Waterproof" }
         },
         {
@@ -49,10 +49,10 @@ export const outdoorScreens: LEDProductType = {
       id: "es960-outdoor",
       name: "GAMA OS960 OUTDOOR SERIES",
       description: "GAMA OS960 series robust outdoor displays.",
-      image: "/products/OUTDOOR SCREEN GAMA OS960.png",
+      image: "/products/GAMA OS960 OUTDOOR SERIES.png",
       products: [
         {
-          id: "es960-p4-4", name: "GAMA OS960 P4.4", description: "P4.4mm Outdoor Series", image: "/products/OUTDOOR SCREEN GAMA OS960.png", pixelPitch: "4.4mm", brightness: "6000 cd/m²",
+          id: "es960-p4-4", name: "GAMA OS960 P4.4", description: "P4.4mm Outdoor Series", image: "/products/GAMA OS960 OUTDOOR SERIES.png", pixelPitch: "4.4mm", brightness: "6000 cd/m²",
           specifications: { "Model Name": "P4.4", "Pixel Pitch": "4.4mm", "Pixel Density (pc)": "216×216", "LED Sealing Type": "SMD1921", "Module Size": "480*320 mm", "Module Resolution": "108*72", "Brightness - Standard": "6000 cd/m²", "Brightness - High": "8000–10000 cd/m²", "Grey Scale": "≥14 bit", "Refresh Rate": "3840Hz or 7680Hz", "Maximum Cabinet Power": "550 W", "Average Cabinet Power": "300 W", "Cabinet Size": "960*960 mm", "Cabinet Weight": "25 KG", "Cabinet Thickness": "87 mm", "Horizontal Viewing Angle": "160°", "Vertical Viewing Angle": "140°", "Input Voltage": "110-220V/200-240V", "Working Temperature": "-20~ +40 ℃", "Working Humidity": "10%~90%", "Storage Temperature": "-40~ +80 ℃", "Operation Humidity": "10%~90%", "Waterproof Level": "IP66", "Working Life": "50000h", "Working Environment": "Outdoor", "Installation Method": "Fixed Installation", "Maintenance": "Front & Rear Access" }
         },
         {
@@ -78,10 +78,10 @@ export const outdoorScreens: LEDProductType = {
       id: "of1000-outdoor",
       name: "GAMA OF 1000 OUTDOOR LED SCREEN",
       description: "Large 1000x1000mm cabinet size outdoor screens.",
-      image: "/products/GAMA OF 1000.png",
+      image: "/products/GAMA OF 1000 OUTDOOR LED SCREEN.png",
       products: [
         {
-          id: "of1000-p3-91", name: "GAMA OF 1000 P3.91", description: "P3.91mm GAMA OF 1000 Screen", image: "/products/GAMA OF 1000.png", pixelPitch: "3.91mm", brightness: "6000 cd/m²",
+          id: "of1000-p3-91", name: "GAMA OF 1000 P3.91", description: "P3.91mm GAMA OF 1000 Screen", image: "/products/GAMA OF 1000 OUTDOOR LED SCREEN.png", pixelPitch: "3.91mm", brightness: "6000 cd/m²",
           specifications: { "Model": "P3.91", "Pixel pitch": "3.91mm", "SMD type": "SMD1921", "Panel resolution(dots/pc)": "256×256", "Module resolution": "128X64", "Material of Panel": "Profiled aluminum", "Module dimension": "500X250 mm", "Panel size(mm)": "1000x1000x87", "Protective Grade": "IP65", "Flatness(mm)": "≤0.1", "Maintenance mode": "Front & Rear", "Weight of cabinet (kg/m2)": "30.5", "Brightness - Standard (cd/m²)": "6000", "Brightness - High (cd/m²)": "8000–10000", "Color temperature (K)": "8000-10000 optional", "Viewing angle(V/H)": "160°/160°", "Contrast ratio": "4000:1", "Drive mode": "1/8 scale", "Refresh rate": "3840Hz or 7680Hz", "Max power consumption(W/m2)": "510", "Avg. power consumption(W/m2)": "150-200" }
         },
         {
@@ -102,10 +102,10 @@ export const outdoorScreens: LEDProductType = {
       id: "outdoor-fixed",
       name: "OUTDOOR FIXED SERIES",
       description: "Standard outdoor fixed installation displays.",
-      image: "/products/OUTDOOR FIXED.png",
+      image: "/products/OUTDOOR FIXED SERIES.png",
       products: [
         {
-          id: "out-fixed-p8", name: "Outdoor Fixed P8", description: "P8mm Outdoor Fixed Display", image: "/products/OUTDOOR FIXED.png", pixelPitch: "8mm", brightness: "≥6000 cd/m2",
+          id: "out-fixed-p8", name: "Outdoor Fixed P8", description: "P8mm Outdoor Fixed Display", image: "/products/OUTDOOR FIXED SERIES.png", pixelPitch: "8mm", brightness: "≥6000 cd/m2",
           specifications: { "Pixel Pitch": "8mm", "LED Type": "SMD3535", "Scan Way": "1/4", "Module Dimension": "256*128 mm", "Module Pixel": "32×16", "Cabinet Dimension": "Customized Size", "Cabinet Resolution": "Depend on the size of Cabinet", "Module Maintenance": "Front or Rear", "Cabinet Material": "Iron Material", "Cabinet Weight": "50kg/m2", "Brightness": "≥6000 cd/m2", "Refresh rate": "3840Hz or 7680Hz", "Digital Processing": "14/16 Bit", "Gray Scale": "16384 Level", "Colors": "687 Million", "Color Temperature": "5000-9300 adjustable", "Brightness Control": "255", "Contrast Ratio": "4000:1", "Viewing Angle H/V": "150 / 160 Deg.", "AC Speration": "AC90-264 V", "Power Consumption (Max/Avg)": "800/250 W/m2", "Storage Tem.": "-4~140F/-20C~+60C", "Storage Humidity": "10%~85%", "Operating Tem.": "-4F~ 140F/-20C~+60C", "Operating Humidity": "10%~85%", "Lift time (50% brightness)": "100 Hour", "Control Mode": "Video Sync" }
         },
         {
@@ -134,10 +134,10 @@ export const outdoorScreens: LEDProductType = {
       id: "ev1000-outdoor-3d",
       name: "GAMA OEV 1000 OUTDOOR 3D SERIES",
       description: "Outdoor 3D series displays.",
-      image: "/products/OUTDOOR SCREEN GAMA OEV 1000.png",
+      image: "/products/GAMA OEV 1000 OUTDOOR 3D SERIES.png",
       products: [
         {
-          id: "ev1000-p2-9", name: "GAMA OEV 1000 P2.9", description: "P2.9mm GAMA OEV 1000 3D Series", image: "/products/OUTDOOR SCREEN GAMA OEV 1000.png", pixelPitch: "2.97mm", brightness: "4500 nits",
+          id: "ev1000-p2-9", name: "GAMA OEV 1000 P2.9", description: "P2.9mm GAMA OEV 1000 3D Series", image: "/products/GAMA OEV 1000 OUTDOOR 3D SERIES.png", pixelPitch: "2.97mm", brightness: "4500 nits",
           specifications: { "Item Number": "P2.9", "Pixel Pitch": "2.97mm", "Pixel Density": "112896", "LED Arrangement": "SMD1515", "Refresh Rate": "3840Hz or 7680Hz", "Cabinet Size/mm": "500*1000", "Module Size/mm": "250*250", "Module Resolution": "84*84", "Brightness(nits)": "4500", "Max Consumption": "700", "Ave Consumption": "280", "Visual Angle (Hor./Vert.)": "140/140", "Grey Scale(Bit)": "≥14", "Protecting Rating": "IP66", "Certificate": "EMC,CE, ETL,FCC, CB" }
         },
         {
@@ -147,6 +147,30 @@ export const outdoorScreens: LEDProductType = {
         {
           id: "ev1000-p4-8", name: "GAMA OEV 1000 P4.8", description: "P4.8mm GAMA OEV 1000 3D Series", image: "/products/OUTDOOR SCREEN GAMA OEV 1000.png", pixelPitch: "4.81mm", brightness: "6500 nits",
           specifications: { "Item Number": "P4.8", "Pixel Pitch": "4.81mm", "Pixel Density": "43264", "LED Arrangement": "SMD1921", "Refresh Rate": "3840Hz or 7680Hz", "Cabinet Size/mm": "500*1000", "Module Size/mm": "500*250", "Module Resolution": "108*52", "Brightness(nits)": "6500", "Max Consumption": "760", "Ave Consumption": "300", "Visual Angle (Hor./Vert.)": "140/140", "Grey Scale(Bit)": "≥14", "Protecting Rating": "IP66", "Certificate": "EMC,CE, ETL,FCC, CB" }
+        }
+      ]
+    },
+    {
+      id: "ov960-outdoor",
+      name: "GAMA OV-960 OUTDOOR SERIES",
+      description: "High brightness GAMA OV-960 series outdoor displays.",
+      image: "/products/GAMA OV-960 OUTDOOR SERIES.png",
+      products: [
+        {
+          id: "ov960-p5-7", name: "GAMA OV-960 P5.7", description: "P5.7mm Outdoor Display", image: "/products/GAMA OV-960 OUTDOOR SERIES.png", pixelPitch: "5.7mm", brightness: "6000 cd/m²",
+          specifications: { "Model name": "P5.7", "Pixel Pitch": "5.7mm", "Pixel Density": "168x168 dots", "LED Lamp Type": "SMD2727", "Module Size": "480*320 mm", "Module Resolution": "84x56", "Brightness - Standard": "6000 cd/m²", "Brightness - High": "8000-10000 cd/m²", "Grey Scale": "≥14 bit", "Refresh Rate": "3840Hz or 7680Hz", "Max Cabinet Power": "550 W", "Avg Cabinet Power": "150 W", "Cabinet Size": "960*960 mm", "Cabinet Weight": "26.5 KG", "Cabinet Thickness": "87 mm" }
+        },
+        {
+          id: "ov960-p6-67", name: "GAMA OV-960 P6.67", description: "P6.67mm Outdoor Display", image: "/products/INDOOR GAMA OV 960.png", pixelPitch: "6.67mm", brightness: "6000 cd/m²",
+          specifications: { "Model name": "P6.67", "Pixel Pitch": "6.67mm", "Pixel Density": "144x144 dots", "LED Lamp Type": "SMD2727", "Module Size": "480*320 mm", "Module Resolution": "72*48", "Brightness - Standard": "6000 cd/m²", "Brightness - High": "8000-10000 cd/m²", "Grey Scale": "≥14 bit", "Refresh Rate": "3840Hz or 7680Hz", "Max Cabinet Power": "550 W", "Avg Cabinet Power": "150 W", "Cabinet Size": "960*960 mm", "Cabinet Weight": "26.5 KG", "Cabinet Thickness": "87 mm" }
+        },
+        {
+          id: "ov960-p8", name: "GAMA OV-960 P8", description: "P8mm Outdoor Display", image: "/products/INDOOR GAMA OV 960.png", pixelPitch: "8mm", brightness: "6000 cd/m²",
+          specifications: { "Model name": "P8", "Pixel Pitch": "8mm", "Pixel Density": "120x120 dots", "LED Lamp Type": "SMD2727", "Module Size": "480*320 mm", "Module Resolution": "60*40", "Brightness - Standard": "6000 cd/m²", "Brightness - High": "8000-10000 cd/m²", "Grey Scale": "≥14 bit", "Refresh Rate": "3840Hz or 7680Hz", "Max Cabinet Power": "550 W", "Avg Cabinet Power": "150 W", "Cabinet Size": "960*960 mm", "Cabinet Weight": "26.5 KG", "Cabinet Thickness": "87 mm" }
+        },
+        {
+          id: "ov960-p10", name: "GAMA OV-960 P10", description: "P10mm Outdoor Display", image: "/products/INDOOR GAMA OV 960.png", pixelPitch: "10mm", brightness: "6500 cd/m²",
+          specifications: { "Model name": "P10", "Pixel Pitch": "10mm", "Pixel Density": "96x96 dots", "LED Lamp Type": "SMD3535", "Module Size": "480*320 mm", "Module Resolution": "48*32", "Brightness - Standard": "6500 cd/m²", "Brightness - High": "8000-10000 cd/m²", "Grey Scale": "≥14 bit", "Refresh Rate": "3840Hz or 7680Hz", "Max Cabinet Power": "550 W", "Avg Cabinet Power": "150 W", "Cabinet Size": "960*960 mm", "Cabinet Weight": "26.5 KG", "Cabinet Thickness": "87 mm" }
         }
       ]
     }

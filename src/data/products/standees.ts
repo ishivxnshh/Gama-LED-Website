@@ -9,10 +9,10 @@ export const ledStandees: LEDProductType = {
       id: "lc60cf-poster",
       name: "LC60CF STANDEES",
       description: "Sleek and standalone LED poster displays for retail and exhibitions.",
-      image: "/products/GAMA LED POSTER.png",
+      image: "/products/LC60CF STANDEES.png",
       products: [
         {
-          id: "poster-p1-25", name: "GAMA LED POSTER P1.25 (GOB)", description: "P1.25mm GOB LED Poster", image: "/products/GAMA LED POSTER.png", pixelPitch: "1.25mm", brightness: "600 nits",
+          id: "poster-p1-25", name: "GAMA LED POSTER P1.25 (GOB)", description: "P1.25mm GOB LED Poster", image: "/products/LC60CF STANDEES.png", pixelPitch: "1.25mm", brightness: "600 nits",
           specifications: { "LED Type": "SMD1010", "Pixel Pitch": "P1.25 (GOB)", "Product Size": "655 x 2060 x 449 mm", "Display Area": "640 x 1920 mm", "Resolution": "512 x 1536", "Net Weight": "44 kg", "Material": "Aluminum Profile + Steel Base", "Module Size": "320 x 160 mm", "Brightness": "600 nits", "Refresh Rate": "3840Hz or 7680Hz", "Color Temperature": "9000 ± 1000 K", "Viewing Angle": "140 / 140 °", "Driving Method": "1/64 Scan", "AC Operating Voltage": "200 – 240 V", "Power Consumption (Max/Avg)": "490 / 163 W/Set", "Storage Temperature": "-40 ~ +60 °C", "Operating Temperature": "-10 ~ +40 °C", "Humidity": "10% ~ 90% RH", "Ingress Protection": "IP40 / IP20", "LED Lifespan": "100,000 H", "Maintenance": "Rear Maintenance", "Seamless Splicing": "Supported", "Foldable Design": "Backward Half-Fold Design", "Installation Method": "Floor Stand / Splicing Installation" }
         },
         {
@@ -37,13 +37,13 @@ export const ledStandees: LEDProductType = {
       id: "lc60s-series",
       name: "LC60S Series",
       description: "Sleek and standalone LED poster displays with integrated CNC-moulded aluminum alloy cabinet.",
-      image: "/products/LC60S.png",
+      image: "/products/LC60S Series.png",
       products: [
         {
           id: "lc60s-p1-25",
           name: "LC60S P1.25 (GOB)",
           description: "P1.25 (GOB) LED Poster",
-          image: "/products/LC60S.png",
+          image: "/products/LC60S Series.png",
           pixelPitch: "1.25mm",
           brightness: "600 nits",
           specifications: {
@@ -220,13 +220,13 @@ export const ledStandees: LEDProductType = {
       id: "lc70-series",
       name: "LC70 Series",
       description: "Premium standalone LED posters with slim profile and front maintenance.",
-      image: "/products/LC 70.png",
+      image: "/products/LC70 Series.png",
       products: [
         {
           id: "lc70-p1-25",
           name: "LC70 P1.25",
           description: "P1.25 LED Poster",
-          image: "/products/LC 70.png",
+          image: "/products/LC70 Series.png",
           pixelPitch: "1.25mm",
           brightness: "600 nits",
           specifications: {
@@ -364,13 +364,13 @@ export const ledStandees: LEDProductType = {
       id: "lc70d-series",
       name: "LC70D Series",
       description: "Double-sided or thicker profile LED posters with front maintenance.",
-      image: "/products/LC70D.png",
+      image: "/products/LC70D Series.png",
       products: [
         {
           id: "lc70d-p1-25",
           name: "LC70D P1.25",
           description: "P1.25 LED Poster",
-          image: "/products/LC70D.png",
+          image: "/products/LC70D Series.png",
           pixelPitch: "1.25mm",
           brightness: "600 nits",
           specifications: {

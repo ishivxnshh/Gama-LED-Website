@@ -9,10 +9,10 @@ export const ledModules: LEDProductType = {
       id: "indoor-modules",
       name: "320x160 Indoor LED Modules",
       description: "Standardized 320x160mm indoor LED modules for seamless videowalls.",
-      image: "/products/Indoor LED Modules.jpeg",
+      image: "/products/320x160 Indoor LED Modules.jpeg",
       products: [
         {
-          id: "indoor-mod-p1-25", name: "Indoor Module P1.25", description: "P1.25mm Indoor LED Module", image: "/products/Indoor LED Modules.jpeg", pixelPitch: "1.25mm", brightness: "600-800 Nits",
+          id: "indoor-mod-p1-25", name: "Indoor Module P1.25", description: "P1.25mm Indoor LED Module", image: "/products/320x160 Indoor LED Modules.jpeg", pixelPitch: "1.25mm", brightness: "600-800 Nits",
           specifications: { "Pixel Pitch": "P1.25mm", "LED": "1010 (Black LED)", "Module Resolution": "256*128", "LED Type": "SMD 3in1", "Brightness": "600-800 Nits", "Module Size": "320*160 mm", "Driving Mode": "1/64 Scan" }
         },
         {
@@ -53,10 +53,10 @@ export const ledModules: LEDProductType = {
       id: "outdoor-modules",
       name: "320x160 Outdoor LED Modules",
       description: "High brightness 320x160mm outdoor LED modules for exterior applications.",
-      image: "/products/Outdoor LED Modules.jpeg",
+      image: "/products/320x160 Outdoor LED Modules.jpeg",
       products: [
         {
-          id: "outdoor-mod-p2-5", name: "Outdoor Module P2.5", description: "P2.5mm Outdoor LED Module", image: "/products/Outdoor LED Modules.jpeg", pixelPitch: "2.5mm", brightness: ">5500 Nits",
+          id: "outdoor-mod-p2-5", name: "Outdoor Module P2.5", description: "P2.5mm Outdoor LED Module", image: "/products/320x160 Outdoor LED Modules.jpeg", pixelPitch: "2.5mm", brightness: ">5500 Nits",
           specifications: { "Pixel Pitch": "P2.5mm", "LED": "SMD1415", "Module Resolution": "128*64", "LED Type": "SMD 3in1", "Brightness": ">5500 Nits", "Module Size": "320*160 mm", "Driving Mode": "1/16 Scan" }
         },
         {
@@ -97,10 +97,10 @@ export const ledModules: LEDProductType = {
       id: "flexible-modules",
       name: "320x160 GAMA FLEXIBLE MODULEs",
       description: "Bendable and flexible 320x160mm LED modules for curved and creative shapes.",
-      image: "/products/GAMA FLEXIBLE MODULE.png",
+      image: "/products/320x160 GAMA FLEXIBLE MODULEs.png",
       products: [
         {
-          id: "flex-mod-p1-86", name: "GAMA FLEXIBLE MODULE P1.86", description: "P1.86mm Flexible LED Module", image: "/products/GAMA FLEXIBLE MODULE.png", pixelPitch: "1.86mm", brightness: "700-750 Nits",
+          id: "flex-mod-p1-86", name: "GAMA FLEXIBLE MODULE P1.86", description: "P1.86mm Flexible LED Module", image: "/products/320x160 GAMA FLEXIBLE MODULEs.png", pixelPitch: "1.86mm", brightness: "700-750 Nits",
           specifications: { "Pixel Pitch": "1.86mm", "LED Type": "SMD1515", "Density": "288906 dot/m²", "Module Pixel": "172*86", "Module Size": "320*160 mm", "Driving Mode": "1/43 Scan", "Brightness": "700-750 Nits" }
         },
         {
@@ -125,10 +125,10 @@ export const ledModules: LEDProductType = {
       id: "gob-modules",
       name: "320x160 GAMA GOB MODULEs",
       description: "Glue-on-Board (GOB) protected 320x160mm modules for maximum durability and protection.",
-      image: "/products/GAMA GOB MODULE.png",
+      image: "/products/320x160 GAMA GOB MODULEs.png",
       products: [
         {
-          id: "gob-mod-p1-25", name: "GAMA GOB MODULE P1.25", description: "P1.25mm GOB LED Module", image: "/products/GAMA GOB MODULE.png", pixelPitch: "1.25mm", brightness: "600-800 Nits",
+          id: "gob-mod-p1-25", name: "GAMA GOB MODULE P1.25", description: "P1.25mm GOB LED Module", image: "/products/320x160 GAMA GOB MODULEs.png", pixelPitch: "1.25mm", brightness: "600-800 Nits",
           specifications: { "Pixel Pitch": "P1.25mm", "LED": "1010 (Black LED)", "Module Resolution": "256*128", "IC Number": "96", "Brightness": "600-800 Nits", "Module Size": "320*160 mm", "Driving Mode": "1/64 Scan" }
         },
         {

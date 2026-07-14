@@ -9,10 +9,10 @@ export const indoorScreens: LEDProductType = {
       id: "ia960-indoor",
       name: "GAMA IA-960 Indoor LED Screen",
       description: "Premium die-casting magnesium alloy indoor LED screens.",
-      image: "/products/MA 960 INDOOR-OUTDOOR.png",
+      image: "/products/GAMA IA-960 Indoor LED Screen.png",
       products: [
         {
-          id: "ia960-2-5", name: "GAMA IA-960 2.5mm", description: "2.5mm Indoor LED Screen", image: "/products/MA 960 INDOOR-OUTDOOR.png", pixelPitch: "2.5mm", brightness: "800-900 Nits",
+          id: "ia960-2-5", name: "GAMA IA-960 2.5mm", description: "2.5mm Indoor LED Screen", image: "/products/GAMA IA-960 Indoor LED Screen.png", pixelPitch: "2.5mm", brightness: "800-900 Nits",
           specifications: { "Pixel Pitch": "2.5mm", "LED": "SMD 3in1", "Module size": "320*160mm", "Module resolution": "128*64dots", "Density": "384x384dots", "LED cabinet size": "960*960*87(mm)", "Cabinet weight": "24kg/pc", "Material": "Die Casting Magnesium Alloy", "Brightness": "800-900 cd/m2 (Nits)", "Avg power consumption": "270w", "Max power consumption": "450w", "Grey level": "14 bits", "Refresh frequency": "3840Hz or 7680Hz", "Humidity-operating": "10% ~ 95%", "Screen life": "≥100000 hours", "Controlling mode": "Synch or Async", "Certificates": "CE, RoHs, FCC, UL", "Protective grade": "IP50" }
         },
         {
@@ -30,37 +30,13 @@ export const indoorScreens: LEDProductType = {
       ]
     },
     {
-      id: "iv960",
-      name: "GAMA IV-960 INDOOR SERIES",
-      description: "High brightness GAMA IV-960 series indoor displays.",
-      image: "/products/INDOOR GAMA OV 960.png",
-      products: [
-        {
-          id: "iv960-p5-7", name: "GAMA IV-960 P5.7", description: "P5.7mm Indoor Display", image: "/products/INDOOR GAMA OV 960.png", pixelPitch: "5.7mm", brightness: "6000 cd/m²",
-          specifications: { "Model name": "P5.7", "Pixel Pitch": "5.7mm", "Pixel Density": "168x168 dots", "LED Lamp Type": "SMD2727", "Module Size": "480*320 mm", "Module Resolution": "84x56", "Brightness - Standard": "6000 cd/m²", "Brightness - High": "8000-10000 cd/m²", "Grey Scale": "≥14 bit", "Refresh Rate": "3840Hz or 7680Hz", "Max Cabinet Power": "550 W", "Avg Cabinet Power": "150 W", "Cabinet Size": "960*960 mm", "Cabinet Weight": "26.5 KG", "Cabinet Thickness": "87 mm" }
-        },
-        {
-          id: "iv960-p6-67", name: "GAMA IV-960 P6.67", description: "P6.67mm Indoor Display", image: "/products/INDOOR GAMA OV 960.png", pixelPitch: "6.67mm", brightness: "6000 cd/m²",
-          specifications: { "Model name": "P6.67", "Pixel Pitch": "6.67mm", "Pixel Density": "144x144 dots", "LED Lamp Type": "SMD2727", "Module Size": "480*320 mm", "Module Resolution": "72*48", "Brightness - Standard": "6000 cd/m²", "Brightness - High": "8000-10000 cd/m²", "Grey Scale": "≥14 bit", "Refresh Rate": "3840Hz or 7680Hz", "Max Cabinet Power": "550 W", "Avg Cabinet Power": "150 W", "Cabinet Size": "960*960 mm", "Cabinet Weight": "26.5 KG", "Cabinet Thickness": "87 mm" }
-        },
-        {
-          id: "iv960-p8", name: "GAMA IV-960 P8", description: "P8mm Indoor Display", image: "/products/INDOOR GAMA OV 960.png", pixelPitch: "8mm", brightness: "6000 cd/m²",
-          specifications: { "Model name": "P8", "Pixel Pitch": "8mm", "Pixel Density": "120x120 dots", "LED Lamp Type": "SMD2727", "Module Size": "480*320 mm", "Module Resolution": "60*40", "Brightness - Standard": "6000 cd/m²", "Brightness - High": "8000-10000 cd/m²", "Grey Scale": "≥14 bit", "Refresh Rate": "3840Hz or 7680Hz", "Max Cabinet Power": "550 W", "Avg Cabinet Power": "150 W", "Cabinet Size": "960*960 mm", "Cabinet Weight": "26.5 KG", "Cabinet Thickness": "87 mm" }
-        },
-        {
-          id: "iv960-p10", name: "GAMA IV-960 P10", description: "P10mm Indoor Display", image: "/products/INDOOR GAMA OV 960.png", pixelPitch: "10mm", brightness: "6500 cd/m²",
-          specifications: { "Model name": "P10", "Pixel Pitch": "10mm", "Pixel Density": "96x96 dots", "LED Lamp Type": "SMD3535", "Module Size": "480*320 mm", "Module Resolution": "48*32", "Brightness - Standard": "6500 cd/m²", "Brightness - High": "8000-10000 cd/m²", "Grey Scale": "≥14 bit", "Refresh Rate": "3840Hz or 7680Hz", "Max Cabinet Power": "550 W", "Avg Cabinet Power": "150 W", "Cabinet Size": "960*960 mm", "Cabinet Weight": "26.5 KG", "Cabinet Thickness": "87 mm" }
-        }
-      ]
-    },
-    {
       id: "ma640s-indoor",
       name: "GAMA I- 640 INDOOR LED SCREEN",
       description: "Fine pitch indoor displays with full front service.",
-      image: "/products/INDOOR SCREEN GAMA I- 640.png",
+      image: "/products/GAMA I- 640 INDOOR LED SCREEN.png",
       products: [
         {
-          id: "ma640s-p1-25", name: "GAMA I- 640 P1.25", description: "P1.25mm Indoor Screen", image: "/products/INDOOR SCREEN GAMA I- 640.png", pixelPitch: "1.25mm", brightness: "650 cd/㎡",
+          id: "ma640s-p1-25", name: "GAMA I- 640 P1.25", description: "P1.25mm Indoor Screen", image: "/products/GAMA I- 640 INDOOR LED SCREEN.png", pixelPitch: "1.25mm", brightness: "650 cd/㎡",
           specifications: { "Pixel Pitch": "1.25mm", "LED": "SMD1010", "Module Resolution": "256*128", "Module Size": "320*160 mm", "Cabinet Resolution": "512*384", "Cabinet Size": "640mm*480mm*(WxH)", "Pixel Density": "196608 dots/pc", "Serviceability": "Full front service", "Protection Level": "IP50", "Weight": "7.5kg", "Grey Level": "14 bit", "Brightness": "650 cd/㎡", "Contrast": "6000:1", "Color Gamut": "≥90% NTSC", "Refresh Rate": "3840Hz or 7680Hz", "Vert. viewing angle": "140°", "Brightness Uniformity": "≥95%" }
         },
         {
@@ -81,10 +57,10 @@ export const indoorScreens: LEDProductType = {
       id: "ma600-smd",
       name: "GAMA I-600 SMD INDOOR LED SCREEN",
       description: "Standard SMD 16:9 ratio indoor displays.",
-      image: "/products/INDOOR SCREEN GAMA I-600.png",
+      image: "/products/GAMA I-600 SMD INDOOR LED SCREEN.png",
       products: [
         {
-          id: "ma600-smd-1-25", name: "GAMA I-600 SMD P1.25", description: "P1.25mm SMD Indoor Screen", image: "/products/INDOOR SCREEN GAMA I-600.png", pixelPitch: "1.25mm", brightness: "600 CD/㎡",
+          id: "ma600-smd-1-25", name: "GAMA I-600 SMD P1.25", description: "P1.25mm SMD Indoor Screen", image: "/products/GAMA I-600 SMD INDOOR LED SCREEN.png", pixelPitch: "1.25mm", brightness: "600 CD/㎡",
           specifications: { "Pixel Pitch": "1.25mm", "Pixel Configuration": "SMD1010", "Module Resolution": "240x135", "Module Size": "300x168.75 mm", "Scan Mode": "1/60", "Cabinet Size": "600x337.5 mm", "Cabinet Weight": "4.65 KG", "Brightness": "600 CD/㎡", "Viewing Angle": "170°", "Gray Grade": "16 Bits", "Operation Power": "AC100-240V 50-60Hz", "Max Power": "450W/㎡", "Avg Power": "270W/㎡", "Frame Frequency": "≥60 Hz", "Refresh Frequency": "≥3840 Hz", "Working Temperature": "-10 ~ +60 ºC", "Lifetime": "100000 Hours" }
         },
         {
@@ -105,10 +81,10 @@ export const indoorScreens: LEDProductType = {
       id: "ma600-cob",
       name: "GAMA I-600 COB INDOOR LED SCREEN",
       description: "Advanced Chip-on-Board (COB) indoor displays for enhanced durability.",
-      image: "/products/INDOOR SCREEN GAMA I-600.png",
+      image: "/products/GAMA I-600 COB INDOOR LED SCREEN.png",
       products: [
         {
-          id: "ma600-cob-0-93", name: "GAMA I-600 COB P0.9375", description: "P0.9375mm COB Indoor Screen", image: "/products/INDOOR SCREEN GAMA I-600.png", pixelPitch: "0.9375mm", brightness: "1000 CD/㎡",
+          id: "ma600-cob-0-93", name: "GAMA I-600 COB P0.9375", description: "P0.9375mm COB Indoor Screen", image: "/products/GAMA I-600 COB INDOOR LED SCREEN.png", pixelPitch: "0.9375mm", brightness: "1000 CD/㎡",
           specifications: { "Pixel Pitch": "0.9375mm", "Pixel Configuration": "COB", "Module Resolution": "160x180", "Module Size": "150x168.75 mm", "Scan Mode": "1/60", "Cabinet Size": "600x337.5 mm", "Cabinet Weight": "4.65 KG", "Brightness": "1000 CD/㎡", "Viewing Angle": "170°", "Gray Grade": "16 Bits", "Operation Power": "AC100-240V 50-60Hz", "Max Power": "450W/㎡", "Avg Power": "270W/㎡", "Frame Frequency": "≥60 Hz", "Refresh Frequency": "≥3840 Hz", "Working Temperature": "-10 ~ +60 ºC", "Lifetime": "100000 Hours" }
         },
         {
@@ -125,10 +101,10 @@ export const indoorScreens: LEDProductType = {
       id: "ma250",
       name: "GAMA I-250 INDOOR LED SCREEN",
       description: "Cost-effective, versatile indoor LED displays.",
-      image: "/products/INDOOR SCREEN GAMA I-250.png",
+      image: "/products/GAMA I-250 INDOOR LED SCREEN.png",
       products: [
         {
-          id: "ma250-1-95", name: "GAMA I-250 P1.95", description: "P1.95mm Indoor Display", image: "/products/INDOOR SCREEN GAMA I-250.png", pixelPitch: "1.95mm", brightness: "700 cd/m²",
+          id: "ma250-1-95", name: "GAMA I-250 P1.95", description: "P1.95mm Indoor Display", image: "/products/GAMA I-250 INDOOR LED SCREEN.png", pixelPitch: "1.95mm", brightness: "700 cd/m²",
           specifications: { "Pixel Pitch": "1.95mm", "LED Type": "SMD1515", "Physical Density": "262144 dot/sqm", "Module Resolution": "128x128", "Module Size": "250x250 mm", "Panel Resolution": "512x128", "Maintenance Mode": "Front", "Cabinet Frame": "Aluminum", "Brightness": "700 cd/m²", "Color Temperature": "3200-9300 K", "Grey Level": "14/16 bit", "View Angle": "160°/160°", "Contrast Ratio": "5000:1", "Frame Frequency": "50/60 Hz", "Drive Mode": "1/32 Scan", "Max Power Consumption": "450 w/m²", "Avg Power Consumption": "150 w/m²", "Power Requirement": "AC90-264V 47-63Hz" }
         },
         {
@@ -149,10 +125,10 @@ export const indoorScreens: LEDProductType = {
       id: "indoor-fixed",
       name: "INDOOR FIXED SERIES",
       description: "Standard indoor fixed installation displays.",
-      image: "/products/INDOOR FIXED.png",
+      image: "/products/INDOOR FIXED SERIES.png",
       products: [
         {
-          id: "in-fixed-p2", name: "Indoor Fixed P2", description: "P2mm Indoor Fixed Display", image: "/products/INDOOR FIXED.png", pixelPitch: "2mm", brightness: "800-1000 cd/m2",
+          id: "in-fixed-p2", name: "Indoor Fixed P2", description: "P2mm Indoor Fixed Display", image: "/products/INDOOR FIXED SERIES.png", pixelPitch: "2mm", brightness: "800-1000 cd/m2",
           specifications: { "Pixel Pitch": "2mm", "LED Type": "SMD1515", "Scan Way": "1/40", "Module Dimension": "256*128 mm", "Module Pixel": "128×64", "Cabinet Dimension": "Customized Size", "Cabinet Resolution": "Depend on the size of Cabinet", "Module Maintenance": "Front or Rear", "Cabinet Material": "Steel or aluminum", "Cabinet Weight": "50kg/m2", "Brightness": "800-1000 cd/m2", "Refresh rate": "3840Hz or 7680Hz", "Digital Processing": "14/16 Bit", "Gray Scale": "16384 Level", "Colors": "687 Million", "Color Temperature": "4,500-8,500 Adjustable", "Brightness Control": "255", "Contrast Ratio": "4000:1", "Viewing Angle H/V": "140 / 140 Deg.", "AC Speration": "AC90~ 264 V", "Power Consumption (Max/Avg)": "800/250 W/m2", "Storage Tem.": "-4 ~ 140F/-20C ~ +60C", "Storage Humidity": "10%~ 85%", "Operating Tem.": "-4 ~ 140F/-20C ~ +60C", "Operating Humidity": "10% ~ 85%", "Lift time (50% brightness)": "100,000 Hour" }
         },
         {
