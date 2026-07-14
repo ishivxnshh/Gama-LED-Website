@@ -6,49 +6,49 @@ export const indoorScreens: LEDProductType = {
   description: "High-resolution, seamless indoor displays for corporate, retail, and broadcast environments.",
   series: [
     {
-      id: "oa960-indoor",
+      id: "ia960-indoor",
       name: "GAMA IA-960 Indoor LED Screen",
       description: "Premium die-casting magnesium alloy indoor LED screens.",
       image: "/products/MA 960 INDOOR-OUTDOOR.png",
       products: [
         {
-          id: "oa960-2-5", name: "GAMA IA-960 2.5mm", description: "2.5mm Indoor LED Screen", image: "/products/MA 960 INDOOR-OUTDOOR.png", pixelPitch: "2.5mm", brightness: "800-900 Nits",
+          id: "ia960-2-5", name: "GAMA IA-960 2.5mm", description: "2.5mm Indoor LED Screen", image: "/products/MA 960 INDOOR-OUTDOOR.png", pixelPitch: "2.5mm", brightness: "800-900 Nits",
           specifications: { "Pixel Pitch": "2.5mm", "LED": "SMD 3in1", "Module size": "320*160mm", "Module resolution": "128*64dots", "Density": "384x384dots", "LED cabinet size": "960*960*87(mm)", "Cabinet weight": "24kg/pc", "Material": "Die Casting Magnesium Alloy", "Brightness": "800-900 cd/m2 (Nits)", "Avg power consumption": "270w", "Max power consumption": "450w", "Grey level": "14 bits", "Refresh frequency": "3840Hz or 7680Hz", "Humidity-operating": "10% ~ 95%", "Screen life": "≥100000 hours", "Controlling mode": "Synch or Async", "Certificates": "CE, RoHs, FCC, UL", "Protective grade": "IP50" }
         },
         {
-          id: "oa960-3-07", name: "GAMA IA-960 3.07mm", description: "3.07mm Indoor LED Screen", image: "/products/MA 960 INDOOR-OUTDOOR.png", pixelPitch: "3.07mm", brightness: "800-900 Nits",
+          id: "ia960-3-07", name: "GAMA IA-960 3.07mm", description: "3.07mm Indoor LED Screen", image: "/products/MA 960 INDOOR-OUTDOOR.png", pixelPitch: "3.07mm", brightness: "800-900 Nits",
           specifications: { "Pixel Pitch": "3.07mm", "LED": "SMD 3in1", "Module size": "320*160mm", "Module resolution": "104*52dots", "Density": "312x312dots", "LED cabinet size": "960*960*87(mm)", "Cabinet weight": "24kg/pc", "Material": "Die Casting Magnesium Alloy", "Brightness": "800-900 cd/m2 (Nits)", "Avg power consumption": "270w", "Max power consumption": "450w", "Grey level": "14 bits", "Refresh frequency": "3840Hz or 7680Hz", "Humidity-operating": "10% ~ 95%", "Screen life": "≥100000 hours", "Controlling mode": "Synch or Async", "Certificates": "CE, RoHs, FCC, UL", "Protective grade": "IP50" }
         },
         {
-          id: "oa960-4", name: "GAMA IA-960 4mm", description: "4mm Indoor LED Screen", image: "/products/MA 960 INDOOR-OUTDOOR.png", pixelPitch: "4mm", brightness: "700-800 Nits",
+          id: "ia960-4", name: "GAMA IA-960 4mm", description: "4mm Indoor LED Screen", image: "/products/MA 960 INDOOR-OUTDOOR.png", pixelPitch: "4mm", brightness: "700-800 Nits",
           specifications: { "Pixel Pitch": "4mm", "LED": "SMD 3in1", "Module size": "320*160mm", "Module resolution": "80*40dots", "Density": "240x240dots", "LED cabinet size": "960*960*87(mm)", "Cabinet weight": "24kg/pc", "Material": "Die Casting Magnesium Alloy", "Brightness": "700-800 cd/m2 (Nits)", "Avg power consumption": "270w", "Max power consumption": "450w", "Grey level": "14 bits", "Refresh frequency": "3840Hz or 7680Hz", "Humidity-operating": "10% ~ 95%", "Screen life": "≥100000 hours", "Controlling mode": "Synch or Async", "Certificates": "CE, RoHs, FCC, UL", "Protective grade": "IP50" }
         },
         {
-          id: "oa960-5", name: "GAMA IA-960 5mm", description: "5mm Indoor LED Screen", image: "/products/MA 960 INDOOR-OUTDOOR.png", pixelPitch: "5mm", brightness: "700-800 Nits",
+          id: "ia960-5", name: "GAMA IA-960 5mm", description: "5mm Indoor LED Screen", image: "/products/MA 960 INDOOR-OUTDOOR.png", pixelPitch: "5mm", brightness: "700-800 Nits",
           specifications: { "Pixel Pitch": "5mm", "LED": "SMD 3in1", "Module size": "320*160mm", "Module resolution": "64*32dots", "Density": "192x192dots", "LED cabinet size": "960*960*87(mm)", "Cabinet weight": "24kg/pc", "Material": "Die Casting Magnesium Alloy", "Brightness": "700-800 cd/m2 (Nits)", "Avg power consumption": "270w", "Max power consumption": "450w", "Grey level": "14 bits", "Refresh frequency": "3840Hz or 7680Hz", "Humidity-operating": "10% ~ 95%", "Screen life": "≥100000 hours", "Controlling mode": "Synch or Async", "Certificates": "CE, RoHs, FCC, UL", "Protective grade": "IP50" }
         }
       ]
     },
     {
-      id: "ev960",
+      id: "iv960",
       name: "GAMA IV-960 INDOOR SERIES",
       description: "High brightness GAMA IV-960 series indoor displays.",
       image: "/products/INDOOR GAMA OV 960.png",
       products: [
         {
-          id: "ev960-p5-7", name: "GAMA IV-960 P5.7", description: "P5.7mm Indoor Display", image: "/products/INDOOR GAMA OV 960.png", pixelPitch: "5.7mm", brightness: "6000 cd/m²",
+          id: "iv960-p5-7", name: "GAMA IV-960 P5.7", description: "P5.7mm Indoor Display", image: "/products/INDOOR GAMA OV 960.png", pixelPitch: "5.7mm", brightness: "6000 cd/m²",
           specifications: { "Model name": "P5.7", "Pixel Pitch": "5.7mm", "Pixel Density": "168x168 dots", "LED Lamp Type": "SMD2727", "Module Size": "480*320 mm", "Module Resolution": "84x56", "Brightness - Standard": "6000 cd/m²", "Brightness - High": "8000-10000 cd/m²", "Grey Scale": "≥14 bit", "Refresh Rate": "3840Hz or 7680Hz", "Max Cabinet Power": "550 W", "Avg Cabinet Power": "150 W", "Cabinet Size": "960*960 mm", "Cabinet Weight": "26.5 KG", "Cabinet Thickness": "87 mm" }
         },
         {
-          id: "ev960-p6-67", name: "GAMA IV-960 P6.67", description: "P6.67mm Indoor Display", image: "/products/INDOOR GAMA OV 960.png", pixelPitch: "6.67mm", brightness: "6000 cd/m²",
+          id: "iv960-p6-67", name: "GAMA IV-960 P6.67", description: "P6.67mm Indoor Display", image: "/products/INDOOR GAMA OV 960.png", pixelPitch: "6.67mm", brightness: "6000 cd/m²",
           specifications: { "Model name": "P6.67", "Pixel Pitch": "6.67mm", "Pixel Density": "144x144 dots", "LED Lamp Type": "SMD2727", "Module Size": "480*320 mm", "Module Resolution": "72*48", "Brightness - Standard": "6000 cd/m²", "Brightness - High": "8000-10000 cd/m²", "Grey Scale": "≥14 bit", "Refresh Rate": "3840Hz or 7680Hz", "Max Cabinet Power": "550 W", "Avg Cabinet Power": "150 W", "Cabinet Size": "960*960 mm", "Cabinet Weight": "26.5 KG", "Cabinet Thickness": "87 mm" }
         },
         {
-          id: "ev960-p8", name: "GAMA IV-960 P8", description: "P8mm Indoor Display", image: "/products/INDOOR GAMA OV 960.png", pixelPitch: "8mm", brightness: "6000 cd/m²",
+          id: "iv960-p8", name: "GAMA IV-960 P8", description: "P8mm Indoor Display", image: "/products/INDOOR GAMA OV 960.png", pixelPitch: "8mm", brightness: "6000 cd/m²",
           specifications: { "Model name": "P8", "Pixel Pitch": "8mm", "Pixel Density": "120x120 dots", "LED Lamp Type": "SMD2727", "Module Size": "480*320 mm", "Module Resolution": "60*40", "Brightness - Standard": "6000 cd/m²", "Brightness - High": "8000-10000 cd/m²", "Grey Scale": "≥14 bit", "Refresh Rate": "3840Hz or 7680Hz", "Max Cabinet Power": "550 W", "Avg Cabinet Power": "150 W", "Cabinet Size": "960*960 mm", "Cabinet Weight": "26.5 KG", "Cabinet Thickness": "87 mm" }
         },
         {
-          id: "ev960-p10", name: "GAMA IV-960 P10", description: "P10mm Indoor Display", image: "/products/INDOOR GAMA OV 960.png", pixelPitch: "10mm", brightness: "6500 cd/m²",
+          id: "iv960-p10", name: "GAMA IV-960 P10", description: "P10mm Indoor Display", image: "/products/INDOOR GAMA OV 960.png", pixelPitch: "10mm", brightness: "6500 cd/m²",
           specifications: { "Model name": "P10", "Pixel Pitch": "10mm", "Pixel Density": "96x96 dots", "LED Lamp Type": "SMD3535", "Module Size": "480*320 mm", "Module Resolution": "48*32", "Brightness - Standard": "6500 cd/m²", "Brightness - High": "8000-10000 cd/m²", "Grey Scale": "≥14 bit", "Refresh Rate": "3840Hz or 7680Hz", "Max Cabinet Power": "550 W", "Avg Cabinet Power": "150 W", "Cabinet Size": "960*960 mm", "Cabinet Weight": "26.5 KG", "Cabinet Thickness": "87 mm" }
         }
       ]
